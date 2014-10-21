@@ -130,7 +130,7 @@ return array(
           ),
          */
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=teatro_sucre',
+            'connectionString' => 'mysql:host=localhost;dbname=parroquia',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',
