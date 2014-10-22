@@ -305,8 +305,8 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
-                            <a href="index.html">
+                        <li class="">
+                            <a href="<?php echo Yii::app()->homeUrl ?>">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -410,22 +410,22 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <!--<div class="col-lg-12">-->
 
-                        <div class="box box-solid box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title">Primary Solid Box</h3>
-                                    <div class="box-tools pull-right">
+                        <!--<div class="box box-solid box-primary">-->
+                                <!--<div class="box-header">-->
+                                    <!--<h3 class="box-title">Primary Solid Box</h3>-->
+<!--                                    <div class="box-tools pull-right">
                                         <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                                     </div>
                                 </div>
-                                <div class="box-body">
+                                <div class="box-body">-->
                                     <?php echo $content; ?>
-                                </div><!-- /.box-body -->
-                            </div>
+                                <!--</div> /.box-body -->
+                            <!--</div>-->
                          
-                    </div>
+                    <!--</div>-->
                     </div>
                 </section><!-- /.content -->
             </aside>
