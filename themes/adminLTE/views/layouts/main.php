@@ -394,9 +394,9 @@
                 <!-- /.sidebar -->
             </aside>
 
-            <aside class="right-side">
+           
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
+<!--                <section class="content-header">
                     <h1>
                         Dashboard
                         <small>Control panel</small>
@@ -405,30 +405,19 @@
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li class="active">Dashboard</li>
                     </ol>
-                </section>
+                </section>-->
 
                 <!-- Main content -->
-                <section class="content">
-                    <div class="row">
-                        <!--<div class="col-lg-12">-->
+<!--                <section class="container-fluid">
+                    <div class="row">-->
+                        
+<!--                        <section class="col-lg-12 connectedSortable">                            
 
-                        <!--<div class="box box-solid box-primary">-->
-                                <!--<div class="box-header">-->
-                                    <!--<h3 class="box-title">Primary Solid Box</h3>-->
-<!--                                    <div class="box-tools pull-right">
-                                        <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body">-->
+                        </section>-->
                                     <?php echo $content; ?>
-                                <!--</div> /.box-body -->
-                            <!--</div>-->
-                         
                     <!--</div>-->
-                    </div>
-                </section><!-- /.content -->
-            </aside>
+                <!--</section>-->
+<!--            </aside>-->
         </div>   <!-- Wrapper -->
 
 
