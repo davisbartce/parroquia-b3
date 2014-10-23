@@ -1,5 +1,5 @@
-/*@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
-@import url(//fonts.googleapis.com/css?family=Kaushan+Script);*/
+/*@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);*/
+/*@import url(/parroquia-b3/themes/adminLTE/fonts/wofs/css?family=Kaushan+Script);*/
 /*@import url(/themes/adminLTE/fonts/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);*/
 /*@import url(/css2?family=Kaushan+Script);*/
 /*! 
@@ -12,21 +12,28 @@
     Core: General style
 ----------------------------
 */
-/* latin-ext */
+/* latin-ext 
 @font-face {
   font-family: 'Kaushan Script';
   font-style: normal;
   font-weight: 400;
-  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(/parroquia-b3/themes/adminLTE/fonts/wofs/kaushan.woff2) format('woff2');
+  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(/parroquia-b3/themes/adminLTE/fonts/wofs/KaushanScript-Regular.ttf) format('woff2');
   unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+ latin 
 @font-face {
   font-family: 'Kaushan Script';
   font-style: normal;
   font-weight: 400;
-  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(/parroquia-b3/themes/adminLTE/fonts/wofs/kaushan2.woff2) format('woff2');
+  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(/parroquia-b3/themes/adminLTE/fonts/wofs/KaushanScript-Regular.ttf) format('ttf');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}*/
+
+@font-face {
+   font-family:'Kaushan Script';
+   font-style: normal;
+   font-weight: 400;
+   src: url(/parroquia-b3/themes/adminLTE/fonts/wofs/KaushanScript-Regular.ttf);
 }
 
 
