@@ -110,7 +110,7 @@
 
                     <div class="row">
                         <!-- accepted payments column -->
-                        <div class="col-xs-6">
+                        <div class="col-xs-6 col-lg-6">
                             <p class="lead">Payment Methods:</p>
                             <img src="../../img/credit/visa.png" alt="Visa"/>
                             <img src="../../img/credit/mastercard.png" alt="Mastercard"/>
@@ -120,7 +120,7 @@
                                 Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
                             </p>
                         </div><!-- /.col -->
-                        <div class="col-xs-6">
+                        <div class="col-xs-6 col-lg-6">
                             <p class="lead">Amount Due 2/22/2014</p>
                             <div class="table-responsive">
                                 <table class="table">
