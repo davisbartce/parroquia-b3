@@ -328,6 +328,7 @@
                                 <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/buttons" ?>"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
                                 <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/sliders" ?>"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
                                 <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/timeline" ?>"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/invoice" ?>"><i class="fa fa-folder"></i> Invoice</a></li>
                             </ul>
                         </li>
                         <li class="treeview">

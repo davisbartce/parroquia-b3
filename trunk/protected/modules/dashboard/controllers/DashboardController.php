@@ -57,6 +57,12 @@ class DashboardController extends Controller
             // using the default layout 'protected/views/layouts/main.php'
             $this->render('pages/timeline');
     }
+    public function actionInvoice()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/invoice');
+    }
 
     /**
      * This is the action to handle external exceptions.
