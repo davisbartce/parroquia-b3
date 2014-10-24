@@ -15,9 +15,47 @@ class DashboardController extends Controller
      */
     public function actionIndex()
     {
+//        var_dump('entro');
+//        die();
             // renders the view file 'protected/views/site/index.php'
             // using the default layout 'protected/views/layouts/main.php'
             $this->render('index');
+    }
+    public function actionWidgets()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/widgets');
+    }
+    public function actionGeneral()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/general');
+    }
+    public function actionIcons()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/icons');
+    }
+    public function actionButtons()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/buttons');
+    }
+    public function actionSliders()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/sliders');
+    }
+    public function actionTimeline()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/timeline');
     }
 
     /**

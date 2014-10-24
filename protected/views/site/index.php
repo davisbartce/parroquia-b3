@@ -1,32 +1,102 @@
-<?php
-/* @var $this SiteController */
-
-$this->pageTitle = Yii::app()->name;
-?>
 <aside class="right-side">
-<section class="content-header">
-    <h1>
-        Dashboard
-        <small>Control panel</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-    </ol>
-</section>
+    <?php
+    /* @var $this SiteController */
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+//    $this->pageTitle = Yii::app()->name;
+    ?>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+    <section class="content-header">
+        <h1>
+            Dashboard
+            <small><?php echo $this->pageTitle = Yii::app()->name; ?></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-    <li>View file: <code><?php echo __FILE__; ?></code></li>
-    <li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
 
-<p>For more details on how to further develop this application, please read
-    the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-    Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-    should you have any questions.</p>
+    <section class="content">   
+        
+        <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                        150
+                                    </h3>
+                                    <p>
+                                        Bautizos
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-child"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                   Acceder <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        53<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        Matrimonios
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-slideshare"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                   Acceder <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        44
+                                    </h3>
+                                    <p>
+                                        Comuniones
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-bell"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                   Acceder <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        65
+                                    </h3>
+                                    <p>
+                                        Confirmaciones
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-book"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                   Acceder <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                    </div>
+
+    </section>
 </aside>
