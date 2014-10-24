@@ -26,6 +26,7 @@ return array(
         'application.modules.cruge.extensions.crugemailer.*',
     ),
     'modules' => array(
+        'dashboard',
         // uncomment the following to enable the Gii tool
         'cruge' => array(
             'tableprefix' => 'cruge_',
