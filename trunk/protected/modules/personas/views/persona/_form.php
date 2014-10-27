@@ -30,8 +30,14 @@
                 <?php echo $form->textFieldGroup($model, 'apellidos', array('maxlength' => 60)) ?>
 
                 <?php echo $form->datePickerGroup($model, 'fecha_nacimiento',
-                        array('prepend' => '<i class="fa fa-calendar"></i>',
-                        'options' => array('format' => 'YYYY/mm/dd'))) ?>
+                        array(
+//                            'prepend' => '<i class="fa fa-calendar"></i>',
+                        'options' => array(
+                            'format' => 'yyyy/mm/dd',
+                            'viewformat' => 'yyyy/mm/dd'
+                            )
+                            )
+                        ) ?>
 
                 <?php echo $form->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
             </div>                        <div class="form-group">
