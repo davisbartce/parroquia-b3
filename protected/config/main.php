@@ -9,6 +9,7 @@ return array(
     'name' => 'Sistema Parroquial',
     'language' => 'es',
     'theme' => 'adminLTE',
+     'defaultController' => 'dashboard/dashboard/index',
     // preloading 'log' component
     'preload' => array(
         'log',
@@ -24,9 +25,12 @@ return array(
 //        cruge
         'application.modules.cruge.components.*',
         'application.modules.cruge.extensions.crugemailer.*',
+        'application.components.validators.*',
+//        'application.modules.dashboards.models.*',
     ),
     'modules' => array(
         'dashboard',
+        'personas',
         // uncomment the following to enable the Gii tool
         'cruge' => array(
             'tableprefix' => 'cruge_',
