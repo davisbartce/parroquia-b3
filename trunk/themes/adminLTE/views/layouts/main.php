@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                     ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                       ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/morris/morris.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet">
@@ -130,8 +130,10 @@
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
                         </li>
+
+
                         <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
+<!--                        <li class="dropdown notifications-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-warning"></i>
                                 <span class="label label-warning">10</span>
@@ -139,7 +141,7 @@
                             <ul class="dropdown-menu">
                                 <li class="header">You have 10 notifications</li>
                                 <li>
-                                    <!-- inner menu: contains the actual data -->
+                                     inner menu: contains the actual data 
                                     <ul class="menu">
                                         <li>
                                             <a href="#">
@@ -171,9 +173,9 @@
                                 </li>
                                 <li class="footer"><a href="#">View all</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <!-- Tasks: style can be found in dropdown.less -->
-                        <li class="dropdown tasks-menu">
+<!--                        <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-tasks"></i>
                                 <span class="label label-danger">9</span>
@@ -181,9 +183,9 @@
                             <ul class="dropdown-menu">
                                 <li class="header">You have 9 tasks</li>
                                 <li>
-                                    <!-- inner menu: contains the actual data -->
+                                     inner menu: contains the actual data 
                                     <ul class="menu">
-                                        <li><!-- Task item -->
+                                        <li> Task item 
                                             <a href="#">
                                                 <h3>
                                                     Design some buttons
@@ -195,8 +197,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
+                                        </li> end task item 
+                                        <li> Task item 
                                             <a href="#">
                                                 <h3>
                                                     Create a nice theme
@@ -208,8 +210,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
+                                        </li> end task item 
+                                        <li> Task item 
                                             <a href="#">
                                                 <h3>
                                                     Some task I need to do
@@ -221,8 +223,8 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
-                                        <li><!-- Task item -->
+                                        </li> end task item 
+                                        <li> Task item 
                                             <a href="#">
                                                 <h3>
                                                     Make beautiful transitions
@@ -234,31 +236,31 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                        </li><!-- end task item -->
+                                        </li> end task item 
                                     </ul>
                                 </li>
                                 <li class="footer">
                                     <a href="#">View all tasks</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>Jane Doe <i class="caret"></i></span>
+                                <span>  <?php echo Yii::app()->user->name ? Yii::app()->user->name : "Guest" ?> <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar3.png' ?>" class="img-circle" alt="User Image" />
                                     <p>
-                                        Jane Doe - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                      <?php echo Yii::app()->user->name ? Yii::app()->user->name : "Guest" ?>
+                                        <!--<small>Member since Nov. 2012</small>-->
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
-                                <li class="user-body">
+<!--                                <li class="user-body">
                                     <div class="col-xs-4 text-center">
                                         <a href="#">Followers</a>
                                     </div>
@@ -268,14 +270,15 @@
                                     <div class="col-xs-4 text-center">
                                         <a href="#">Friends</a>
                                     </div>
-                                </li>
+                                </li>-->
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-                                    <div class="pull-left">
+<!--                                    <div class="pull-left">
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
+                                    </div>-->
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a class="btn btn-success"<?php echo CHtml::link('<i class="icon-off"></i>&nbsp;&nbsp;Cerrar Sesiòn', Yii::app()->user->ui->logoutUrl) ?>  </a>              
+                                        <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
                                     </div>
                                 </li>
                             </ul>
@@ -293,10 +296,10 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src=" <?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar3.png' ?> " class="img-circle" alt="User Image" />
+                            <img class="img-circle" alt="User Image" src=" <?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar3.png' ?> "/>
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <p>Hola     , <?php echo ' '.Yii::app()->user->name ?> </p>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
@@ -311,11 +314,11 @@
                             </a>
                         </li>
                         <li>
-                            <a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/widgets" ?>">
+                            <a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/widgets" ?>">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>
-                        
+
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
@@ -323,12 +326,14 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/general" ?>"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/icons" ?>"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/buttons" ?>"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/sliders" ?>"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/timeline" ?>"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl."/dashboard/dashboard/invoice" ?>"><i class="fa fa-folder"></i> Invoice</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/general" ?>"><i class="fa fa-angle-double-right"></i> General</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/icons" ?>"><i class="fa fa-angle-double-right"></i> Icons</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/buttons" ?>"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/sliders" ?>"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/timeline" ?>"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/invoice" ?>"><i class="fa fa-folder"></i> Invoice</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/generalForm" ?>"><i class="fa fa-folder"></i> General Form</a></li>
+                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -384,30 +389,30 @@
                 <!-- /.sidebar -->
             </aside>
 
-           
-                <!-- Content Header (Page header) -->
-<!--                <section class="content-header">
-                    <h1>
-                        Dashboard
-                        <small>Control panel</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>-->
 
-                <!-- Main content -->
+            <!-- Content Header (Page header) -->
+<!--                <section class="content-header">
+                <h1>
+                    Dashboard
+                    <small>Control panel</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </section>-->
+
+            <!-- Main content -->
 <!--                <section class="container-fluid">
-                    <div class="row">-->
-                        
+                <div class="row">-->
+
 <!--                        <section class="col-lg-12 connectedSortable">                            
 
-                        </section>-->
-                                    <?php echo $content; ?>
-                    <!--</div>-->
-                <!--</section>-->
-<!--            </aside>-->
+</section>-->
+            <?php echo $content; ?>
+            <!--</div>-->
+            <!--</section>-->
+            <!--            </aside>-->
         </div>   <!-- Wrapper -->
 
 

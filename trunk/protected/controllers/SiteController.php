@@ -35,17 +35,40 @@ class SiteController extends Controller
 	/**
 	 * This is the action to handle external exceptions.
 	 */
-	public function actionError()
-	{
-		if($error=Yii::app()->errorHandler->error)
-		{
-			if(Yii::app()->request->isAjaxRequest)
-				echo $error['message'];
-			else
-				$this->render('error', $error);
-		}
-	}
+//	public function actionError()
+//	{
+//		if($error=Yii::app()->errorHandler->error)
+//		{
+//			if(Yii::app()->request->isAjaxRequest)
+//				echo $error['message'];
+//			else
+//				$this->render('error', $error);
+//		}
+//	}
 
+        
+            public function actionError()
+    {
+        if (Yii::app()->user->isGuest) {
+            $this->redirect(Yii::app()->user->ui->loginUrl);
+        }
+        if($error=Yii::app()->errorHandler->error)
+        {
+            if(Yii::app()->request->isAjaxRequest) {
+                    echo $error['message'];
+            } else {
+                if($error['code'] == 404) {
+                    $this->layout = '//layouts/error';
+                    $this->render('404', $error);
+                } else if($error['code'] == 401) {
+                    $this->layout = '//layouts/error';
+                    $this->render('401', $error);
+                } else {
+                    $this->render('error', $error);
+                }
+            }
+        }
+    }
 	/**
 	 * Displays the contact page
 	 */

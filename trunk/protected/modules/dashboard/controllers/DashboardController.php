@@ -3,11 +3,13 @@
 class DashboardController extends Controller
 {
     
-    public function filters() {
+     public function filters() {
         return array(
             array('CrugeAccessControlFilter -error'),
         );
     }
+    
+//    public $layout = '//layouts/admin';
 
     /**
      * This is the default 'index' action that is invoked
@@ -63,12 +65,25 @@ class DashboardController extends Controller
             // using the default layout 'protected/views/layouts/main.php'
             $this->render('pages/invoice');
     }
+    public function actionAdvanced()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/advanced');
+    }
+    public function actionGeneralForm()
+    {
+            // renders the view file 'protected/views/site/index.php'
+            // using the default layout 'protected/views/layouts/main.php'
+            $this->render('pages/generalForm');
+    }
 
     /**
      * This is the action to handle external exceptions.
      */
     public function actionError()
     {
+        die('sii');
         if (Yii::app()->user->isGuest) {
             $this->redirect(Yii::app()->user->ui->loginUrl);
         }
