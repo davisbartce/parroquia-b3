@@ -277,7 +277,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>-->
                                     <div class="pull-right">
-                                        <a class="btn btn-success"<?php echo CHtml::link('<i class="icon-off"></i>&nbsp;&nbsp;Cerrar Sesiòn', Yii::app()->user->ui->logoutUrl) ?>  </a>              
+                                    <?php echo CHtml::link('<i class=" btn btn-success icon-off"></i>&nbsp;&nbsp;Cerrar Sesiòn', Yii::app()->user->ui->logoutUrl) ?>             
                                         <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
                                     </div>
                                 </li>
@@ -419,7 +419,7 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui.min.js"></script>
+        <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui.min.js"></script>-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/raphael-min.js"></script>
         <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/morris/morris.min.js"></script>-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/sparkline/jquery.sparkline.min.js"></script>

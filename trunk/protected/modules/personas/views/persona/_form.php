@@ -1,3 +1,5 @@
+
+
 <?php
 /** @var PersonaController $this */
 /** @var Persona $model */
@@ -28,16 +30,22 @@
                 <?php echo $form->textFieldGroup($model, 'nombres', array('maxlength' => 60)) ?>
 
                 <?php echo $form->textFieldGroup($model, 'apellidos', array('maxlength' => 60)) ?>
-
-                <?php echo $form->datePickerGroup($model, 'fecha_nacimiento',
-                        array(
-//                            'prepend' => '<i class="fa fa-calendar"></i>',
-                        'options' => array(
-                            'format' => 'yyyy/mm/dd',
-                            'viewformat' => 'yyyy/mm/dd'
-                            )
-                            )
-                        ) ?>
+<?php var_dump('si'); ?>
+                <?php
+            echo $form->datePickerGroup(
+                    $model, 'fecha_nacimiento', array(
+                'widgetOptions' => array(
+                    'options' => array(
+                        'language' => 'es',
+                        'format' => 'dd/mm/yyyy',
+                    ),
+                ),
+                'wrapperHtmlOptions' => array(
+                    'class' => 'col-sm-5',
+                ),
+                    )
+            );
+            ?>
 
                 <?php echo $form->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
             </div>                        <div class="form-group">
