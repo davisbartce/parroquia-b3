@@ -1,12 +1,18 @@
-
-
 <?php
 /** @var PersonaController $this */
 /** @var Persona $model */
 /** @var AweActiveForm $form */
 ?>
 <aside class="right-side">
-    <div class="col-lg-12">
+
+    <section class="content-header">
+        <h1>
+            <!--<small>-->
+            Persona            <!--</small>-->
+        </h1>
+    </section>
+    <div class="col-lg-12 col-sm-12">
+
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update') . ' ' . Persona::label(1); ?></h3>
@@ -30,25 +36,11 @@
                 <?php echo $form->textFieldGroup($model, 'nombres', array('maxlength' => 60)) ?>
 
                 <?php echo $form->textFieldGroup($model, 'apellidos', array('maxlength' => 60)) ?>
-<?php var_dump('si'); ?>
-                <?php
-            echo $form->datePickerGroup(
-                    $model, 'fecha_nacimiento', array(
-                'widgetOptions' => array(
-                    'options' => array(
-                        'language' => 'es',
-                        'format' => 'dd/mm/yyyy',
-                    ),
-                ),
-                'wrapperHtmlOptions' => array(
-                    'class' => 'col-sm-5',
-                ),
-                    )
-            );
-            ?>
+
+                <?php echo $form->datePickerGroup($model, 'fecha_nacimiento', array('prepend' => '<i class="icon-calendar"></i>')) ?>
 
                 <?php echo $form->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
-            </div>                        <div class="form-group">
+                <!--</div>                                <div class="form-group">-->
                 <div class="col-lg-10 col-lg-offset-2">
                     <?php
                     $this->widget('booster.widgets.TbButton', array(
@@ -62,9 +54,11 @@
                         'htmlOptions' => array('onclick' => 'javascript:history.go(-1)')
                     ));
                     ?>
-<?php $this->endWidget(); ?>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
+<?php $this->endWidget(); ?>
 </aside>
