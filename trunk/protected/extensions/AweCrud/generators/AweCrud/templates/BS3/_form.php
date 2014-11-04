@@ -15,15 +15,8 @@
             <!--</small>-->
         </h1>
     </section>
-    <div class="col-lg-12 col-sm-12">
-
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?php echo "<?php echo Yii::t('AweCrud.app',\$model->isNewRecord ? 'Create' : 'Update') . ' ' . {$this->modelClass}::label(1); ?>" ?></h3>
-            </div>
-            <div class="panel-body">
-
-                <?php
+    
+     <?php
                 echo "<?php\n"
                 ?> 
                 $form = $this->beginWidget('ext.AweCrud.components.AweActiveForm', array(
@@ -34,6 +27,16 @@
                 'enableClientValidation' => <?php echo $this->validation == 2 || $this->validation == 3 ? 'true' : 'false' ?>,
                 ));
                 ?>
+    <div class="col-lg-12 col-sm-12">
+        
+        <br>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo "<?php echo Yii::t('AweCrud.app',\$model->isNewRecord ? 'Create' : 'Update') . ' ' . {$this->modelClass}::label(1); ?>" ?></h3>
+            </div>
+            <div class="panel-body">
+
+               
                 <?php
                 $aux = 1; //auxiliar para ver si el campo es par o impar
                 ?>
@@ -79,10 +82,11 @@
 			'label'=> Yii::t('AweCrud.app', 'Cancel'),
 			'htmlOptions' => array('onclick' => 'javascript:history.go(-1)')
 		)); ?>\n" ?>
-                        <?php echo "<?php \$this->endWidget(); ?>\n" ?>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
+                 <?php echo "<?php \$this->endWidget(); ?>\n" ?>
 </aside>
