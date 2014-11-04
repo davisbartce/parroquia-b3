@@ -337,14 +337,14 @@
                                 <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
                             </ul>
                         </li>
-                        <li class="treeview">
+                        <li class="treeview <?php echo YiiBase::app()->getController()->getId() == "persona"  ? "active" : "" ?> ">
                             <a href="#">
                                 <i class="fa fa-th-list"></i> <span>Catálogos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo Yii::app()->createUrl('personas/persona/admin') ?>" style="margin-left: 10px;"><i class="fa fa-user"></i> Personas</a></li>
-                                <li><a href="<?php echo Yii::app()->createUrl('padres/padre/admin') ?>" style="margin-left: 10px;"><i class="fa fa-male"></i> Padres</a></li>
+                                <li class=""><a href="<?php echo Yii::app()->createUrl('padres/padre/admin') ?>" style="margin-left: 10px;"><i class="fa fa-male"></i> Padres</a></li>
                             </ul>
                         </li>
 <!--                        <li>
