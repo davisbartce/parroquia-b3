@@ -19,28 +19,36 @@ class uniqueValidator extends CValidator {
         foreach ($this->attributeName as $name) {
             
 //            $varaibleTemporal=explode('/', $object->$name);
-            var_dump($object->$name);
+//            var_dump($object->$name);
 
            if($name=='fecha_nacimiento'){
-               $object->$name=  Util::FormatDate($object->$name, 'Y/m/d');
+               $object->$name=  Util::FormatDate($object->$name, 'Y-m-d');
             }
 //            var_dump(checkdate(explode('/', $object->$name)));
             $criteria->addSearchCondition($name, $object->$name, false);
         }
 //        var_dump($object->exists( $criteria ));
-        var_dump($criteria);
+//        var_dump($criteria);
+//        var_dump($criteria->condition);
+//        var_dump($criteria->params);
 
         $persona = Persona::model()->find(array('condition' => $criteria->condition, 'params' => ($criteria->params)));
 
 //        var_dump($persona);
-        die();
+//        die();
 
         // use exists with $criteria to check if the supplied keys combined are unique
 //        if ( $object->exists( $criteria ) ) {
+//         if($name=='fecha_nacimiento'){
+//               $object->$name=  Util::FormatDate($object->$name, 'd-m-Y');
+//            }
         if ($persona) {
-            die('murio');
-            $this->addError($object, $attribute, $object->label() . ' ' .
-                    $attribute . ' "' . $object->$attribute . '" has already been taken.');
+//            die('murio');
+//            $this->addError($object, $attribute, $object->label() . ' ' .
+            $this->addError($object, $attribute,
+//                    $attribute . ' "' . $object->$attribute . '" !Ya existe una persona con estos datos¡.');
+                   '!Ya existe una Persona con estos datos¡');
+           
         }
     }
 

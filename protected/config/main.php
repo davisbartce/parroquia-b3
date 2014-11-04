@@ -31,6 +31,7 @@ return array(
     'modules' => array(
         'dashboard',
         'personas',
+        'padres',
         // uncomment the following to enable the Gii tool
         'cruge' => array(
             'tableprefix' => 'cruge_',

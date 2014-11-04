@@ -1,0 +1,14 @@
+.scrollable{
+    overflow: auto;
+}
+.actionMenuAdmin{
+    display: inline-block;
+    float: right;
+}
+h1.header-title{
+    display: inline-block;
+}
+.user-panel{
+    padding: 26px;
+    
+}
