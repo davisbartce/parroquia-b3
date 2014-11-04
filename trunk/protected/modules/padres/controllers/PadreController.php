@@ -1,6 +1,6 @@
 <?php
 
-class PersonaController extends AweController {
+class PadreController extends AweController {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -31,22 +31,18 @@ class PersonaController extends AweController {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new Persona;
+        $model = new Padre;
 
-        $this->performAjaxValidation($model, 'persona-form');
-//        var_dump(  $this->performAjaxValidation($model, 'persona-form'));
-           $model->fecha_nacimiento=Util::FormatDate( $model->fecha_nacimiento, 'd-m-Y');
+        $this->performAjaxValidation($model, 'padre-form');
 
-        if (isset($_POST['Persona'])) {
-            $model->attributes = $_POST['Persona'];
-            $model->fecha_nacimiento=Util::FormatDate( $model->fecha_nacimiento, 'Y-m-d');
-//            var_dump($model->attributes);
-//            die();
+        if (isset($_POST['Padre'])) {
+            $model->attributes = $_POST['Padre'];
+            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+
             if ($model->save()) {
                 $this->redirect(array('admin'));
-            }
-            else{
-                  $model->fecha_nacimiento=Util::FormatDate( $model->fecha_nacimiento, 'd-m-Y');
+            } else {
+                $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
             }
         }
 
@@ -63,10 +59,10 @@ class PersonaController extends AweController {
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
 
-        $this->performAjaxValidation($model, 'persona-form');
+        $this->performAjaxValidation($model, 'padre-form');
 
-        if (isset($_POST['Persona'])) {
-            $model->attributes = $_POST['Persona'];
+        if (isset($_POST['Padre'])) {
+            $model->attributes = $_POST['Padre'];
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }
@@ -98,10 +94,10 @@ class PersonaController extends AweController {
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new Persona('search');
+        $model = new Padre('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Persona']))
-            $model->attributes = $_GET['Persona'];
+        if (isset($_GET['Padre']))
+            $model->attributes = $_GET['Padre'];
 
         $this->render('admin', array(
             'model' => $model,
@@ -114,7 +110,7 @@ class PersonaController extends AweController {
      * @param integer the ID of the model to be loaded
      */
     public function loadModel($id, $modelClass = __CLASS__) {
-        $model = Persona::model()->findByPk($id);
+        $model = Padre::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -125,7 +121,7 @@ class PersonaController extends AweController {
      * @param CModel the model to be validated
      */
     protected function performAjaxValidation($model, $form = null) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'persona-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'padre-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }

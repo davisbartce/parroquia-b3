@@ -17,7 +17,7 @@ class Persona extends BasePersona {
 
     public function rules() {
         return array(
-            array('clavePersonas', 'uniqueValidator', 'attributeName' => array(
+            array('fecha_nacimiento', 'uniqueValidator', 'attributeName' => array(
                     'nombres', 'apellidos', 'fecha_nacimiento')),
 //            array('nombres', 'unique', 'criteria'=>array(
 //            'condition'=>'`apellidos`=:secondKey AND `fecha_nacimiento`=:thirdKey ',
@@ -27,6 +27,7 @@ class Persona extends BasePersona {
 //            )
 //        )),
             array('nombres, apellidos, fecha_nacimiento', 'required'),
+            array('documento', 'unique'),
             array('documento', 'length', 'max' => 20),
             array('nombres, apellidos, lugar_nacimiento', 'length', 'max' => 60),
             array('documento, lugar_nacimiento', 'default', 'setOnEmpty' => true, 'value' => null),

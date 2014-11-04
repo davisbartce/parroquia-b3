@@ -1,6 +1,6 @@
 <?php
-/** @var PersonaController $this */
-/** @var Persona $model */
+/** @var PadreController $this */
+/** @var Padre $model */
 /** @var AweActiveForm $form */
 ?>
 <aside class="right-side">
@@ -8,14 +8,14 @@
     <section class="content-header">
         <h1>
             <!--<small>-->
-            Persona            <!--</small>-->
+            Padre            <!--</small>-->
         </h1>
     </section>
 
     <?php
     $form = $this->beginWidget('ext.AweCrud.components.AweActiveForm', array(
         'type' => 'horizontal',
-        'id' => 'persona-form',
+        'id' => 'padre-form',
         'enableAjaxValidation' => true,
         'clientOptions' => array('validateOnSubmit' => false, 'validateOnChange' => true,),
         'enableClientValidation' => false,
@@ -26,7 +26,7 @@
         <br>
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update') . ' ' . Persona::label(1); ?></h3>
+                <h3 class="panel-title"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update') . ' ' . Padre::label(1); ?></h3>
             </div>
             <div class="panel-body">
 
@@ -34,11 +34,9 @@
 
 
 
-                <?php echo $form->textFieldGroup($model, 'documento', array('maxlength' => 20)) ?>
+                <?php echo $form->textFieldGroup($model, 'Nombres', array('maxlength' => 60)) ?>
 
-                <?php echo $form->textFieldGroup($model, 'nombres', array('maxlength' => 60)) ?>
-
-                <?php echo $form->textFieldGroup($model, 'apellidos', array('maxlength' => 60)) ?>
+                <?php echo $form->textFieldGroup($model, 'Apellidos', array('maxlength' => 60)) ?>
 
                 <?php // echo $form->datePickerGroup($model, 'fecha_nacimiento', array('prepend' => '<i class="icon-calendar"></i>')) ?>
                 <?php
@@ -59,9 +57,8 @@
                 );
                 ?>
 
-
-                <?php echo $form->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
-            </div>                                <div class="form-group">
+            </div>                               
+            <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <?php
                     $this->widget('booster.widgets.TbButton', array(
@@ -80,6 +77,5 @@
             </div>
         </div>
     </div>
-</div>
-<?php $this->endWidget(); ?>
+    <?php $this->endWidget(); ?>
 </aside>
