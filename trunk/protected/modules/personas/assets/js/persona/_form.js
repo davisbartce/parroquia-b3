@@ -27,6 +27,8 @@ function save($form) {
             btn_save.stop();
         },
         successCall: function (data) {
+            
+            window.location = "/parroquia-b3/personas/persona/admin";
 //            escenario_id = data.attr.id;
 //            $('#panel_escenario').fadeOut(200, function () {
 //                $('[for="btn_multimedia"]').fadeIn(200);
