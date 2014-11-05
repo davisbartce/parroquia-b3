@@ -63,7 +63,11 @@
                     <?php
                     $this->widget('booster.widgets.TbButton', array(
                         'buttonType' => 'submit',
+//                        'type' => 'success',
                         'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
+//                        'htmlOptions'=>array(
+//                            'type'=>'success'
+//                        )
                     ));
                     ?>
                     <?php
