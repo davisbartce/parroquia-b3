@@ -16,11 +16,11 @@ $this->menu = array(
              </div>-->
             <!--</small>-->
         </h1>
- <a class="btn btn-success actionMenuAdmin" href="<?php echo Yii::app()->createUrl('personas/persona/create') ?>"><i
-         class="fa fa-plus"></i>&nbsp; Crear 
-    </a>
-        
-       
+        <a class="btn btn-success actionMenuAdmin" href="<?php echo Yii::app()->createUrl('personas/persona/create') ?>"><i
+                class="fa fa-plus"></i>&nbsp; Crear 
+        </a>
+
+
     </section>
 
     <div class="col-lg-12 col-sm-12">
@@ -31,7 +31,7 @@ $this->menu = array(
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo 'Administrar' ; ?></h3>
+                <h3 class="panel-title"><?php echo 'Administrar'; ?></h3>
             </div>
             <div class="panel-body">
                 <div class="scrollable">

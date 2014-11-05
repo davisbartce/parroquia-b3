@@ -9,13 +9,16 @@ $this->menu = array(
 ?>
 <aside class="right-side">
     <section class="content-header">
-        <h1>
+        <h1 class="header-title">
             <!--<small>-->
             <i class="fa fa-male"></i>  Padres<!--            <div class="icon">
                 
              </div>-->
             <!--</small>-->
         </h1>
+        <a class="btn btn-success actionMenuAdmin" href="<?php echo Yii::app()->createUrl('padres/padre/create') ?>"><i
+                class="fa fa-plus"></i>&nbsp; Crear 
+        </a>
     </section>
 
     <div class="col-lg-12 col-sm-12">

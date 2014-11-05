@@ -32,27 +32,37 @@ class PersonaController extends AweController {
      */
     public function actionCreate() {
         $model = new Persona;
+        $result = array();
+        $this->ajaxValidation($model);
 
-        $this->performAjaxValidation($model, 'persona-form');
+//        $this->performAjaxValidation($model, 'persona-form');
 //        var_dump(  $this->performAjaxValidation($model, 'persona-form'));
-           $model->fecha_nacimiento=Util::FormatDate( $model->fecha_nacimiento, 'd-m-Y');
+        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
 
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
-            $model->fecha_nacimiento=Util::FormatDate( $model->fecha_nacimiento, 'Y-m-d');
+            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+            $result['success'] = $model->save();
+            if ($result['success']) {
+                $result['attr'] = $model->attributes;
+//            if ($result['success']) {
+//                
+//            }
 //            var_dump($model->attributes);
 //            die();
-            if ($model->save()) {
-                $this->redirect(array('admin'));
             }
-            else{
-                  $model->fecha_nacimiento=Util::FormatDate( $model->fecha_nacimiento, 'd-m-Y');
-            }
+            echo CJSON::encode($result);
+//             $this->redirect(array('admin'));
+//            if ($model->save()) {
+//                $this->redirect(array('admin'));
+//            } else {
+//                $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+//            }
+        } else {
+            $this->render('create', array(
+                'model' => $model,
+            ));
         }
-
-        $this->render('create', array(
-            'model' => $model,
-        ));
     }
 
     /**
@@ -128,6 +138,26 @@ class PersonaController extends AweController {
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'persona-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
+        }
+    }
+
+    /**
+     * funcion de validacion por ajax
+     * @param type $model
+     * @param type $form_id
+     */
+    protected function ajaxValidation($model, $form_id = "persona-form") {
+        $portAtt = str_replace('-', ' ', (str_replace('-form', '', $form_id)));
+        $portAtt = ucwords(strtolower($portAtt));
+        $portAtt = str_replace(' ', '', $portAtt);
+        if (isset($_POST['ajax']) && $_POST['ajax'] === '#' . $form_id) {
+            $model->attributes = $_POST[$portAtt];
+            $result['success'] = $model->validate();
+            if (!$result['success']) {
+                $result['errors'] = $model->errors;
+                echo json_encode($result);
+                Yii::app()->end();
+            }
         }
     }
 

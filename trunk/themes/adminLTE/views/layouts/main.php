@@ -21,8 +21,9 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                       ?>/css/font-awesome.min.css" rel="stylesheet">-->
-        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                          ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/morris/morris.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/AdminLTE.css" rel="stylesheet">
@@ -134,117 +135,117 @@
 
 
                         <!-- Notifications: style can be found in dropdown.less -->
-<!--                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                     inner menu: contains the actual data 
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-group info"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-shopping-cart success"></i> 25 sales made
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>-->
+                        <!--                        <li class="dropdown notifications-menu">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-warning"></i>
+                                                        <span class="label label-warning">10</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="header">You have 10 notifications</li>
+                                                        <li>
+                                                             inner menu: contains the actual data 
+                                                            <ul class="menu">
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="fa fa-group info"></i> 5 new members joined today
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="fa fa-users warning"></i> 5 new members joined
+                                                                    </a>
+                                                                </li>
+                        
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="fa fa-shopping-cart success"></i> 25 sales made
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <i class="ion ion-ios7-person danger"></i> You changed your username
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="footer"><a href="#">View all</a></li>
+                                                    </ul>
+                                                </li>-->
                         <!-- Tasks: style can be found in dropdown.less -->
-<!--                        <li class="dropdown tasks-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-tasks"></i>
-                                <span class="label label-danger">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 9 tasks</li>
-                                <li>
-                                     inner menu: contains the actual data 
-                                    <ul class="menu">
-                                        <li> Task item 
-                                            <a href="#">
-                                                <h3>
-                                                    Design some buttons
-                                                    <small class="pull-right">20%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">20% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li> end task item 
-                                        <li> Task item 
-                                            <a href="#">
-                                                <h3>
-                                                    Create a nice theme
-                                                    <small class="pull-right">40%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">40% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li> end task item 
-                                        <li> Task item 
-                                            <a href="#">
-                                                <h3>
-                                                    Some task I need to do
-                                                    <small class="pull-right">60%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">60% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li> end task item 
-                                        <li> Task item 
-                                            <a href="#">
-                                                <h3>
-                                                    Make beautiful transitions
-                                                    <small class="pull-right">80%</small>
-                                                </h3>
-                                                <div class="progress xs">
-                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                        <span class="sr-only">80% Complete</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li> end task item 
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="#">View all tasks</a>
-                                </li>
-                            </ul>
-                        </li>-->
+                        <!--                        <li class="dropdown tasks-menu">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-tasks"></i>
+                                                        <span class="label label-danger">9</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="header">You have 9 tasks</li>
+                                                        <li>
+                                                             inner menu: contains the actual data 
+                                                            <ul class="menu">
+                                                                <li> Task item 
+                                                                    <a href="#">
+                                                                        <h3>
+                                                                            Design some buttons
+                                                                            <small class="pull-right">20%</small>
+                                                                        </h3>
+                                                                        <div class="progress xs">
+                                                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                                <span class="sr-only">20% Complete</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li> end task item 
+                                                                <li> Task item 
+                                                                    <a href="#">
+                                                                        <h3>
+                                                                            Create a nice theme
+                                                                            <small class="pull-right">40%</small>
+                                                                        </h3>
+                                                                        <div class="progress xs">
+                                                                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                                <span class="sr-only">40% Complete</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li> end task item 
+                                                                <li> Task item 
+                                                                    <a href="#">
+                                                                        <h3>
+                                                                            Some task I need to do
+                                                                            <small class="pull-right">60%</small>
+                                                                        </h3>
+                                                                        <div class="progress xs">
+                                                                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                                <span class="sr-only">60% Complete</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li> end task item 
+                                                                <li> Task item 
+                                                                    <a href="#">
+                                                                        <h3>
+                                                                            Make beautiful transitions
+                                                                            <small class="pull-right">80%</small>
+                                                                        </h3>
+                                                                        <div class="progress xs">
+                                                                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                                <span class="sr-only">80% Complete</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </li> end task item 
+                                                            </ul>
+                                                        </li>
+                                                        <li class="footer">
+                                                            <a href="#">View all tasks</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>-->
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -256,29 +257,29 @@
                                 <li class="user-header bg-light-blue">
                                     <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar3.png' ?>" class="img-circle" alt="User Image" />
                                     <p>
-                                      <?php echo Yii::app()->user->name ? Yii::app()->user->name : "Guest" ?>
+                                        <?php echo Yii::app()->user->name ? Yii::app()->user->name : "Guest" ?>
                                         <!--<small>Member since Nov. 2012</small>-->
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
-<!--                                <li class="user-body">
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
-                                    </div>
-                                    <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
-                                    </div>
-                                </li>-->
+                                <!--                                <li class="user-body">
+                                                                    <div class="col-xs-4 text-center">
+                                                                        <a href="#">Followers</a>
+                                                                    </div>
+                                                                    <div class="col-xs-4 text-center">
+                                                                        <a href="#">Sales</a>
+                                                                    </div>
+                                                                    <div class="col-xs-4 text-center">
+                                                                        <a href="#">Friends</a>
+                                                                    </div>
+                                                                </li>-->
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
-<!--                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>-->
+                                    <!--                                    <div class="pull-left">
+                                                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                                                        </div>-->
                                     <div class="pull-right">
-                                    <?php echo CHtml::link('<i class=" btn btn-success icon-off">Cerrar Sesiòn</i>&nbsp;&nbsp;', Yii::app()->user->ui->logoutUrl) ?>             
+                                        <?php echo CHtml::link('<i class=" btn btn-danger icon-off">Cerrar Sesiòn</i>&nbsp;&nbsp;', Yii::app()->user->ui->logoutUrl) ?>             
                                         <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
                                     </div>
                                 </li>
@@ -296,14 +297,14 @@
                 <section class="sidebar">
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
-<!--                        <div class="pull-left image">
-                            <img class="img-circle" alt="User Image" src=" <?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar3.png' ?> "/>
-                        </div>
-                        <div class="pull-left info">
-                            <p>Hola     , <?php echo ' '.Yii::app()->user->name ?> </p>
-
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                        </div>-->
+                        <!--                        <div class="pull-left image">
+                                                    <img class="img-circle" alt="User Image" src=" <?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar3.png' ?> "/>
+                                                </div>
+                                                <div class="pull-left info">
+                                                    <p>Hola     , <?php echo ' ' . Yii::app()->user->name ?> </p>
+                        
+                                                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                                                </div>-->
                     </div>
                     <!-- search form -->
                     <!-- /.search form -->
@@ -337,7 +338,7 @@
                                 <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
                             </ul>
                         </li>
-                        <li class="treeview <?php echo YiiBase::app()->getController()->getId() == "persona"  ? "active" : "" ?> ">
+                        <li class="treeview <?php echo YiiBase::app()->getController()->getId() == "persona" ? "active" : "" ?> ">
                             <a href="#">
                                 <i class="fa fa-th-list"></i> <span>Catálogos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -347,12 +348,12 @@
                                 <li class=""><a href="<?php echo Yii::app()->createUrl('padres/padre/admin') ?>" style="margin-left: 10px;"><i class="fa fa-male"></i> Padres</a></li>
                             </ul>
                         </li>
-<!--                        <li>
-                            <a href="pages/calendar.html">
-                                <i class="fa fa-calendar"></i> <span>Calendar</span>
-                                <small class="badge pull-right bg-red">3</small>
-                            </a>
-                        </li>-->
+                        <!--                        <li>
+                                                    <a href="pages/calendar.html">
+                                                        <i class="fa fa-calendar"></i> <span>Calendar</span>
+                                                        <small class="badge pull-right bg-red">3</small>
+                                                    </a>
+                                                </li>-->
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -390,6 +391,13 @@
         <!-- Placed at the end of the document so the pages load faster -->
         <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui.min.js"></script>-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/raphael-min.js"></script>
+        <!--plugis para lada-->
+        <!-- ladda submit -->
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/spin.min.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/ladda.min.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/ladda.jquery.min.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.validateAjax.js"></script>
+
         <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/morris/morris.min.js"></script>-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/sparkline/jquery.sparkline.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>

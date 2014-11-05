@@ -2,6 +2,7 @@
 /** @var PersonaController $this */
 /** @var Persona $model */
 /** @var AweActiveForm $form */
+Util::tsRegisterAssetJs('_form.js');
 ?>
 <aside class="right-side">
 
@@ -17,7 +18,7 @@
         'type' => 'horizontal',
         'id' => 'persona-form',
         'enableAjaxValidation' => true,
-        'clientOptions' => array('validateOnSubmit' => false, 'validateOnChange' => true,),
+        'clientOptions' => array('validateOnSubmit' => false, 'validateOnChange' => false,),
         'enableClientValidation' => false,
     ));
     ?>
@@ -63,11 +64,15 @@
                 <?php echo $form->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
             </div>                                <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
+                    <button id="btn_save" class="btn btn-success ladda-button" form-id="#persona-form"
+                            data-style="expand-right">
+                        <span class="ladda-label">Registrar</span>
+                    </button>
                     <?php
-                    $this->widget('booster.widgets.TbButton', array(
-                        'buttonType' => 'submit',
-                        'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
-                    ));
+//                    $this->widget('booster.widgets.TbButton', array(
+//                        'buttonType' => 'submit',
+//                        'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
+//                    ));
                     ?>
                     <?php
                     $this->widget('booster.widgets.TbButton', array(
@@ -80,6 +85,10 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->
 <?php $this->endWidget(); ?>
 </aside>
+
+<a id="redireccionar-admin" class="btn" href="<?php echo Yii::app()->createUrl('personas/persona/admin') ?>"><i
+         class="fa fa-plus"></i>&nbsp; Crear 
+    </a>

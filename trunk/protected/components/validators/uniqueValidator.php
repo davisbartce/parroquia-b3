@@ -14,6 +14,7 @@ class uniqueValidator extends CValidator {
 
     protected function validateAttribute($object, $attribute) {
 //        var_dump($object);
+        $persona=null;
         // build criteria from attribute(s) using Yii CDbCriteria
         $criteria = new CDbCriteria();
         foreach ($this->attributeName as $name) {
@@ -31,7 +32,7 @@ class uniqueValidator extends CValidator {
 //        var_dump($criteria);
 //        var_dump($criteria->condition);
 //        var_dump($criteria->params);
-
+       if($criteria->params)
         $persona = Persona::model()->find(array('condition' => $criteria->condition, 'params' => ($criteria->params)));
 
 //        var_dump($persona);
