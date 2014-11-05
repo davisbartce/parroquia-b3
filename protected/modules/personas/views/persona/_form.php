@@ -88,7 +88,7 @@ Util::tsRegisterAssetJs('_form.js');
 <!--</div>-->
 <?php $this->endWidget(); ?>
 </aside>
-
-<a id="redireccionar-admin" class="btn" href="<?php echo Yii::app()->createUrl('personas/persona/admin') ?>"><i
+<!--
+<a id="redireccionar-admin" class="btn" href="< ?php echo Yii::app()->createUrl('personas/persona/admin') ?>"><i
          class="fa fa-plus"></i>&nbsp; Crear 
-    </a>
+    </a>-->
