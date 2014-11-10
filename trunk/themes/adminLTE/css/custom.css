@@ -12,3 +12,9 @@ h1.header-title{
     padding: 26px;
     
 }
+.select2-container{
+    width: 100% !important;
+}
+.select2-drop{
+    width: auto !important;
+}

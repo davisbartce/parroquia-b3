@@ -27,11 +27,16 @@ return array(
         'application.modules.cruge.extensions.crugemailer.*',
         'application.components.validators.*',
 //        'application.modules.dashboards.models.*',
+        'application.modules.personas.models.*',
+        'application.modules.bautizos.models.*',
+        'application.modules.libros.models.*',
     ),
     'modules' => array(
         'dashboard',
         'personas',
         'padres',
+        'bautizos',
+        'libros',
         // uncomment the following to enable the Gii tool
         'cruge' => array(
             'tableprefix' => 'cruge_',
