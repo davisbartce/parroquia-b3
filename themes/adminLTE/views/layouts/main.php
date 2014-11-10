@@ -24,6 +24,9 @@
         <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                          ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
+        <!-- Select2 -->
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2.css" rel="stylesheet">
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2-bootstrap.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/morris/morris.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/AdminLTE.css" rel="stylesheet">
@@ -392,6 +395,9 @@
         <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui.min.js"></script>-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/raphael-min.js"></script>
         <!--plugis para lada-->
+           <!--select 2-->
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2.min.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2_locale_es.js"></script>
         <!-- ladda submit -->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/spin.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/ladda.min.js"></script>

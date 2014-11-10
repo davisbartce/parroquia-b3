@@ -117,6 +117,28 @@ class PersonaController extends AweController {
             'model' => $model,
         ));
     }
+    public function actionMini() {
+         $model = new Persona;
+        $result = array();
+        $this->ajaxValidation($model);
+
+//        $this->performAjaxValidation($model, 'persona-form');
+//        var_dump(  $this->performAjaxValidation($model, 'persona-form'));
+        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+
+        if (isset($_POST['Persona'])) {
+            $model->attributes = $_POST['Persona'];
+            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+            $result['success'] = $model->save();
+            if ($result['success']) {
+                $result['attr'] = $model->attributes;
+            }
+        } else {
+            $this->renderPartial('_form_mini', array(
+                'model' => $model,
+            ),false,true);
+        }
+    }
 
     /**
      * Returns the data model based on the primary key given in the GET variable.
