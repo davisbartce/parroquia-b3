@@ -1,5 +1,6 @@
 var btn_save;
 $(function () {
+    alert();
     $()
     //ation load
     //ladda submit
