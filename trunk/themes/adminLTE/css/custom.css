@@ -29,3 +29,18 @@ div.popover.in{
 .popover-style{
     
 }
+
+.input-popover> input , .input-popover> div > input {
+    height: 20px !important;
+}
+.input-popover> div > span.input-group-addon {
+   padding: 0px 12px;
+}
+.input-popover > div.help-block.error {
+   font-size: 13px !important;
+   margin-bottom: 0px !important; 
+}
+.well-popover{
+    margin-bottom: 10px;
+}
+

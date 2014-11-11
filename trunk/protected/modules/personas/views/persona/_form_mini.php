@@ -29,12 +29,22 @@ Util::tsRegisterAssetJs('_form_mini.js');
 
             
 
-                <?php echo $formPersona->textFieldGroup($model, 'documento', array('maxlength' => 20)) ?>
+                <?php echo $formPersona->textFieldGroup($model, 'documento', array('maxlength' => 20,
+                    'wrapperHtmlOptions' => array(
+					'class' => 'input-popover',
+                    ))) ?>
 
-                <?php echo $formPersona->textFieldGroup($model, 'nombres', array('maxlength' => 60)) ?>
+                <?php echo $formPersona->textFieldGroup($model, 'nombres', array(
+                    'maxlength' => 60,
+                    'wrapperHtmlOptions' => array(
+					'class' => 'input-popover',
+                    ),)) ?>
 
                 <?php echo $formPersona->textFieldGroup($model, 'apellidos', array(
-                    'maxlength' => 60
+                    'maxlength' => 60,
+                    'wrapperHtmlOptions' => array(
+					'class' => 'input-popover',
+                    ),
                     )) ?>
 
                 <?php // echo $formPersonaPersonaPersonaPersona->datePickerGroup($model, 'fecha_nacimiento', array('prepend' => '<i class="icon-calendar"></i>')) ?>
@@ -48,7 +58,7 @@ Util::tsRegisterAssetJs('_form_mini.js');
                         ),
                     ),
                     'wrapperHtmlOptions' => array(
-					'class' => 'date-popover',
+					'class' => 'date-popover input-popover',
                     ),
 //				'hint' => 'Click inside! This is a super cool date field.',
                     'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
@@ -57,10 +67,12 @@ Util::tsRegisterAssetJs('_form_mini.js');
                 ?>
 
 
-                <?php echo $formPersona->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
+                <?php echo $formPersona->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60,'wrapperHtmlOptions' => array(
+					'class' => 'input-popover',
+                    ),)) ?>
             <!--</div>                                <div class="form-group">-->
-                <!--<div class="col-lg-10 col-lg-offset-2">-->
-                    <button id="btn_save" class="btn btn-success ladda-button btn-xs" form-id="#persona-form"
+                <div class="well-popover">
+                    <button id="btn_save_persona" class="btn btn-success ladda-button btn-xs" form-id="#persona-form"
                             data-style="expand-right">
                         <span class="ladda-label">Registrar</span>
                     </button>
@@ -73,11 +85,16 @@ Util::tsRegisterAssetJs('_form_mini.js');
                     <?php
                     $this->widget('booster.widgets.TbButton', array(
                         'label' => Yii::t('AweCrud.app', 'Cancel'),
-                        'htmlOptions' => array('onclick' => 'js:cerrarpopover();',)
+//                         'wrapperHtmlOptions' => array(
+//					'class' => 'btn-xs',
+//                    ),
+                        'htmlOptions' => array('onclick' => 'js:cerrarpopover();',
+                            'class' => 'btn-xs',
+                            )
                     ));
                     ?>
 
-                <!--</div>-->
+                </div>
             <!--</div>-->
         <!--</div>-->
     <!--</div>-->

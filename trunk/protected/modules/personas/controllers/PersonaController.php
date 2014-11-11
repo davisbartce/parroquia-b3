@@ -133,6 +133,7 @@ class PersonaController extends AweController {
             if ($result['success']) {
                 $result['attr'] = $model->attributes;
             }
+              echo CJSON::encode($result);
         } else {
             $this->renderPartial('_form_mini', array(
                 'model' => $model,
