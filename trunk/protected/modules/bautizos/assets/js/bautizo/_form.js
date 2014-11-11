@@ -1,5 +1,14 @@
 var btn_save;
 $(function() {
+    var datos;
+    $.get(baseUrl + 'personas/persona/mini', function(data) {
+//            $('#pedidosPendientesCocina').html(data);
+//                console.log(data);
+                datos = data;
+                $("#popover-content-Persona").html(data);
+//                return $("#popover-content-Persona").html(datos);
+
+            });
 //      init();
 //    $('#popover1').on('show.bs.popover', function() {
 //        abrirpopover($(this).attr('entidad'));
@@ -24,19 +33,19 @@ $(function() {
             return $("#popover-head-Persona").html();
         },
         content: function() {
-            var datos;
+//            var datos;
 //            $.ajaxSetup({
 //                async: false
 //            });
 
-            $.get(baseUrl + 'personas/persona/mini', function(data) {
-//            $('#pedidosPendientesCocina').html(data);
-                console.log(data);
-                datos = data;
-//                $("#popover-content-Persona").html(data);
-                return $("#popover-content-Persona").html(datos);
-
-            });
+//            $.get(baseUrl + 'personas/persona/mini', function(data) {
+////            $('#pedidosPendientesCocina').html(data);
+//                console.log(data);
+//                datos = data;
+////                $("#popover-content-Persona").html(data);
+//                return $("#popover-content-Persona").html(datos);
+//
+//            });
              
             return $("#popover-content-Persona").html(datos);
 //             $.ajaxSetup({

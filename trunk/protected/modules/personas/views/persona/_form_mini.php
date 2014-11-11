@@ -3,7 +3,7 @@ Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 /** @var PersonaController $this */
 /** @var Persona $model */
 /** @var AweActiveForm $formPersonaPersonaPersonaPersona */
-Util::tsRegisterAssetJs('_form.js');
+Util::tsRegisterAssetJs('_form_mini.js');
 ?>
 
 
@@ -27,13 +27,15 @@ Util::tsRegisterAssetJs('_form.js');
 
 
 
-
+            
 
                 <?php echo $formPersona->textFieldGroup($model, 'documento', array('maxlength' => 20)) ?>
 
                 <?php echo $formPersona->textFieldGroup($model, 'nombres', array('maxlength' => 60)) ?>
 
-                <?php echo $formPersona->textFieldGroup($model, 'apellidos', array('maxlength' => 60)) ?>
+                <?php echo $formPersona->textFieldGroup($model, 'apellidos', array(
+                    'maxlength' => 60
+                    )) ?>
 
                 <?php // echo $formPersonaPersonaPersonaPersona->datePickerGroup($model, 'fecha_nacimiento', array('prepend' => '<i class="icon-calendar"></i>')) ?>
                 <?php
@@ -46,7 +48,7 @@ Util::tsRegisterAssetJs('_form.js');
                         ),
                     ),
                     'wrapperHtmlOptions' => array(
-					'class' => 'col-sm-3',
+					'class' => 'date-popover',
                     ),
 //				'hint' => 'Click inside! This is a super cool date field.',
                     'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
@@ -58,7 +60,7 @@ Util::tsRegisterAssetJs('_form.js');
                 <?php echo $formPersona->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
             <!--</div>                                <div class="form-group">-->
                 <!--<div class="col-lg-10 col-lg-offset-2">-->
-                    <button id="btn_save" class="btn btn-success ladda-button" form-id="#persona-form"
+                    <button id="btn_save" class="btn btn-success ladda-button btn-xs" form-id="#persona-form"
                             data-style="expand-right">
                         <span class="ladda-label">Registrar</span>
                     </button>

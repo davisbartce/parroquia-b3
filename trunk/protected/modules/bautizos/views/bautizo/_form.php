@@ -151,7 +151,7 @@ Util::tsRegisterAssetJs('_form.js');
                 <div class="form-group">
                     <div class="col-lg-5 col-lg-offset-2">
 
-                        <button id="btn_save" class="btn btn-success ladda-button" form-id="#bautizo-form"
+                        <button id="btn_save2" class="btn btn-success ladda-button" form-id="#bautizo-form"
                                 data-style="expand-right">
                             <span class="ladda-label">Registrar</span>
                         </button>
@@ -230,7 +230,7 @@ Util::tsRegisterAssetJs('_form.js');
     <?php $this->endWidget(); ?>
 
     <div id="popover-head-Persona" class=" popover-head">Nueva Persona</div>
-    <div id="popover-content-Persona" class=" popover-content">
+    <div id="popover-content-Persona" class=" popover-content popover-style">
       
     </div>
 
