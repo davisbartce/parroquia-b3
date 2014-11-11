@@ -1,5 +1,7 @@
 var btn_save;
 $(function () {
+    $('form#persona-form').find('label.control-label').addClass('hidden')
+    
 //    alert();
     $()
     //ation load

@@ -18,3 +18,10 @@ h1.header-title{
 .select2-drop{
     width: auto !important;
 }
+.date-popover > div > input{
+    min-width: 95px !important;
+    
+}
+div.popover.in{
+    z-index: 1050 !important;
+}
