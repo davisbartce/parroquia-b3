@@ -105,7 +105,7 @@ function abrirpopover(entidad_tipo) {
 function cerrarpopover() {
     $('#popover1').popover('hide');
     $('#popover2').popover('hide');
-    $('#escenario-form').trigger("reset");
+    $('#persona-form').trigger("reset");
     $('#produccion-categoria-form').trigger("reset");
 }
 
