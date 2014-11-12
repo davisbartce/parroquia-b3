@@ -4,17 +4,23 @@ $(function() {
     $.get(baseUrl + 'personas/persona/mini', function(data) {
 //            $('#pedidosPendientesCocina').html(data);
 //                console.log(data);
-                datos = data;
-                $("#popover-content-Persona").html(data);
+        datos = data;
+        $("#popover-content-Persona").html(data);
 //                return $("#popover-content-Persona").html(datos);
 
-            });
+    });
 //      init();
 //    $('#popover1').on('show.bs.popover', function() {
 //        abrirpopover($(this).attr('entidad'));
 //    });
     $('#popover2').on('show.bs.popover', function() {
         abrirpopover($(this).attr('entidad'));
+//        alert('popover on');
+        
+              $('#prependSpin').removeClass('fa-plus');
+        $('#prependSpin').addClass('fa-spinner fa-spin');
+
+       
     });
 //    $('#popover1').popover({
 //        html: true,
@@ -33,6 +39,7 @@ $(function() {
             return $("#popover-head-Persona").html();
         },
         content: function() {
+//             alert('popover content');
 //            var datos;
 //            $.ajaxSetup({
 //                async: false
@@ -46,12 +53,17 @@ $(function() {
 //                return $("#popover-content-Persona").html(datos);
 //
 //            });
-             
+
+
+                $('#prependSpin').removeClass('fa-spinner fa-spin');
+             $('#prependSpin').addClass('fa-plus');
             return $("#popover-content-Persona").html(datos);
+           
+           
 //             $.ajaxSetup({
 //                async: true
 //            });
-          
+
         }
     });
 

@@ -72,7 +72,8 @@ Util::tsRegisterAssetJs('_form.js');
                             }
                             echo $form->hiddenField($model, 'persona_id', $htmlOptions);
                             ?> 
-                            <span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-spinner fa-spin"></i></a></span>
+                            <!--<span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-spinner fa-spin"></i></a></span>-->
+                            <span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-plus"></i></a></span>
                             <!--<span class="input-group-addon">.00</span>-->
                             <?php echo $form->error($model, 'persona_id', array('class' => 'help-block error')); ?>
                         </div>
