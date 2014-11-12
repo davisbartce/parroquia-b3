@@ -35,7 +35,8 @@ class uniqueValidator extends CValidator {
        if($criteria->params)
         $persona = Persona::model()->find(array('condition' => $criteria->condition, 'params' => ($criteria->params)));
 
-//        var_dump($persona);
+//        var_dump($persona->attributes);
+//        var_dump(!isset($object->id));
 //        die();
 
         // use exists with $criteria to check if the supplied keys combined are unique
@@ -43,7 +44,8 @@ class uniqueValidator extends CValidator {
 //         if($name=='fecha_nacimiento'){
 //               $object->$name=  Util::FormatDate($object->$name, 'd-m-Y');
 //            }
-        if ($persona) {
+        if ($persona && !isset($object->id)) {
+            
 //            die('murio');
 //            $this->addError($object, $attribute, $object->label() . ' ' .
             $this->addError($object, $attribute,
