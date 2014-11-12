@@ -72,19 +72,32 @@ class PersonaController extends AweController {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
-        $this->performAjaxValidation($model, 'persona-form');
-
+        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+        $result = array();
+        $this->ajaxValidation($model);
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
-            if ($model->save()) {
-                $this->redirect(array('admin'));
+            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+            $result['success'] = $model->save();
+            if ($result['success']) {
+                $result['attr'] = $model->attributes;
             }
+            echo CJSON::encode($result);
         }
-
-        $this->render('update', array(
+        else{
+              $this->render('update', array(
             'model' => $model,
         ));
+        }
+
+//        if (isset($_POST['Persona'])) {
+//            $model->attributes = $_POST['Persona'];
+//            if ($model->save()) {
+//                $this->redirect(array('admin'));
+//            }
+//        }
+
+      
     }
 
     /**
@@ -117,8 +130,9 @@ class PersonaController extends AweController {
             'model' => $model,
         ));
     }
+
     public function actionMini() {
-         $model = new Persona;
+        $model = new Persona;
         $result = array();
         $this->ajaxValidation($model);
 
@@ -137,7 +151,7 @@ class PersonaController extends AweController {
         } else {
             $this->renderPartial('_form_mini', array(
                 'model' => $model,
-            ),false,true);
+                    ), false, true);
         }
     }
 

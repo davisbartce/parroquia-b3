@@ -349,6 +349,7 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo Yii::app()->createUrl('personas/persona/admin') ?>" style="margin-left: 10px;"><i class="fa fa-user"></i> Personas</a></li>
                                 <li class=""><a href="<?php echo Yii::app()->createUrl('padres/padre/admin') ?>" style="margin-left: 10px;"><i class="fa fa-male"></i> Padres</a></li>
+                                <li class=""><a href="<?php echo Yii::app()->createUrl('libros/libro/admin') ?>" style="margin-left: 10px;"><i class="fa fa-book"></i> Libros</a></li>
                             </ul>
                         </li>
                         <!--                        <li>

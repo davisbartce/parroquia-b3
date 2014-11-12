@@ -9,7 +9,7 @@ Util::tsRegisterAssetJs('_form.js');
     <section class="content-header">
         <h1>
             <!--<small>-->
-            Persona            <!--</small>-->
+          <i class="fa fa-user"></i>   Persona            <!--</small>-->
         </h1>
     </section>
 
@@ -27,7 +27,7 @@ Util::tsRegisterAssetJs('_form.js');
         <br>
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update') . ' ' . Persona::label(1); ?></h3>
+                <h3 class="panel-title"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update')  ?></h3>
             </div>
             <div class="panel-body">
 
