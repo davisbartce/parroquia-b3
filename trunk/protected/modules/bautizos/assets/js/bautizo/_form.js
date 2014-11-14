@@ -81,7 +81,7 @@ $(function() {
 //            }
         },
         ajax: {// instead of writing the function to execute the request we use Select2's convenient helper
-            url: baseUrl + "producciones/produccionCategoria/ajaxlistProduccionCategorias",
+            url: baseUrl + "personas/persona/ajaxlistPersonas",
             type: "get",
             dataType: 'json',
             data: function(term, page) {
