@@ -229,11 +229,14 @@ Util::tsRegisterAssetJs('_form.js');
 
 
     <?php $this->endWidget(); ?>
+    <<div class="hide">
+        <div id="popover-head-Persona" class="hide popover-head">Nueva Persona</div>
+        <div id="popover-content-Persona" class=" popover-content popover-style">
 
-    <div id="popover-head-Persona" class=" popover-head">Nueva Persona</div>
-    <div id="popover-content-Persona" class=" popover-content popover-style">
-      
+        </div>
     </div>
+
+
 
 
 </aside>
