@@ -4,6 +4,8 @@ Yii::import('personas.models._base.BasePersona');
 
 class Persona extends BasePersona {
 
+        public $campo_completo;
+    
     /**
      * @return Persona
      */
@@ -13,6 +15,33 @@ class Persona extends BasePersona {
 
     public static function label($n = 1) {
         return Yii::t('app', 'Persona|Personas', $n);
+    }
+    
+      public function attributeLabels() {
+        return array(
+                'id' => Yii::t('app', 'ID'),
+                'documento' => Yii::t('app', 'Documento'),
+                'nombres' => Yii::t('app', 'Nombres'),
+                'apellidos' => Yii::t('app', 'Apellidos'),
+                'fecha_nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
+                'lugar_nacimiento' => Yii::t('app', 'Lugar Nacimiento'),
+                'campo_completo' => Yii::t('app', 'Persona'),
+        );
+    }
+
+    public function search() {
+        $criteria = new CDbCriteria;
+
+        $criteria->compare('id', $this->id);
+        $criteria->compare('documento', $this->documento, true);
+        $criteria->compare('nombres', $this->nombres, true);
+        $criteria->compare('apellidos', $this->apellidos, true);
+        $criteria->compare('fecha_nacimiento', $this->fecha_nacimiento, true);
+        $criteria->compare('lugar_nacimiento', $this->lugar_nacimiento, true);
+
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
     }
 
     public function rules() {
@@ -45,5 +74,17 @@ class Persona extends BasePersona {
                 ->limit(10);
         return $command->queryAll();
     }
+    
+     public function getCampo_completo() {
+        if (!$this->campo_completo)
+            $this->campo_completo = $this->nombres . ' ' . $this->apellidos;
+        return $this->campo_completo;
+    }
+    
+    public function setCampo_completo($campo_completo) {
+        $this->campo_completo = $campo_completo;
+        return $this->campo_completo;
+    }
+
 
 }

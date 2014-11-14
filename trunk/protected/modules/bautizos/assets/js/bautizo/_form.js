@@ -122,6 +122,7 @@ function cerrarpopover() {
 }
 
 function savePersona(form) {
+    alert();
 
     ajaxValidarFormulario({
         formId: form,

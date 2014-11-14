@@ -18,7 +18,7 @@ Util::tsRegisterAssetJs('_form.js');
         'type' => 'horizontal',
         'id' => 'bautizo-form',
         'enableAjaxValidation' => true,
-        'clientOptions' => array('validateOnSubmit' => false, 'validateOnChange' => false,),
+        'clientOptions' => array('validateOnSubmit' => true, 'validateOnChange' => false,),
         'enableClientValidation' => false,
     ));
     ?>
@@ -67,7 +67,7 @@ Util::tsRegisterAssetJs('_form.js');
                             if ($model->persona_id) {
                                 $model_persona = Persona::model()->findByPk($model->persona_id);
                                 $htmlOptions = array_merge($htmlOptions, array(
-                                    'selected-text' => $model_persona->nombre
+                                    'selected-text' => $model_persona->campo_completo
                                 ));
                             }
                             echo $form->hiddenField($model, 'persona_id', $htmlOptions);
@@ -75,8 +75,9 @@ Util::tsRegisterAssetJs('_form.js');
                             <!--<span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-spinner fa-spin"></i></a></span>-->
                             <span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-plus"></i></a></span>
                             <!--<span class="input-group-addon">.00</span>-->
-                            <?php echo $form->error($model, 'persona_id', array('class' => 'help-block error')); ?>
+                            
                         </div>
+                        <?php echo $form->error($model, 'persona_id', array('class' => 'help-block error')); ?>
                     </div>
 
                 </div>
