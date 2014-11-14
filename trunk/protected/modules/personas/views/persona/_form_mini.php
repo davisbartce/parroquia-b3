@@ -37,7 +37,7 @@ Util::tsRegisterAssetJs('_form_mini.js');
                 <?php echo $formPersona->textFieldGroup($model, 'nombres', array(
                     'maxlength' => 60,
                     'wrapperHtmlOptions' => array(
-					'class' => 'input-popover',
+					'class' => 'input-popover ',
                     ),)) ?>
 
                 <?php echo $formPersona->textFieldGroup($model, 'apellidos', array(
