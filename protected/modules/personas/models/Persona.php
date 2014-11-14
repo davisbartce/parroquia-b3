@@ -34,5 +34,16 @@ class Persona extends BasePersona {
             array('id, documento, nombres, apellidos, fecha_nacimiento, lugar_nacimiento', 'safe', 'on' => 'search'),
         );
     }
+    
+    public function getListSelect2($search_value) {
+//        echo $search_value;
+        $command = Yii::app()->db->createCommand()
+                ->select('p.id,concat(p.nombres," ",p.apellidos," (",YEAR(p.fecha_nacimiento),")") as text')
+                ->from('persona p')
+                ->where("concat(p.nombres,' ',p.apellidos) like '%$search_value%'")
+//                ->andWhere('pc.estado = :estado', array(':estado' => ProduccionCategoria::ESTADO_ACTIVO))
+                ->limit(10);
+        return $command->queryAll();
+    }
 
 }

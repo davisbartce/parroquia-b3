@@ -41,6 +41,8 @@ class PersonaController extends AweController {
 
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
+            $model->nombres = trim($model->nombres);
+            $model->apellidos = trim($model->apellidos);
             $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
             $result['success'] = $model->save();
             if ($result['success']) {
@@ -77,17 +79,18 @@ class PersonaController extends AweController {
         $this->ajaxValidation($model);
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
+            $model->nombres = trim($model->nombres);
+            $model->apellidos = trim($model->apellidos);
             $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
             $result['success'] = $model->save();
             if ($result['success']) {
                 $result['attr'] = $model->attributes;
             }
             echo CJSON::encode($result);
-        }
-        else{
-              $this->render('update', array(
-            'model' => $model,
-        ));
+        } else {
+            $this->render('update', array(
+                'model' => $model,
+            ));
         }
 
 //        if (isset($_POST['Persona'])) {
@@ -96,8 +99,6 @@ class PersonaController extends AweController {
 //                $this->redirect(array('admin'));
 //            }
 //        }
-
-      
     }
 
     /**
@@ -147,7 +148,7 @@ class PersonaController extends AweController {
             if ($result['success']) {
                 $result['attr'] = $model->attributes;
             }
-              echo CJSON::encode($result);
+            echo CJSON::encode($result);
         } else {
             $this->renderPartial('_form_mini', array(
                 'model' => $model,
@@ -195,6 +196,13 @@ class PersonaController extends AweController {
                 echo json_encode($result);
                 Yii::app()->end();
             }
+        }
+    }
+
+    public function actionAjaxlistPersonas($search_value) {
+//        var_dump($search_value);
+        if (Yii::app()->request->isAjaxRequest) {
+            echo CJSON::encode(Persona::model()->getListSelect2($search_value));
         }
     }
 
