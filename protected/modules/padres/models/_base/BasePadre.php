@@ -10,14 +10,14 @@
  * and there are no model relations.
  *
  * @property integer $id
- * @property string $Nombres
- * @property string $Apellidos
+ * @property string $nombres
+ * @property string $apellidos
  * @property string $fecha_nacimiento
  *
  */
 abstract class BasePadre extends AweActiveRecord {
 
-    public static function model($className=__CLASS__) {
+    public static function model($className = __CLASS__) {
         return parent::model($className);
     }
 
@@ -26,16 +26,16 @@ abstract class BasePadre extends AweActiveRecord {
     }
 
     public static function representingColumn() {
-        return 'Nombres';
+        return 'nombres';
     }
 
     public function rules() {
         return array(
-            array('Nombres, Apellidos', 'required'),
-            array('Nombres, Apellidos', 'length', 'max'=>60),
+            array('nombres, apellidos', 'required'),
+            array('nombres, apellidos', 'length', 'max' => 60),
             array('fecha_nacimiento', 'safe'),
             array('fecha_nacimiento', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, Nombres, Apellidos, fecha_nacimiento', 'safe', 'on'=>'search'),
+            array('id, nombres, apellidos, fecha_nacimiento', 'safe', 'on' => 'search'),
         );
     }
 
@@ -49,10 +49,10 @@ abstract class BasePadre extends AweActiveRecord {
      */
     public function attributeLabels() {
         return array(
-                'id' => Yii::t('app', 'ID'),
-                'Nombres' => Yii::t('app', 'Nombres'),
-                'Apellidos' => Yii::t('app', 'Apellidos'),
-                'fecha_nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
+            'id' => Yii::t('app', 'ID'),
+            'nombres' => Yii::t('app', 'Nombres'),
+            'apellidos' => Yii::t('app', 'Apellidos'),
+            'fecha_nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
         );
     }
 
@@ -60,8 +60,10 @@ abstract class BasePadre extends AweActiveRecord {
         $criteria = new CDbCriteria;
 
         $criteria->compare('id', $this->id);
-        $criteria->compare('Nombres', $this->Nombres, true);
-        $criteria->compare('Apellidos', $this->Apellidos, true);
+        $criteria->compare('nombres', $this->nombres, true);
+        $criteria->compare('CONCAT(IFNULL(CONCAT(nombres," "),""),IFNULL(apellidos,""))', $this->nombre_completo, true, 'OR');
+
+        $criteria->compare('apellidos', $this->apellidos, true);
         $criteria->compare('fecha_nacimiento', $this->fecha_nacimiento, true);
 
         return new CActiveDataProvider($this, array(
@@ -71,6 +73,7 @@ abstract class BasePadre extends AweActiveRecord {
 
     public function behaviors() {
         return array_merge(array(
-        ), parent::behaviors());
+                ), parent::behaviors());
     }
+
 }
