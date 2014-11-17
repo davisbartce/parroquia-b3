@@ -6,7 +6,8 @@ $(function() {
     $()
     //ation load
     //ladda submit
-    $("#btn_save_persona").click(function(e) {
+    $(".btn_save_persona").click(function(e) {
+        alert()
         e.preventDefault();
         btn_save_persona = Ladda.create(this);
         var form_id = $(this).attr('form-id');

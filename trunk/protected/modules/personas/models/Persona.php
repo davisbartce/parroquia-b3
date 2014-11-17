@@ -38,6 +38,7 @@ class Persona extends BasePersona {
         $criteria->compare('apellidos', $this->apellidos, true);
         $criteria->compare('fecha_nacimiento', $this->fecha_nacimiento, true);
         $criteria->compare('lugar_nacimiento', $this->lugar_nacimiento, true);
+//        $criteria->compare('campo_completo', $this->lugar_nacimiento, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -60,7 +61,7 @@ class Persona extends BasePersona {
             array('documento', 'length', 'max' => 20),
             array('nombres, apellidos, lugar_nacimiento', 'length', 'max' => 60),
             array('documento, lugar_nacimiento', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, documento, nombres, apellidos, fecha_nacimiento, lugar_nacimiento', 'safe', 'on' => 'search'),
+            array('id, documento, campo_completo,nombres, apellidos, fecha_nacimiento, lugar_nacimiento', 'safe', 'on' => 'search'),
         );
     }
     

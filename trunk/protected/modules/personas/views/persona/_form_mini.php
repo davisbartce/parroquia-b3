@@ -72,7 +72,7 @@ Util::tsRegisterAssetJs('_form_mini.js');
                     ),)) ?>
             <!--</div>                                <div class="form-group">-->
                 <div class="well-popover">
-                    <button id="btn_save_persona" class="btn btn-success ladda-button btn-xs" form-id="#persona-form"
+                    <button id="btn_save_persona" class="btn btn-success ladda-button btn-xs btn_save_persona" form-id="#persona-form"
                             data-style="expand-right">
                         <span class="ladda-label">Registrar</span>
                     </button>

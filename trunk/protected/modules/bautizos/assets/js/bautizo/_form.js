@@ -10,28 +10,9 @@ $(function() {
 
     });
 //      init();
-//    $('#popover1').on('show.bs.popover', function() {
-//        abrirpopover($(this).attr('entidad'));
-//    });
     $('#popover2').on('show.bs.popover', function() {
         abrirpopover($(this).attr('entidad'));
-//        alert('popover on');
-        
-              $('#prependSpin').removeClass('fa-plus');
-        $('#prependSpin').addClass('fa-spinner fa-spin');
-
-       
     });
-//    $('#popover1').popover({
-//        html: true,
-//        placement: 'left',
-//        title: function() {
-//            return $("#popover-head-Escenario").html();
-//        },
-//        content: function() {
-//            return $("#popover-content-Escenario").html();
-//        }
-//    });
     $('#popover2').popover({
         html: true,
         placement: 'left',
@@ -39,37 +20,15 @@ $(function() {
             return $("#popover-head-Persona").html();
         },
         content: function() {
-//             alert('popover content');
-//            var datos;
-//            $.ajaxSetup({
-//                async: false
-//            });
+            $('#persona-form').trigger("reset");
 
-//            $.get(baseUrl + 'personas/persona/mini', function(data) {
-////            $('#pedidosPendientesCocina').html(data);
-//                console.log(data);
-//                datos = data;
-////                $("#popover-content-Persona").html(data);
-//                return $("#popover-content-Persona").html(datos);
-//
-//            });
-
-
-                $('#prependSpin').removeClass('fa-spinner fa-spin');
-             $('#prependSpin').addClass('fa-plus');
             return $("#popover-content-Persona").html(datos);
-           
-           
-//             $.ajaxSetup({
-//                async: true
-//            });
-
         }
     });
 
 
 
-    $("#Bautizo_persona_id").select2({
+    $("#Bautizo_persona_id, #Bautizo_papa_id, #Bautizo_mama_id,#Bautizo_padrino_id,#Bautizo_madrina_id").select2({
         enable: true,
         initSelection: function(element, callback) {
             if ($(element).val()) {
@@ -110,15 +69,17 @@ $(function() {
 //}
 
 function abrirpopover(entidad_tipo) {
+
     $('#' + entidad_tipo + '_nombre_em_').attr('style', 'display:none;');
 //    $('#Proyecto_nombre_em_').attr('style', 'display:none;');
 }
 
 function cerrarpopover() {
-    $('#popover1').popover('hide');
+//    $('#popover3').popover('hide');
     $('#popover2').popover('hide');
     $('#persona-form').trigger("reset");
-    $('#produccion-categoria-form').trigger("reset");
+//    $('form.form-horizontal').trigger("reset");
+//    $('#produccion-categoria-form').trigger("reset");
 }
 
 function savePersona(form) {
