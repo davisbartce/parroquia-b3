@@ -34,9 +34,9 @@
 
 
 
-                <?php echo $form->textFieldGroup($model, 'Nombres', array('maxlength' => 60)) ?>
+                <?php echo $form->textFieldGroup($model, 'nombres', array('maxlength' => 60)) ?>
 
-                <?php echo $form->textFieldGroup($model, 'Apellidos', array('maxlength' => 60)) ?>
+                <?php echo $form->textFieldGroup($model, 'apellidos', array('maxlength' => 60)) ?>
 
                 <?php // echo $form->datePickerGroup($model, 'fecha_nacimiento', array('prepend' => '<i class="icon-calendar"></i>')) ?>
                 <?php
