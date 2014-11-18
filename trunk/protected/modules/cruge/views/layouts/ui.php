@@ -15,27 +15,32 @@
 <?php
 $this->beginContent('//layouts/column2');
 ?>
+<aside class="right-side">
 
-<?php
-if (Yii::app()->user->isSuperAdmin) {
-    echo Yii::app()->user->ui->superAdminNote();
-}
-?>
+    <?php
+    if (Yii::app()->user->isSuperAdmin) {
+        echo Yii::app()->user->ui->superAdminNote();
+    }
+    ?>
+
     <div class="top-controlls">
-        <?php foreach(Yii::app()->user->ui->tradeAdminItems as $menu) :?>
-        <?php $this->widget(
-            'booster.widgets.TbButtonGroup',
-            array(
+        <?php foreach (Yii::app()->user->ui->tradeAdminItems as $menu) : ?>
+            <?php
+            $this->widget(
+                    'booster.widgets.TbButtonGroup', array(
                 'buttons' => array($menu),
-            )
-        ); ?>
-        <?php endforeach; ?>
+                    )
+            );
+            ?>
+<?php endforeach; ?>
     </div>
 
     <div id="content">
-        <?php echo $content; ?>
+    <?php echo $content; ?>
     </div><!-- content -->
     <?php if (Yii::app()->user->checkAccess('admin')) { ?>	
-<?php } ?>
+    <?php } ?>
 
 <?php $this->endContent(); ?>
+
+</aside>
