@@ -17,7 +17,7 @@
         'type' => 'horizontal',
         'id' => 'padre-form',
         'enableAjaxValidation' => true,
-        'clientOptions' => array('validateOnSubmit' => false, 'validateOnChange' => true,),
+        'clientOptions' => array('validateOnSubmit' => true, 'validateOnChange' => false,),
         'enableClientValidation' => false,
     ));
     ?>
@@ -60,15 +60,18 @@
             </div>                               
             <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
+                    <button class="btn btn-success" id="yw0" type="submit" name="yt0">Registrar</button>
                     <?php
-                    $this->widget('booster.widgets.TbButton', array(
-                        'buttonType' => 'submit',
-//                        'type' => 'success',
-                        'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
-//                        'htmlOptions'=>array(
-//                            'type'=>'success'
-//                        )
-                    ));
+                    
+                    
+//                    $this->widget('booster.widgets.TbButton', array(
+//                        'buttonType' => 'submit',
+////                        'type' => 'success',
+//                        'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
+////                        'htmlOptions'=>array(
+////                            'type'=>'success'
+////                        )
+//                    ));
                     ?>
                     <?php
                     $this->widget('booster.widgets.TbButton', array(
