@@ -58,11 +58,13 @@ class PadreController extends AweController {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
+        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
 
         $this->performAjaxValidation($model, 'padre-form');
 
         if (isset($_POST['Padre'])) {
             $model->attributes = $_POST['Padre'];
+            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }

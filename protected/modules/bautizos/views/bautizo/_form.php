@@ -271,12 +271,32 @@ Util::tsRegisterAssetJs('_form.js');
             <div class="panel-body">
 
                 <?php echo $form->textFieldGroup($model, 'rc_año', array('maxlength' => 4)) ?>
+                 <?php
+//                echo $form->datePickerGroup(
+//                        $model, 'rc_ano', array(
+//                    'widgetOptions' => array(
+//                        'options' => array(
+//                            'format' => 'yyyy',
+//                            'startView' => 2,
+//                            'minViewMode' => 2,
+//                            'autoclose' => true
+//                        ),
+//                    ),
+//                    'wrapperHtmlOptions' => array(
+//					'class' => 'col-sm-7 col-lg-7',
+//                    ),
+////				'hint' => 'Click inside! This is a super cool date field.',
+//                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+//                        )
+//                );
+                ?>
 
                 <?php echo $form->textFieldGroup($model, 'rc_tomo', array('maxlength' => 20)) ?>
 
                 <?php echo $form->textFieldGroup($model, 'rc_folio') ?>
 
                 <?php echo $form->textFieldGroup($model, 'rc_acta') ?>
+                
 
                 <?php
                 echo $form->datePickerGroup(
@@ -304,7 +324,7 @@ Util::tsRegisterAssetJs('_form.js');
 
 
     <?php $this->endWidget(); ?>
-    <<div class="hide">
+    <div class="hide">
         <div id="popover-head-Persona" class="hide popover-head">Nueva Persona</div>
         <div id="popover-content-Persona" class="popover-content popover-style">
 

@@ -14,6 +14,7 @@ function ajaxValidarFormulario(options)
             }
         },
         success: function (data) {
+            console.log('ajaxValidate');
             //acciones a realizar cuando la respuesta es positiva 
             if (data.success) {
                 //reiniciar elementos
@@ -47,7 +48,7 @@ function ajaxValidarFormulario(options)
                 //mostrar errores
                 $.each(data.errors, function (parametro, mensaje) {
                     //elemento con error
-                    selectElementoFormError = "form" + options.formId + ' [name="' + formIdent.replace('#', '') + "[" + parametro + ']"';
+                    selectElementoFormError = "form" + options.formId + ' [name="' + formIdent.replace('#', '') + "[" + parametro + ']"]';
                     //agregar la clase error
                     //.parents("div.form-group").addClass('has-error')
                     $(selectElementoFormError).parents("div.form-group").addClass('has-error');
@@ -88,6 +89,7 @@ function reloadControlGroup(formId)
     $('form' + formId + ' .help-block').attr('style', 'display: none');
 }
 function addClassSuccess(formId) {
+//    
     $('form' + formId + ' div.form-group').each(function () {
         if (!$(this).hasClass('has-error')) {
             $(this).addClass('has-success');

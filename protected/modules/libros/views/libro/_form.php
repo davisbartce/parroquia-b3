@@ -34,14 +34,35 @@
 
 
 
-                <?php echo $form->textFieldGroup($model, 'ano', array('maxlength' => 4)) ?>
+                <?php // echo $form->textFieldGroup($model, 'ano', array('maxlength' => 4)) ?>
+                <?php
+                echo $form->datePickerGroup(
+                        $model, 'ano', array(
+                    'widgetOptions' => array(
+                        'options' => array(
+                            'format' => 'yyyy',
+                            'startView' => 2,
+                            'minViewMode' => 2,
+                            'autoclose' => true
+                        ),
+                    ),
+                    'wrapperHtmlOptions' => array(
+					'class' => 'col-sm-7 col-lg-7',
+                    ),
+//				'hint' => 'Click inside! This is a super cool date field.',
+                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+                        )
+                );
+                ?>
 
-                <?php echo $form->textFieldGroup($model, 'tomo', array('maxlength' => 45)) ?>
+                <?php echo $form->textFieldGroup($model, 'tomo', array('maxlength' => 45,  'wrapperHtmlOptions' => array(
+					'class' => 'col-sm-7 col-lg-7',
+                    ),)) ?>
 
-                <?php echo $form->dropDownListGroup($model, 'tipo', array('wrapperHtmlOptions' => array('class' => 'col-sm-12',), 'widgetOptions' => array('data' => array('BAUTIZOS' => 'BAUTIZOS', 'MATRIMONIOS' => 'MATRIMONIOS', 'CONFIRMACIONES' => 'CONFIRMACIONES', 'PRIMERAS COMUNIONES' => 'PRIMERAS COMUNIONES',), 'htmlOptions' => array(),))) ?>
+                <?php echo $form->dropDownListGroup($model, 'tipo', array('wrapperHtmlOptions' => array('class' => 'col-sm-7 col-lg-7',), 'widgetOptions' => array('data' => array('BAUTIZOS' => 'BAUTIZOS', 'MATRIMONIOS' => 'MATRIMONIOS', 'CONFIRMACIONES' => 'CONFIRMACIONES', 'PRIMERAS COMUNIONES' => 'PRIMERAS COMUNIONES',), 'htmlOptions' => array(),))) ?>
             </div>                                <div class="form-group">
                 <div class="col-lg-8 col-lg-offset-4">
-                    
+
                     <button class="btn btn-success" id="yw0" type="submit" name="yt0">Registrar</button>
                     <?php
 //                    $this->widget('booster.widgets.TbButton', array(
