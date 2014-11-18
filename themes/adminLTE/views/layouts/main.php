@@ -352,6 +352,11 @@
                                 <li class=""><a href="<?php echo Yii::app()->createUrl('libros/libro/admin') ?>" style="margin-left: 10px;"><i class="fa fa-book"></i> Libros</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href=" <?php echo Yii::app()->baseUrl . "/bautizos/bautizo/admin" ?>">
+                                <i class="fa fa-child"></i> <span>Bautizos</span> 
+                            </a>
+                        </li>
                         <!--                        <li>
                                                     <a href="pages/calendar.html">
                                                         <i class="fa fa-calendar"></i> <span>Calendar</span>

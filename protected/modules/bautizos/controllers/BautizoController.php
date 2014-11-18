@@ -37,6 +37,8 @@ class BautizoController extends AweController {
 
         if (isset($_POST['Bautizo'])) {
             $model->attributes = $_POST['Bautizo'];
+            $model->fecha_bautizo = Util::FormatDate($model->fecha_bautizo, 'Y-m-d');
+            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }
@@ -54,11 +56,15 @@ class BautizoController extends AweController {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
+        $model->fecha_bautizo = Util::FormatDate($model->fecha_bautizo, 'd-m-Y');
+        $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
 
         $this->performAjaxValidation($model, 'bautizo-form');
 
         if (isset($_POST['Bautizo'])) {
             $model->attributes = $_POST['Bautizo'];
+            $model->fecha_bautizo = Util::FormatDate($model->fecha_bautizo, 'Y-m-d');
+            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }
