@@ -44,3 +44,22 @@ div.popover.in{
     margin-bottom: 10px;
 }
 
+.panel-informacion>.panel-heading {
+color: #fff;
+background-color: #189BBB !important;
+border-color: #bce8f1;
+}
+.panel-success>.panel-heading {
+color: #FFFFFF;
+background-color: #00a65a !important;
+border-color: #d6e9c6;
+}
+.panel-warning>.panel-heading {
+color: #FFFFFF;
+background-color: #f39c12 !important;
+border-color: #faebcc;
+}
+h3.panel-title{
+    font-weight: bold;
+}
+

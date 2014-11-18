@@ -25,7 +25,7 @@ Util::tsRegisterAssetJs('_form.js');
     <div class="col-lg-7  col-sm-7  ">
 
         <br>
-        <div class="panel panel-info">
+        <div class="panel panel-informacion">
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update'); ?></h3>
             </div>
@@ -101,8 +101,8 @@ Util::tsRegisterAssetJs('_form.js');
                         'class' => '',
                     ),
                     'widgetOptions' => array(
-                        'data' => CHtml::listData(Padre::model()->findAll(), 'id', 'nombres'),
-//                                    'empty'=>'seleccione',
+                        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'nombres')),
+//                        'empty' => 'seleccione',
                         'htmlOptions' => array(),
                     )
                         )

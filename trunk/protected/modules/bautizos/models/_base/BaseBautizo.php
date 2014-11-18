@@ -16,7 +16,7 @@
  * @property integer $padre_parroquia_id
  * @property integer $papa_id
  * @property integer $mama_id
- * @property integer $feligreses_de
+ * @property string $feligreses_de
  * @property integer $padrino_id
  * @property integer $madrina_id
  * @property integer $tomo_id
@@ -47,8 +47,9 @@ abstract class BaseBautizo extends AweActiveRecord {
     public function rules() {
         return array(
             array('persona_id, fecha_bautizo, padre_parroquia_id, tomo_id, pagina, numero, rc_tomo, rc_folio, rc_acta, rc_fecha', 'required'),
-            array('persona_id, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, rc_folio, rc_acta', 'numerical', 'integerOnly'=>true),
+            array('persona_id, padre_parroquia_id, papa_id, mama_id, padrino_id, madrina_id, tomo_id, pagina, numero, rc_folio, rc_acta', 'numerical', 'integerOnly'=>true),
             array('iglesia', 'length', 'max'=>60),
+            array('feligreses_de', 'length', 'max'=>64),
             array('nota', 'length', 'max'=>150),
             array('rc_año', 'length', 'max'=>4),
             array('rc_tomo', 'length', 'max'=>20),
@@ -99,7 +100,7 @@ abstract class BaseBautizo extends AweActiveRecord {
         $criteria->compare('padre_parroquia_id', $this->padre_parroquia_id);
         $criteria->compare('papa_id', $this->papa_id);
         $criteria->compare('mama_id', $this->mama_id);
-        $criteria->compare('feligreses_de', $this->feligreses_de);
+        $criteria->compare('feligreses_de', $this->feligreses_de, true);
         $criteria->compare('padrino_id', $this->padrino_id);
         $criteria->compare('madrina_id', $this->madrina_id);
         $criteria->compare('tomo_id', $this->tomo_id);

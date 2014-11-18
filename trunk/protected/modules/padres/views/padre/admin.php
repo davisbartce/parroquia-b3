@@ -39,8 +39,8 @@ $this->menu = array(
                     'type' => 'striped bordered hover advance',
                     'dataProvider' => $model->search(),
                     'columns' => array(
-                        'Nombres',
-                        'Apellidos',
+                        'nombres',
+                        'apellidos',
                         'fecha_nacimiento',
                         array(
                             'class' => 'CButtonColumn',
@@ -54,20 +54,20 @@ $this->menu = array(
                 }',
                             'buttons' => array(
                                 'update' => array(
-                                    'label' => '<button class="btn btn-primary"><i class="icon-pencil"></i></button>',
+                                    'label' => '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
                                     'options' => array('title' => 'Actualizar'),
                                     'imageUrl' => false,
                                 //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
                                 ),
                                 'delete' => array(
-                                    'label' => '<button class="btn btn-danger"><i class="icon-trash"></i></button>',
+                                    'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
                                     'options' => array('title' => 'Eliminar'),
                                     'imageUrl' => false,
                                 //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
                                 ),
                             ),
                             'htmlOptions' => array(
-                                'width' => '80px'
+                                'width' => '100px'
                             )
                         ),
                     ),
