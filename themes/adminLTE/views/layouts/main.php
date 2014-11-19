@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                          ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                           ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
         <!-- Select2 -->
@@ -313,35 +313,35 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="">
+                        <li class="principal">
                             <a href="<?php echo Yii::app()->homeUrl ?>">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li>
-                            <a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/widgets" ?>">
+                        <li class=" principal">
+                            <a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/widgets" ?>">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>
 
-                        <li class="treeview">
+                        <li class="treeview principal">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
                                 <span>UI Elements</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/general" ?>"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/icons" ?>"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/buttons" ?>"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/sliders" ?>"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/timeline" ?>"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/invoice" ?>"><i class="fa fa-folder"></i> Invoice</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/generalForm" ?>"><i class="fa fa-folder"></i> General Form</a></li>
-                                <li><a href=" <?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/general" ?>"><i class="fa fa-angle-double-right"></i> General</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/icons" ?>"><i class="fa fa-angle-double-right"></i> Icons</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/buttons" ?>"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/sliders" ?>"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/timeline" ?>"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/invoice" ?>"><i class="fa fa-folder"></i> Invoice</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/generalForm" ?>"><i class="fa fa-folder"></i> General Form</a></li>
+                                <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
                             </ul>
                         </li>
-                        <li class="treeview <?php echo YiiBase::app()->getController()->getId() == "persona" ? "active" : "" ?> ">
+                        <li class="treeview principal <?php echo YiiBase::app()->getController()->getId() == "persona" ? "active" : "" ?> ">
                             <a href="#">
                                 <i class="fa fa-th-list"></i> <span>Catálogos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -352,8 +352,8 @@
                                 <li class=""><a href="<?php echo Yii::app()->createUrl('libros/libro/admin') ?>" style="margin-left: 10px;"><i class="fa fa-book"></i> Libros</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href=" <?php echo Yii::app()->baseUrl . "/bautizos/bautizo/admin" ?>">
+                        <li class="principal ">
+                            <a href="<?php echo Yii::app()->baseUrl . "/bautizos/bautizo/admin" ?>">
                                 <i class="fa fa-child"></i> <span>Bautizos</span> 
                             </a>
                         </li>
@@ -400,8 +400,10 @@
         <!-- Placed at the end of the document so the pages load faster -->
         <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui.min.js"></script>-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/raphael-min.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/menu.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/AdminLTE/app.js"></script>
         <!--plugis para lada-->
-           <!--select 2-->
+        <!--select 2-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2_locale_es.js"></script>
         <!-- ladda submit -->
@@ -415,7 +417,7 @@
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins/jqueryKnob/jquery.knob.js"></script>
-        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/AdminLTE/app.js"></script>
+
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/AdminLTE/dashboard.js"></script>
         <!--<script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/AdminLTE/demo.js"></script>-->
 <!--        <script src="< ?php echo Yii::app()->theme->baseUrl; ?>/js/custom.js"></script>

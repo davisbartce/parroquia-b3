@@ -584,9 +584,12 @@ $(window).load(function() {
             var btn = $(this).children("a").first();
             var menu = $(this).children(".treeview-menu").first();
             var isActive = $(this).hasClass('active');
-
+            console.log(isActive);
+            console.log(this);
+// alert();
             //initialize already active menus
             if (isActive) {
+               
                 menu.show();
                 btn.children(".fa-angle-left").first().removeClass("fa-angle-left").addClass("fa-angle-down");
             }
