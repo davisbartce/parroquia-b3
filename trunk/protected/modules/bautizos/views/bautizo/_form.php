@@ -30,7 +30,7 @@ Util::tsRegisterAssetJs('_form.js');
         <div class="panel panel-informacion">
             <div class="panel-heading">
                 <h3 class="panel-title" style="display: inline-block"><?php echo Yii::t('AweCrud.app', $model->isNewRecord ? 'Create' : 'Update'); ?></h3> 
-                <a href="#" id="popover2"  entidad="Categoria" data-original-title="" title="" class="pop add-btn btn btn-success pull-right" style="display: inline-block">
+                <a href="#" id="popover2"  entidad="Categoria" data-original-title="" title="" class="pop add-btn btn btn-danger pull-right" style="display: inline-block">
                     <i class="fa fa-plus-circle"></i>
                     <i class="fa fa-user"></i>
                 </a>
