@@ -12,12 +12,12 @@ h1.header-title{
     padding: 26px;
     
 }
-.select2-container{
+/*.select2-container{
     width: 100% !important;
-}
-.select2-drop{
+}*/
+/*.select2-drop{
     width: auto !important;
-}
+}*/
 .date-popover > div > input{
     min-width: 95px !important;
     
@@ -64,6 +64,13 @@ h3.panel-title{
 }
 
 .ct-form-control {
-    min-width: 150px !important;
+    min-width: 130px !important;
+}
+.add-btn {
+   padding: 0px 12px !important;
+}
+
+.popover-title {
+color: black;
 }
 

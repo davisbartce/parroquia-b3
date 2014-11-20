@@ -15,7 +15,7 @@ $(function() {
     });
     $('#popover2').popover({
         html: true,
-        placement: 'right',
+        placement: 'left',
         title: function() {
             return $("#popover-head-Persona").html();
         },
