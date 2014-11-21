@@ -23,7 +23,7 @@
  * @property integer $pagina
  * @property integer $numero
  * @property string $nota
- * @property string $rc_año
+ * @property string $rc_ano
  * @property string $rc_tomo
  * @property integer $rc_folio
  * @property integer $rc_acta
@@ -51,10 +51,10 @@ abstract class BaseBautizo extends AweActiveRecord {
             array('iglesia', 'length', 'max'=>60),
             array('feligreses_de', 'length', 'max'=>64),
             array('nota', 'length', 'max'=>150),
-            array('rc_año', 'length', 'max'=>4),
+            array('rc_ano', 'length', 'max'=>4),
             array('rc_tomo', 'length', 'max'=>20),
-            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota, rc_año', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, persona_id, fecha_bautizo, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota, rc_año, rc_tomo, rc_folio, rc_acta, rc_fecha', 'safe', 'on'=>'search'),
+            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota, rc_ano', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, persona_id, fecha_bautizo, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota, rc_ano, rc_tomo, rc_folio, rc_acta, rc_fecha', 'safe', 'on'=>'search'),
         );
     }
 
@@ -82,7 +82,7 @@ abstract class BaseBautizo extends AweActiveRecord {
                 'pagina' => Yii::t('app', 'Pagina'),
                 'numero' => Yii::t('app', 'Numero'),
                 'nota' => Yii::t('app', 'Nota'),
-                'rc_año' => Yii::t('app', 'Rc Año'),
+                'rc_ano' => Yii::t('app', 'Rc Ano'),
                 'rc_tomo' => Yii::t('app', 'Rc Tomo'),
                 'rc_folio' => Yii::t('app', 'Rc Folio'),
                 'rc_acta' => Yii::t('app', 'Rc Acta'),
@@ -107,7 +107,7 @@ abstract class BaseBautizo extends AweActiveRecord {
         $criteria->compare('pagina', $this->pagina);
         $criteria->compare('numero', $this->numero);
         $criteria->compare('nota', $this->nota, true);
-        $criteria->compare('rc_año', $this->rc_año, true);
+        $criteria->compare('rc_ano', $this->rc_ano, true);
         $criteria->compare('rc_tomo', $this->rc_tomo, true);
         $criteria->compare('rc_folio', $this->rc_folio);
         $criteria->compare('rc_acta', $this->rc_acta);
