@@ -286,7 +286,7 @@ Util::tsRegisterAssetJs('_form.js');
                 <?php // echo $form->textFieldGroup($model, 'rc_año', array('maxlength' => 4)) ?>
                 <?php
                 echo $form->datePickerGroup(
-                        $model, 'rc_año', array(
+                        $model, 'rc_ano', array(
                     'widgetOptions' => array(
                         'options' => array(
                             'format' => 'yyyy',
