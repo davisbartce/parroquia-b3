@@ -49,55 +49,59 @@ Util::tsRegisterAssetJs('_form.js');
                     <!--<span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-plus"></i></a></span>-->
 
                 <?php
-//                                $htmlOptions = array('class' => "form-control");
+                $htmlOptions = array('class' => "form-control");
                 if ($model->persona_id) {
                     $model_persona = Persona::model()->findByPk($model->persona_id);
-                    $htmlOptions = array_merge($htmlOptions, array(
+
+                    $htmlOptions = array_merge(
+                            $htmlOptions, array(
                         'selected-text' => $model_persona->nombres . ' ' . $model_persona->apellidos . ' ' . $model_persona->fecha_nacimiento
-                    ));
+                            )
+                    );
                 }
+//                var_dump($htmlOptions);
+//                die();
                 echo $form->textFieldGroup($model, 'persona_id', array(
-                    'wrapperHtmlOptions' => array(
-//					'class' => 'col-sm-5',
+                    'widgetOptions' => array(
+                        'htmlOptions'=>$htmlOptions,
                     ),
-//                    'prepend' => '<a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-plus"></i></a>'
                 ));
                 ?> 
                             <!--<span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-spinner fa-spin"></i></a></span>-->
                             <!--<span class="input-group-addon">.00</span>-->
 
                 <!--</div>-->
-                <?php echo $form->error($model, 'persona_id', array('class' => 'help-block error')); ?>
+<?php // echo $form->error($model, 'persona_id', array('class' => 'help-block error'));  ?>
                 <!--</div>-->
 
                 <!--</div>-->
 
 
 
-                <?php // echo $form->datePickerGroup($model, 'fecha_bautizo') ?>
+<?php // echo $form->datePickerGroup($model, 'fecha_bautizo')  ?>
 
 
 
-                <?php
-                echo $form->datePickerGroup(
-                        $model, 'fecha_bautizo', array(
-                    'widgetOptions' => array(
-                        'options' => array(
-                            'format' => 'dd/mm/yyyy',
-                            'autoclose' => true
-                        ),
-                    ),
-                    'wrapperHtmlOptions' => array(
+<?php
+echo $form->datePickerGroup(
+        $model, 'fecha_bautizo', array(
+    'widgetOptions' => array(
+        'options' => array(
+            'format' => 'dd/mm/yyyy',
+            'autoclose' => true
+        ),
+    ),
+    'wrapperHtmlOptions' => array(
 //					'class' => 'col-sm-12',
-                    ),
+    ),
 //				'hint' => 'Click inside! This is a super cool date field.',
-                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
-                        )
-                );
-                ?>
+    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+        )
+);
+?>
 
 
-                <?php echo $form->textFieldGroup($model, 'iglesia', array('maxlength' => 60)) ?>
+<?php echo $form->textFieldGroup($model, 'iglesia', array('maxlength' => 60)) ?>
 
                 <?php
                 // echo $form->textFieldGroup($model, 'padre_parroquia_id') 
@@ -107,68 +111,68 @@ Util::tsRegisterAssetJs('_form.js');
 
 
 
-                <?php
-                echo $form->dropDownListGroup(
-                        $model, 'padre_parroquia_id', array(
-                    'wrapperHtmlOptions' => array(
-                        'class' => '',
-                    ),
-                    'widgetOptions' => array(
-                        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'nombres')),
+<?php
+echo $form->dropDownListGroup(
+        $model, 'padre_parroquia_id', array(
+    'wrapperHtmlOptions' => array(
+        'class' => '',
+    ),
+    'widgetOptions' => array(
+        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'nombres')),
 //                        'empty' => 'seleccione',
-                        'htmlOptions' => array(),
-                    )
-                        )
-                );
-                ?>
+        'htmlOptions' => array(),
+    )
+        )
+);
+?>
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="Bautizo_papa_id">Papa <span ></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
-                        <?php
-                        $htmlOptions = array('class' => "form-control");
-                        if ($model->papa_id) {
-                            $modelPapa = Persona::model()->findByPk($model->papa_id);
+<?php
+$htmlOptions = array('class' => "form-control");
+if ($model->papa_id) {
+    $modelPapa = Persona::model()->findByPk($model->papa_id);
 //                            var_dump($modelPapa);
 //                            die();
-                            $htmlOptions = array_merge($htmlOptions, array(
-                                'selected-text' => $modelPapa->nombres . ' ' . $modelPapa->apellidos . ' ' . $modelPapa->fecha_nacimiento
-                            ));
-                        }
-                        echo $form->hiddenField($model, 'papa_id', $htmlOptions);
-                        ?> 
+    $htmlOptions = array_merge($htmlOptions, array(
+        'selected-text' => $modelPapa->nombres . ' ' . $modelPapa->apellidos . ' ' . $modelPapa->fecha_nacimiento
+    ));
+}
+echo $form->hiddenField($model, 'papa_id', $htmlOptions);
+?> 
                             <!--<span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-spinner fa-spin"></i></a></span>-->
                             <!--<span class="input-group-addon"><a href="#" id="popover3"  class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-plus"></i></a></span>-->
                             <!--<span class="input-group-addon">.00</span>-->
 
                     </div>
-                    <?php echo $form->error($model, 'papa_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'papa_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="Bautizo_mama_id">Mama <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
-                        <?php
-                        $htmlOptions = array('class' => "form-control");
-                        if ($model->mama_id) {
-                            $modelMama = Persona::model()->findByPk($model->mama_id);
-                            $htmlOptions = array_merge($htmlOptions, array(
-                                'selected-text' => $modelMama->nombres . ' ' . $modelMama->apellidos . ' ' . $modelMama->fecha_nacimiento
-                            ));
-                        }
-                        echo $form->hiddenField($model, 'mama_id', $htmlOptions);
-                        ?> 
+<?php
+$htmlOptions = array('class' => "form-control");
+if ($model->mama_id) {
+    $modelMama = Persona::model()->findByPk($model->mama_id);
+    $htmlOptions = array_merge($htmlOptions, array(
+        'selected-text' => $modelMama->nombres . ' ' . $modelMama->apellidos . ' ' . $modelMama->fecha_nacimiento
+    ));
+}
+echo $form->hiddenField($model, 'mama_id', $htmlOptions);
+?> 
                             <!--<span class="input-group-addon"><a href="#" id="popover2" class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-spinner fa-spin"></i></a></span>-->
                             <!--<span class="input-group-addon"><a href="#" id="popover3"  class="pop" entidad="Categoria" data-original-title="" title=""><i id="prependSpin" class="fa fa-plus"></i></a></span>-->
                             <!--<span class="input-group-addon">.00</span>-->
 
                     </div>
-                    <?php echo $form->error($model, 'mama_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'mama_id', array('class' => 'help-block error')); ?>
                 </div>
 
 
-                <?php // echo $form->textFieldGroup($model, 'mama_id')  ?>
+<?php // echo $form->textFieldGroup($model, 'mama_id')   ?>
 
                 <?php echo $form->textFieldGroup($model, 'feligreses_de') ?>
 
@@ -176,40 +180,40 @@ Util::tsRegisterAssetJs('_form.js');
                     <label class="col-sm-3 control-label" for="Bautizo_padrino_id">Padrino <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
-                        <?php
-                        $htmlOptions = array('class' => "form-control");
-                        if ($model->padrino_id) {
-                            $modelPadrino = Persona::model()->findByPk($model->padrino_id);
-                            $htmlOptions = array_merge($htmlOptions, array(
-                                'selected-text' => $modelPadrino->nombres . ' ' . $modelPadrino->apellidos . ' ' . $modelPadrino->fecha_nacimiento
-                            ));
-                        }
-                        echo $form->hiddenField($model, 'padrino_id', $htmlOptions);
-                        ?> 
+<?php
+$htmlOptions = array('class' => "form-control");
+if ($model->padrino_id) {
+    $modelPadrino = Persona::model()->findByPk($model->padrino_id);
+    $htmlOptions = array_merge($htmlOptions, array(
+        'selected-text' => $modelPadrino->nombres . ' ' . $modelPadrino->apellidos . ' ' . $modelPadrino->fecha_nacimiento
+    ));
+}
+echo $form->hiddenField($model, 'padrino_id', $htmlOptions);
+?> 
 
                     </div>
-                    <?php echo $form->error($model, 'padrino_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'padrino_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="Bautizo_madrina_id">Madrina <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
-                        <?php
-                        $htmlOptions = array('class' => "form-control");
-                        if ($model->madrina_id) {
-                            $modelMadrina = Persona::model()->findByPk($model->madrina_id);
-                            $htmlOptions = array_merge($htmlOptions, array(
-                                'selected-text' => $modelMadrina->nombres . ' ' . $modelMadrina->apellidos . ' ' . $modelMadrina->fecha_nacimiento
-                            ));
-                        }
-                        echo $form->hiddenField($model, 'madrina_id', $htmlOptions);
-                        ?> 
+<?php
+$htmlOptions = array('class' => "form-control");
+if ($model->madrina_id) {
+    $modelMadrina = Persona::model()->findByPk($model->madrina_id);
+    $htmlOptions = array_merge($htmlOptions, array(
+        'selected-text' => $modelMadrina->nombres . ' ' . $modelMadrina->apellidos . ' ' . $modelMadrina->fecha_nacimiento
+    ));
+}
+echo $form->hiddenField($model, 'madrina_id', $htmlOptions);
+?> 
 
                     </div>
-                    <?php echo $form->error($model, 'madrina_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'madrina_id', array('class' => 'help-block error')); ?>
                 </div>
 
-                <?php // echo $form->textFieldGroup($model, 'padrino_id')  ?>
+<?php // echo $form->textFieldGroup($model, 'padrino_id')   ?>
 
                 <?php // echo $form->textFieldGroup($model, 'madrina_id')  ?>
 
@@ -220,12 +224,12 @@ Util::tsRegisterAssetJs('_form.js');
                                 data-style="expand-right">
                             <span class="ladda-label">Registrar</span>
                         </button>
-                        <?php
+<?php
 //                        $this->widget('booster.widgets.TbButton', array(
 //                            'buttonType' => 'submit',
 //                            'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
 //                        ));
-                        ?>
+?>
                         <?php
                         $this->widget('booster.widgets.TbButton', array(
                             'label' => Yii::t('AweCrud.app', 'Cancel'),
@@ -251,20 +255,20 @@ Util::tsRegisterAssetJs('_form.js');
 
 
 
-                <?php
-                echo $form->dropDownListGroup(
-                        $model, 'tomo_id', array(
-                    'wrapperHtmlOptions' => array(
-                        'class' => '',
-                    ),
-                    'widgetOptions' => array(
-                        'data' => CHtml::listData(Libro::model()->findAll(), 'id', 'tomo'),
+<?php
+echo $form->dropDownListGroup(
+        $model, 'tomo_id', array(
+    'wrapperHtmlOptions' => array(
+        'class' => '',
+    ),
+    'widgetOptions' => array(
+        'data' => CHtml::listData(Libro::model()->findAll(), 'id', 'tomo'),
 //                                    'empty'=>'seleccione',
-                        'htmlOptions' => array(),
-                    )
-                        )
-                );
-                ?>
+        'htmlOptions' => array(),
+    )
+        )
+);
+?>
 
                 <?php // echo $form->textFieldGroup($model, 'tomo_id') ?>
 
@@ -283,7 +287,7 @@ Util::tsRegisterAssetJs('_form.js');
             </div>
             <div class="panel-body">
 
-                <?php // echo $form->textFieldGroup($model, 'rc_año', array('maxlength' => 4)) ?>
+<?php // echo $form->textFieldGroup($model, 'rc_año', array('maxlength' => 4))  ?>
                 <?php
                 echo $form->datePickerGroup(
                         $model, 'rc_ano', array(
@@ -298,7 +302,7 @@ Util::tsRegisterAssetJs('_form.js');
                     'wrapperHtmlOptions' => array(
 //					'class' => 'col-sm-7 col-lg-7',
 //                        'readonly' => 'readonly',
-                    'class'=>'hasDatepicker'
+                        'class' => 'hasDatepicker'
                     ),
 //				'hint' => 'Click inside! This is a super cool date field.',
                     'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
@@ -313,26 +317,26 @@ Util::tsRegisterAssetJs('_form.js');
                 <?php echo $form->textFieldGroup($model, 'rc_acta') ?>
 
 
-                <?php
-                echo $form->datePickerGroup(
-                        $model, 'rc_fecha', array(
-                    'widgetOptions' => array(
-                        'options' => array(
-                            'format' => 'dd/mm/yyyy',
-                            'autoclose' => true
-                        ),
-                    ),
-                    'wrapperHtmlOptions' => array(
+<?php
+echo $form->datePickerGroup(
+        $model, 'rc_fecha', array(
+    'widgetOptions' => array(
+        'options' => array(
+            'format' => 'dd/mm/yyyy',
+            'autoclose' => true
+        ),
+    ),
+    'wrapperHtmlOptions' => array(
 //					'class' => 'col-sm-12',
-                    ),
+    ),
 //				'hint' => 'Click inside! This is a super cool date field.',
-                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
-                        )
-                );
-                ?>
+    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+        )
+);
+?>
 
 
-                <?php // echo $form->datePickerGroup($model, 'rc_fecha', array('prepend' => '<i class="icon-calendar"></i>')) ?>
+<?php // echo $form->datePickerGroup($model, 'rc_fecha', array('prepend' => '<i class="icon-calendar"></i>'))  ?>
             </div>
         </div>
     </div>
@@ -340,7 +344,7 @@ Util::tsRegisterAssetJs('_form.js');
 
 
 
-    <?php $this->endWidget(); ?>
+<?php $this->endWidget(); ?>
     <div class="hide">
         <div id="popover-head-Persona" class="hide popover-head">Nueva Persona</div>
         <div id="popover-content-Persona" class="popover-content popover-style">
