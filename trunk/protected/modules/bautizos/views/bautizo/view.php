@@ -27,9 +27,9 @@
                 <div class="box-header">
                     <h3 class="box-title">Información del Bautizo</h3>
                     <div class="box-tools pull-right">
-                                        <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
+                        <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
                     <!--                        <div class="box-tools pull-right">
                                                 <div class="label bg-aqua">Label</div>
                                             </div>-->
@@ -90,8 +90,10 @@
 
 
                     </div><!-- /.box-body -->
-
+                   
                 </div>
+<!--                 <div class="overlay"></div>
+                    <div class="loading-img"></div>-->
             </div>
 
 
@@ -104,9 +106,9 @@
                 <div class="box-header">
                     <h3 class="box-title">Libro    <i class="fa fa-book"></i></h3>
                     <div class="box-tools pull-right">
-                                        <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
+                        <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
                     <!--                        <div class="box-tools pull-right">
                                                 <div class="label bg-aqua">Label</div>
                                             </div>-->
@@ -175,9 +177,9 @@
                 <div class="box-header">
                     <h3 class="box-title">RC   <i class="fa fa-university"></i></h3>
                     <div class="box-tools pull-right">
-                                        <button class="btn btn-warning btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button class="btn btn-warning btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
+                        <button class="btn btn-warning btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-warning btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
                     <!--                        <div class="box-tools pull-right">
                                                 <div class="label bg-aqua">Label</div>
                                             </div>-->
