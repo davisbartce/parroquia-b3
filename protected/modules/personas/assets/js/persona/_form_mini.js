@@ -7,7 +7,7 @@ $(function() {
     //ation load
     //ladda submit
     $(".btn_save_persona").click(function(e) {
-        alert()
+//        alert()
         e.preventDefault();
         btn_save_persona = Ladda.create(this);
         var form_id = $(this).attr('form-id');
@@ -19,14 +19,14 @@ $(function() {
 
 });
 function save($form) {
-    alert('save');
+//    alert('save');
     ajaxValidarFormulario({
         formId: $form,
         beforeCall: function() {
             btn_save_persona.setProgress(0.6);
         },
         errorCall: function() {
-            alert('error');
+//            alert('error');
             btn_save_persona.setProgress(1);
             btn_save_persona.stop();
         },

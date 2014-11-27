@@ -102,9 +102,9 @@
 
         </div>
         <div class="col-lg-5   col-sm-5 ">
-            <div class="box box-solid box-success">
+            <div class="box  box-success">
                 <div class="box-header">
-                    <h3 class="box-title">Libro    <i class="fa fa-book"></i></h3>
+                     <i class="fa fa-book"></i><h3 class="box-title">Libro   </h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -144,38 +144,13 @@
                         ?>
 
                     </div>
-                    <?php
-//                    $this->widget('booster.widgets.TbDetailView', array(
-//                        'data' => $model,
-//                        'attributes' => array(
-////                                    'persona_id',
-////                                    'fecha_bautizo',
-//                            //        'iglesia',
-//                            //        'padre_parroquia_id',
-//                            //        'papa_id',
-//                            //        'mama_id',
-//                            //        'feligreses_de',
-//                            //        'padrino_id',
-//                            //        'madrina_id',
-//                            'tomo_id',
-//                            'pagina',
-//                            'numero',
-//                            'nota',
-//                        //        'rc_año',
-//                        //        'rc_tomo',
-//                        //        'rc_folio',
-//                        //        'rc_acta',
-//                        //        'rc_fecha',
-//                        ),
-//                    ));
-                    ?>
 
                 </div><!-- /.box-body -->
                 <!--</div>-->
             </div>
             <div class="box box-solid box-warning">
                 <div class="box-header">
-                    <h3 class="box-title">RC   <i class="fa fa-university"></i></h3>
+                  <i class="fa fa-university"></i>   <h3 class="box-title">RC  </h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-warning btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-warning btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
