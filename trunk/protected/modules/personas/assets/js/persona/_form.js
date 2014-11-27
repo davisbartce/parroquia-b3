@@ -16,7 +16,7 @@ $(function () {
     
 });
 function save($form) {
-    alert('save');
+//    alert('save');
     ajaxValidarFormulario({
         formId: $form,
         beforeCall: function () {
