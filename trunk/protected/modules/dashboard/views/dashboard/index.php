@@ -29,7 +29,7 @@
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        150
+                                         <?php echo Bautizo::model()->count() ?>
                                     </h3>
                                     <p>
                                         Bautizos
@@ -38,7 +38,7 @@
                                 <div class="icon">
                                     <i class="fa fa-child"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="<?php echo Yii::app()->baseUrl . "/bautizos/bautizo/admin"?>" class="small-box-footer">
                                    Acceder <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -57,7 +57,7 @@
                                 <div class="icon">
                                     <i class="fa fa-slideshare"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="<?php echo Yii::app()->baseUrl . "/matrimonios/matrimonio/admin" ?>" class="small-box-footer">
                                    Acceder <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -76,7 +76,7 @@
                                 <div class="icon">
                                     <i class="fa fa-bell"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">
+                                <a href="<?php echo Yii::app()->baseUrl . "/comuniones/comunion/admin" ?>" class="small-box-footer">
                                    Acceder <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>

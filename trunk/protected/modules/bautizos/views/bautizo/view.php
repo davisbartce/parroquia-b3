@@ -26,7 +26,7 @@
             <div class="box box-solid box-primary">
                 <div class="box-header">
                     <h3 class="box-title">Información del Bautizo</h3>
-                    <div class="box-tools pull-right">
+                    <div class="box-tools pull-right no-print">
                         <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
@@ -105,7 +105,7 @@
             <div class="box  box-success">
                 <div class="box-header">
                      <i class="fa fa-book"></i><h3 class="box-title">Libro   </h3>
-                    <div class="box-tools pull-right">
+                    <div class="box-tools pull-right no-print">
                         <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
@@ -151,7 +151,7 @@
             <div class="box box-solid box-warning">
                 <div class="box-header">
                   <i class="fa fa-university"></i>   <h3 class="box-title">RC  </h3>
-                    <div class="box-tools pull-right">
+                    <div class="box-tools pull-right no-print">
                         <button class="btn btn-warning btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-warning btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
