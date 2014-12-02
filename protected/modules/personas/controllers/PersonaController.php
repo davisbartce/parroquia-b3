@@ -66,6 +66,18 @@ class PersonaController extends AweController {
             ));
         }
     }
+    public function actionCreateModal() {
+        $model=new Persona;
+        
+          if (Yii::app()->request->isAjaxRequest) {
+        
+         $this->renderPartial('modal', array( 'model'=>$model), false, true);
+          }
+         
+         
+    }
+    
+    
 
     /**
      * Updates a particular model.

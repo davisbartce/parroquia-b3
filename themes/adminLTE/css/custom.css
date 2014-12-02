@@ -74,3 +74,12 @@ h3.panel-title{
 color: black;
 }
 
+.modal-body {
+overflow-y: scroll;
+height: 400px;
+}
+.modal.loading-img {
+/*z-index: 1020;*/
+background: transparent url('../img/ajax-loader1.gif') 50% 50% no-repeat;
+}
+
