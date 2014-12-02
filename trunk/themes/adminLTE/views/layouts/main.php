@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                           ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                            ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
         <!-- Select2 -->
@@ -393,6 +393,13 @@
             <!--</section>-->
             <!--            </aside>-->
         </div>   <!-- Wrapper -->
+        <div class="row">
+            <?php
+// El modal de la página
+            $this->beginWidget('booster.widgets.TbModal', array('id' => 'mainModal', 'options' => array('backdrop' => 'static')));
+            $this->endWidget();
+            ?>
+        </div>
 
 
         <!-- Bootstrap core JavaScript
@@ -402,6 +409,7 @@
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/raphael-min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/menu.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/AdminLTE/app.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/common-scripts.js"></script>
         <!--plugis para lada-->
         <!--select 2-->
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/select2/select2.min.js"></script>
