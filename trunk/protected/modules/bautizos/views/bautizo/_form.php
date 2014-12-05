@@ -90,6 +90,10 @@ echo $form->datePickerGroup(
             'format' => 'dd/mm/yyyy',
             'autoclose' => true
         ),
+        'htmlOptions'=>array(
+                                 'class' => 'hasDatepicker',
+                              'readonly' => 'readonly',
+                            ),
     ),
     'wrapperHtmlOptions' => array(
 //					'class' => 'col-sm-12',
@@ -220,15 +224,16 @@ echo $form->hiddenField($model, 'madrina_id', $htmlOptions);
                 <div class="form-group">
                     <div class="col-lg-5 col-lg-offset-2">
 
-                        <button id="btn_save2" class="btn btn-success ladda-button" form-id="#bautizo-form"
+<!--                        <button id="btn_save_bautizo" class="btn btn-success ladda-button" form-id="#bautizo-form"
                                 data-style="expand-right">
                             <span class="ladda-label">Registrar</span>
-                        </button>
+                        </button>-->
 <?php
-//                        $this->widget('booster.widgets.TbButton', array(
-//                            'buttonType' => 'submit',
-//                            'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Create') : Yii::t('AweCrud.app', 'Save'),
-//                        ));
+                        $this->widget('booster.widgets.TbButton', array(
+                            'buttonType' => 'submit',
+                            'label' => $model->isNewRecord ? Yii::t('AweCrud.app', 'Registrar') : Yii::t('AweCrud.app', 'Save'),
+                              'context' => 'success',
+                        ));
 ?>
                         <?php
                         $this->widget('booster.widgets.TbButton', array(
@@ -291,6 +296,7 @@ echo $form->dropDownListGroup(
                 <?php
                 echo $form->datePickerGroup(
                         $model, 'rc_ano', array(
+                           
                     'widgetOptions' => array(
                         'options' => array(
                             'format' => 'yyyy',
@@ -298,11 +304,15 @@ echo $form->dropDownListGroup(
                             'minViewMode' => 2,
                             'autoclose' => true
                         ),
+                         'htmlOptions'=>array(
+                                 'class' => 'hasDatepicker',
+                              'readonly' => 'readonly',
+                            ),
                     ),
                     'wrapperHtmlOptions' => array(
 //					'class' => 'col-sm-7 col-lg-7',
 //                        'readonly' => 'readonly',
-                        'class' => 'hasDatepicker'
+//                        'class' => 'hasDatepicker'
                     ),
 //				'hint' => 'Click inside! This is a super cool date field.',
                     'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
@@ -325,6 +335,10 @@ echo $form->datePickerGroup(
             'format' => 'dd/mm/yyyy',
             'autoclose' => true
         ),
+        'htmlOptions'=>array(
+                                 'class' => 'hasDatepicker',
+                              'readonly' => 'readonly',
+                            ),
     ),
     'wrapperHtmlOptions' => array(
 //					'class' => 'col-sm-12',
