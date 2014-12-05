@@ -54,11 +54,20 @@ $(function() {
             }
         }
     });
+    
+//     $("#btn_save_bautizo").click(function (e) {
+//        e.preventDefault();
+//        btn_save = Ladda.create(this);
+//        var form_id = $(this).attr('form-id');
+//        btn_save.start();
+//        saveProduccion(form_id);
+//        return false;
+//    }); 
 //
 });
 
 //function init() {
-//    $("#btn_save_produccion").click(function (e) {
+//    $("#btn_save_bautizo").click(function (e) {
 //        e.preventDefault();
 //        btn_save = Ladda.create(this);
 //        var form_id = $(this).attr('form-id');
