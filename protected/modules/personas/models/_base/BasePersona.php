@@ -7,7 +7,7 @@
  * property or method in class "Persona".
  *
  * Columns in table "persona" available as properties of the model,
- * and there are no model relations.
+ * followed by relations of table "persona" available as properties of the model.
  *
  * @property integer $id
  * @property string $documento
@@ -15,7 +15,9 @@
  * @property string $apellidos
  * @property string $fecha_nacimiento
  * @property string $lugar_nacimiento
+ * @property string $estado_civil
  *
+ * @property Direccion[] $direccions
  */
 abstract class BasePersona extends AweActiveRecord {
 
@@ -36,13 +38,16 @@ abstract class BasePersona extends AweActiveRecord {
             array('nombres, apellidos, fecha_nacimiento', 'required'),
             array('documento', 'length', 'max'=>20),
             array('nombres, apellidos, lugar_nacimiento', 'length', 'max'=>60),
-            array('documento, lugar_nacimiento', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, documento, nombres, apellidos, fecha_nacimiento, lugar_nacimiento', 'safe', 'on'=>'search'),
+            array('estado_civil', 'length', 'max'=>13),
+            array('estado_civil', 'in', 'range' => array('SOLTERO(A)','CASADO(A)','DIVORCIADO(A)','VIUDO(A)')), // enum,
+            array('documento, lugar_nacimiento, estado_civil', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, documento, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, estado_civil', 'safe', 'on'=>'search'),
         );
     }
 
     public function relations() {
         return array(
+            'direccions' => array(self::HAS_MANY, 'Direccion', 'persona_id'),
         );
     }
 
@@ -57,6 +62,8 @@ abstract class BasePersona extends AweActiveRecord {
                 'apellidos' => Yii::t('app', 'Apellidos'),
                 'fecha_nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
                 'lugar_nacimiento' => Yii::t('app', 'Lugar Nacimiento'),
+                'estado_civil' => Yii::t('app', 'Estado Civil'),
+                'direccions' => null,
         );
     }
 
@@ -69,6 +76,7 @@ abstract class BasePersona extends AweActiveRecord {
         $criteria->compare('apellidos', $this->apellidos, true);
         $criteria->compare('fecha_nacimiento', $this->fecha_nacimiento, true);
         $criteria->compare('lugar_nacimiento', $this->lugar_nacimiento, true);
+        $criteria->compare('estado_civil', $this->estado_civil, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
