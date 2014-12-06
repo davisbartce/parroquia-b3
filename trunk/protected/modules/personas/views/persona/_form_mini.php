@@ -70,6 +70,9 @@ Util::tsRegisterAssetJs('_form_mini.js');
                 <?php echo $formPersona->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60,'wrapperHtmlOptions' => array(
 					'class' => 'input-popover',
                     ),)) ?>
+              <?php echo $formPersona->dropDownListGroup($model, 'estado_civil',array( 'wrapperHtmlOptions' => array('class' => 'input-popover',),'widgetOptions' => array('data' => array('SOLTERO(A)' => 'SOLTERO(A)','CASADO(A)' => 'CASADO(A)','DIVORCIADO(A)' => 'DIVORCIADO(A)','VIUDO(A)' => 'VIUDO(A)',),'htmlOptions' => array(),) )) ?>
+            
+            
             <!--</div>                                <div class="form-group">-->
                 <div class="well-popover">
                     <button id="btn_save_persona" class="btn btn-success ladda-button btn-xs btn_save_persona" form-id="#persona-form"

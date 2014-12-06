@@ -62,6 +62,10 @@ Util::tsRegisterAssetJs('_form.js');
 
 
                 <?php echo $form->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60)) ?>
+                
+                 <?php echo $form->dropDownListGroup($model, 'estado_civil',array( 'wrapperHtmlOptions' => array('class' => 'col-sm-12',),'widgetOptions' => array('data' => array('SOLTERO(A)' => 'SOLTERO(A)','CASADO(A)' => 'CASADO(A)','DIVORCIADO(A)' => 'DIVORCIADO(A)','VIUDO(A)' => 'VIUDO(A)',),'htmlOptions' => array(),) )) ?>
+                
+                
             </div>                                <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                     <button id="btn_save" class="btn btn-success ladda-button" form-id="#persona-form"
