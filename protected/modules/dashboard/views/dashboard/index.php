@@ -12,7 +12,8 @@
     <section class="content-header">
         <h1>
             Dashboard
-            <small><?php echo $this->pageTitle = Yii::app()->name; ?></small>
+            <small><?php // echo $this->pageTitle = Yii::app()->name; ?> 
+                JESUS EL BUEN PASTOR</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

@@ -33,19 +33,19 @@ $this->menu = array(
             <div class="panel-heading">
                 <h3 class="panel-title"><?php echo 'Administrar'; ?></h3>
                 <?php
-                   $this->widget(
-                                     'booster.widgets.TbButton', array(
-                                'id' => 'add-contact',
-                                'label' => 'Agregar Contacto',
-                                'encodeLabel' => false,
-                                'icon' => 'user',
-                                'htmlOptions' => array(
-                                    'onClick' => 'js:viewModal("personas/persona/createModal",function(){'
-                                    . '})',
-                                    'class' => '',
-                                ),
-                                    )
-                            ) ;
+//                   $this->widget(
+//                                     'booster.widgets.TbButton', array(
+//                                'id' => 'add-contact',
+//                                'label' => 'Agregar Contacto',
+//                                'encodeLabel' => false,
+//                                'icon' => 'user',
+//                                'htmlOptions' => array(
+//                                    'onClick' => 'js:viewModal("personas/persona/createModal",function(){'
+//                                    . '})',
+//                                    'class' => '',
+//                                ),
+//                                    )
+//                            ) ;
             ?>
             </div>
             <div class="panel-body">
