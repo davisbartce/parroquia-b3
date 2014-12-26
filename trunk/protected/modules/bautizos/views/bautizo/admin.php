@@ -42,10 +42,18 @@ $this->menu = array(
                         'type' => 'striped bordered hover advance',
                         'dataProvider' => $model->search(),
                         'columns' => array(
-                            'persona_id',
+                            array(
+                                'name'=>'persona_id',
+                                'value'=>'$data->persona->nombres." ".$data->persona->apellidos'
+                            ),
+//                            'persona_id',
                             'fecha_bautizo',
                             'iglesia',
-                            'padre_parroquia_id',
+//                            'padre_parroquia_id',
+                              array(
+                                'name'=>'padre_parroquia_id',
+                                'value'=>'$data->padre->nombres." ".$data->persona->apellidos'
+                            ),
                             'papa_id',
                             'mama_id',
                             /*
