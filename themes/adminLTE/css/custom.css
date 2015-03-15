@@ -100,3 +100,11 @@ cursor: pointer!important;
 background: #FFF!important;
 }
 
+.select2-container {
+  min-width: 100px !important;
+}
+
+.detail-view th {
+  width: auto;
+}
+

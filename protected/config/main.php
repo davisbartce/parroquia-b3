@@ -31,6 +31,8 @@ return array(
         'application.modules.padres.models.*',
         'application.modules.bautizos.models.*',
         'application.modules.libros.models.*',
+        'application.modules.matrimonios.models.*',
+        'application.modules.confirmaciones.models.*',
     ),
     'modules' => array(
         'dashboard',
@@ -38,6 +40,8 @@ return array(
         'padres',
         'bautizos',
         'libros',
+        'matrimonios',
+        'confirmaciones',
         // uncomment the following to enable the Gii tool
         'cruge' => array(
             'tableprefix' => 'cruge_',

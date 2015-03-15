@@ -6,7 +6,7 @@
     <section class="content-header">
         <h1 class="header-title">
               <!--<small>-->
-            <i class="fa fa-child"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
+            <i class="fa fa-book"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
                 
              </div>-->
             <!--</small>-->
@@ -25,7 +25,7 @@
         <div class="col-lg-7   col-sm-7 ">
             <div class="box box-solid box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Información del Bautizo</h3>
+                    <h3 class="box-title">Información de la Confirmación</h3>
 <!--                    <div class="box-tools pull-right no-print">
                         <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -46,7 +46,7 @@
                                     'name' => 'persona_id',
                                     'value' => $model->persona->nombres . ' ' . $model->persona->apellidos
                                 ),
-                                'fecha_bautizo',
+                                'fecha_confirmacion',
                                 'iglesia',
 //                            'padre_parroquia_id',
                                 array(

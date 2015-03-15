@@ -9,14 +9,14 @@ Util::tsRegisterAssetJs('_form.js');
     <section class="content-header">
         <h1>
             <!--<small>-->
-            <i class="fa fa-child"></i> Bautizo            <!--</small>-->
+            <i class="fa fa-book"></i> Confirmación            <!--</small>-->
         </h1>
     </section>
 
     <?php
     $form = $this->beginWidget('ext.AweCrud.components.AweActiveForm', array(
         'type' => 'horizontal',
-        'id' => 'bautizo-form',
+        'id' => 'confirmacion-form',
         'enableAjaxValidation' => true,
         'clientOptions' => array('validateOnSubmit' => true, 'validateOnChange' => false,),
         'enableClientValidation' => false,
@@ -82,7 +82,7 @@ Util::tsRegisterAssetJs('_form.js');
 
                 <?php
                 echo $form->datePickerGroup(
-                        $model, 'fecha_bautizo', array(
+                        $model, 'fecha_confirmacion', array(
                     'widgetOptions' => array(
                         'options' => array(
                             'format' => 'dd/mm/yyyy',
@@ -129,7 +129,7 @@ Util::tsRegisterAssetJs('_form.js');
                 ?>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="Bautizo_papa_id">Papa <span ></span></label>
+                    <label class="col-sm-3 control-label" for="Confirmacion_papa_id">Papa <span ></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
                         <?php
@@ -152,7 +152,7 @@ Util::tsRegisterAssetJs('_form.js');
                     <?php echo $form->error($model, 'papa_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="Bautizo_mama_id">Mama <span></span></label>
+                    <label class="col-sm-3 control-label" for="Confirmacion_mama_id">Mama <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
                         <?php
@@ -179,7 +179,7 @@ Util::tsRegisterAssetJs('_form.js');
                 <?php echo $form->textFieldGroup($model, 'feligreses_de') ?>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="Bautizo_padrino_id">Padrino <span></span></label>
+                    <label class="col-sm-3 control-label" for="Confirmacion_padrino_id">Padrino <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
                         <?php
@@ -197,7 +197,7 @@ Util::tsRegisterAssetJs('_form.js');
                     <?php echo $form->error($model, 'padrino_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="Bautizo_madrina_id">Madrina <span></span></label>
+                    <label class="col-sm-3 control-label" for="Confirmacion_madrina_id">Madrina <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
                         <?php
@@ -265,7 +265,7 @@ Util::tsRegisterAssetJs('_form.js');
                         'class' => '',
                     ),
                     'widgetOptions' => array(
-                        'data' => CHtml::listData(Libro::model()->de_tipo(Libro::BAUTIZOS)->findAll(), 'id', 'tomo','ano'),
+                        'data' => CHtml::listData(Libro::model()->de_tipo(Libro::CONFIRMACIONES)->findAll(), 'id', 'tomo','ano'),
 //                                    'empty'=>'seleccione',
                         'htmlOptions' => array(),
                     )

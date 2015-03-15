@@ -357,6 +357,16 @@
                                 <i class="fa fa-child"></i> <span>Bautizos</span> 
                             </a>
                         </li>
+                        <li class="principal ">
+                            <a href="<?php echo Yii::app()->baseUrl . "/matrimonios/matrimonio/admin" ?>">
+                                <i class="fa fa-slideshare"></i> <span>Matrimonios</span> 
+                            </a>
+                        </li>
+                        <li class="principal ">
+                            <a href="<?php echo Yii::app()->baseUrl . "/confirmaciones/confirmacion/admin" ?>">
+                                <i class="fa fa-book"></i> <span>Confirmaciones</span> 
+                            </a>
+                        </li>
                         <!--                        <li>
                                                     <a href="pages/calendar.html">
                                                         <i class="fa fa-calendar"></i> <span>Calendar</span>
