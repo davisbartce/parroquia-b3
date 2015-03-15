@@ -70,7 +70,7 @@ Util::tsRegisterAssetJs('_form_mini.js');
                 <?php echo $formPersona->textFieldGroup($model, 'lugar_nacimiento', array('maxlength' => 60,'wrapperHtmlOptions' => array(
 					'class' => 'input-popover',
                     ),)) ?>
-              <?php echo $formPersona->dropDownListGroup($model, 'estado_civil',array( 'wrapperHtmlOptions' => array('class' => 'input-popover',),'widgetOptions' => array('data' => array('SOLTERO(A)' => 'SOLTERO(A)','CASADO(A)' => 'CASADO(A)','DIVORCIADO(A)' => 'DIVORCIADO(A)','VIUDO(A)' => 'VIUDO(A)',),'htmlOptions' => array(),) )) ?>
+              <?php // echo $formPersona->dropDownListGroup($model, 'estado_civil',array( 'wrapperHtmlOptions' => array('class' => 'input-popover',),'widgetOptions' => array('data' => array('SOLTERO(A)' => 'SOLTERO(A)','CASADO(A)' => 'CASADO(A)','DIVORCIADO(A)' => 'DIVORCIADO(A)','VIUDO(A)' => 'VIUDO(A)',),'htmlOptions' => array(),) )) ?>
             
             
             <!--</div>                                <div class="form-group">-->

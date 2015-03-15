@@ -1,12 +1,14 @@
 <?php
-/** @var BautizoController $this */
-/** @var Bautizo $model */
+/** @var MatrimonioController $this */
+/** @var Matrimonio $model */
+
 ?>
+
 <aside class="right-side">
     <section class="content-header">
         <h1 class="header-title">
               <!--<small>-->
-            <i class="fa fa-child"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
+            <i class="fa fa-slideshare"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
                 
              </div>-->
             <!--</small>-->
@@ -25,7 +27,7 @@
         <div class="col-lg-7   col-sm-7 ">
             <div class="box box-solid box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Información del Bautizo</h3>
+                    <h3 class="box-title">Información del Matrimonio</h3>
 <!--                    <div class="box-tools pull-right no-print">
                         <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -42,38 +44,38 @@
                             'data' => $model,
                             'attributes' => array(
 //                                    'persona_id',
-                                array(
-                                    'name' => 'persona_id',
-                                    'value' => $model->persona->nombres . ' ' . $model->persona->apellidos
-                                ),
-                                'fecha_bautizo',
+//                                array(
+//                                    'name' => 'novio_id',
+//                                    'value' => $model->novio->nombres . ' ' . $model->novio->apellidos
+//                                ),
+                                'fecha_matrimonio',
                                 'iglesia',
 //                            'padre_parroquia_id',
                                 array(
                                     'name' => 'padre_parroquia_id',
                                     'value' => $model->padre->nombres . ' ' . $model->padre->apellidos
                                 ),
-                                array(
-                                    'name' => 'papa_id',
-                                    'value' => $model->papa_id ? $model->papa->nombres . ' ' . $model->papa->apellidos : ""
-                                ),
-                                array(
-                                    'name' => 'mama_id',
-                                    'value' => $model->mama_id ? $model->mama->nombres . ' ' . $model->mama->apellidos : ""
-                                ),
+//                                array(
+//                                    'name' => 'papa_novio_id',
+//                                    'value' => $model->papa_novio_id ? $model->papa_novio->nombres . ' ' . $model->papa_novio->apellidos : ""
+//                                ),
+//                                array(
+//                                    'name' => 'mama_novio_id',
+//                                    'value' => $model->mama_novio_id ? $model->mama_novio->nombres . ' ' . $model->mama_novio->apellidos : ""
+//                                ),
 //                            'papa_id',
 //                            'mama_id',
-                                'feligreses_de',
-                                array(
-                                    'name' => 'padrino_id',
-                                    'value' => $model->padrino_id ? $model->padrino->nombres . ' ' . $model->padrino->apellidos : '<span class="null">No asignado</span>',
-                                    'type' => 'html'
-                                ),
-                                array(
-                                    'name' => 'madrina_id',
-                                    'value' => $model->madrina_id ? $model->madrina->nombres . ' ' . $model->madrina->apellidos : '<span class="null">No asignado</span>',
-                                    'type' => 'html'
-                                ),
+//                                'feligreses_de',
+//                                array(
+//                                    'name' => 'padrino_id',
+//                                    'value' => $model->padrino_id ? $model->padrino->nombres . ' ' . $model->padrino->apellidos : '<span class="null">No asignado</span>',
+//                                    'type' => 'html'
+//                                ),
+//                                array(
+//                                    'name' => 'madrina_id',
+//                                    'value' => $model->madrina_id ? $model->madrina->nombres . ' ' . $model->madrina->apellidos : '<span class="null">No asignado</span>',
+//                                    'type' => 'html'
+//                                ),
 //                            'madrina_id',
 //        'tomo_id',
 //        'pagina',
@@ -90,6 +92,79 @@
 
 
                     </div><!-- /.box-body -->
+                    <br>
+                    <div class="row">
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="box box-danger">
+                            <div class="box-header">
+                                <i class="fa fa-male"></i>
+                                <h3 class="box-title">Novio</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+
+                                <?php
+                        $this->widget('booster.widgets.TbDetailView', array(
+                            'data' => $model,
+                            'attributes' => array(
+//                                    'persona_id',
+                                array(
+                                    'name' => 'novio_id',
+                                    'value' => $model->novio->nombres . ' ' . $model->novio->apellidos
+                                ),
+                                array(
+                                    'name' => 'papa_novio_id',
+                                    'value' => $model->papa_novio_id ? $model->papa_novio->nombres . ' ' . $model->papa_novio->apellidos : ""
+                                ),
+                                array(
+                                    'name' => 'mama_novio_id',
+                                    'value' => $model->mama_novio_id ? $model->mama_novio->nombres . ' ' . $model->mama_novio->apellidos : ""
+                                ),
+                                'testigo_novio_1',
+                                'testigo_novio_2',
+                            ),
+                        ));
+                        ?>
+
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <i class="fa fa-female"></i>
+                                <h3 class="box-title">Novia</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+
+    <?php
+                        $this->widget('booster.widgets.TbDetailView', array(
+                            'data' => $model,
+                            'attributes' => array(
+//                                    'persona_id',
+                                array(
+                                    'name' => 'novia_id',
+                                    'value' => $model->novia->nombres . ' ' . $model->novia->apellidos
+                                ),
+                                array(
+                                    'name' => 'papa_novia_id',
+                                    'value' => $model->papa_novia_id ? $model->papa_novia->nombres . ' ' . $model->papa_novia->apellidos : ""
+                                ),
+                                array(
+                                    'name' => 'mama_novia_id',
+                                    'value' => $model->mama_novia_id ? $model->mama_novia->nombres . ' ' . $model->mama_novia->apellidos : ""
+                                ),
+                                 'testigo_novia_1',
+                                'testigo_novia_2',
+                            ),
+                        ));
+                        ?>
+
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                </div>
+
                    
                 </div>
 <!--                 <div class="overlay"></div>
@@ -148,7 +223,7 @@
                 </div><!-- /.box-body -->
                 <!--</div>-->
             </div>
-            <div class="box box-solid box-warning">
+            <div class="box   box-solid box-warning">
                 <div class="box-header">
                   <i class="fa fa-university"></i>   <h3 class="box-title">RC  </h3>
 <!--                    <div class="box-tools pull-right no-print">
@@ -182,6 +257,7 @@
                                 'rc_tomo',
                                 'rc_folio',
                                 'rc_acta',
+                                'rc_lugar',
                                 'rc_fecha',
                             ),
                         ));
