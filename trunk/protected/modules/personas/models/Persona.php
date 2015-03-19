@@ -17,6 +17,13 @@ class Persona extends BasePersona {
         return Yii::t('app', 'Persona|Personas', $n);
     }
     
+     public function relations() {
+        return array(
+            'direccions' => array(self::HAS_MANY, 'Direccion', 'persona_id'),
+             'bautizos' => array(self::BELONGS_TO, 'Bautizo', 'persona_id'),
+        );
+    }
+    
       public function attributeLabels() {
         return array(
                 'id' => Yii::t('app', 'ID'),
@@ -46,22 +53,17 @@ class Persona extends BasePersona {
     }
 
     public function rules() {
-        return array(
+        return array_merge(parent::rules(),array(
             array('fecha_nacimiento', 'uniqueValidator', 'attributeName' => array(
                     'nombres', 'apellidos', 'fecha_nacimiento')),
+               array('documento',  'unique'),
 //            array('nombres', 'unique', 'criteria'=>array(
 //            'condition'=>'`apellidos`=:secondKey AND `fecha_nacimiento`=:thirdKey ',
 //            'params'=>array(
 //                ':secondKey'=>$this->apellidos,
 //                ':thirdKey'=>$this->fecha_nacimiento
-//            )
+            )
 //        )),
-            array('nombres, apellidos, fecha_nacimiento', 'required'),
-            array('documento', 'unique'),
-            array('documento', 'length', 'max' => 20),
-            array('nombres, apellidos, lugar_nacimiento', 'length', 'max' => 60),
-            array('documento, lugar_nacimiento', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, documento, campo_completo,nombres, apellidos, fecha_nacimiento, lugar_nacimiento', 'safe', 'on' => 'search'),
         );
     }
     

@@ -49,7 +49,8 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        53<sup style="font-size: 20px">%</sup>
+                                        <!--53<sup style="font-size: 20px">%</sup>-->
+                                       <?php echo Matrimonio::model()->count() ?>
                                     </h3>
                                     <p>
                                         Matrimonios
@@ -69,6 +70,7 @@
                                 <div class="inner">
                                     <h3>
                                         44
+                                       <?php // echo Comunion::model()->count() ?>
                                     </h3>
                                     <p>
                                         Comuniones
@@ -87,7 +89,8 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        65
+                                        <?php echo Confirmacion::model()->count() ?>
+                                        
                                     </h3>
                                     <p>
                                         Confirmaciones
