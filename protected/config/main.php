@@ -33,6 +33,7 @@ return array(
         'application.modules.libros.models.*',
         'application.modules.matrimonios.models.*',
         'application.modules.confirmaciones.models.*',
+        'application.modules.comuniones.models.*',
     ),
     'modules' => array(
         'dashboard',
@@ -42,6 +43,7 @@ return array(
         'libros',
         'matrimonios',
         'confirmaciones',
+        'comuniones',
         // uncomment the following to enable the Gii tool
         'cruge' => array(
             'tableprefix' => 'cruge_',
@@ -211,6 +213,6 @@ return array(
     // using Yii::app()->params['paramName']
     'params' => array(
         // this is used in contact page
-        'adminEmail' => 'webmaster@example.com',
+        'adminEmail' => 'davisbartce@gmail.com',
     ),
 );

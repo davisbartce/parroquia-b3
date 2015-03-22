@@ -367,6 +367,11 @@
                                 <i class="fa fa-book"></i> <span>Confirmaciones</span> 
                             </a>
                         </li>
+                        <li class="principal ">
+                            <a href="<?php echo Yii::app()->baseUrl . "/comuniones/comunion/admin" ?>">
+                                <i class="fa fa-bell"></i> <span>Comuniones</span> 
+                            </a>
+                        </li>
                         <!--                        <li>
                                                     <a href="pages/calendar.html">
                                                         <i class="fa fa-calendar"></i> <span>Calendar</span>
