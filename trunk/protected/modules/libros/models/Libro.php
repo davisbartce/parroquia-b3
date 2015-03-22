@@ -10,6 +10,7 @@ class Libro extends BaseLibro
      const MATRIMONIOS = 'MATRIMONIOS';
      const BAUTIZOS = 'BAUTIZOS';
      const CONFIRMACIONES = 'CONFIRMACIONES';
+     const COMUNIONES = 'PRIMERAS COMUNIONES';
     public static function model($className = __CLASS__)
     {
         return parent::model($className);

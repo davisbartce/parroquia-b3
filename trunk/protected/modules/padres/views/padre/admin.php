@@ -45,7 +45,7 @@ $this->menu = array(
                             'fecha_nacimiento',
                             array(
                                 'class' => 'CButtonColumn',
-                                'template' => '{update} {delete}',
+                                'template' => '{update}',
                                 'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -60,12 +60,12 @@ $this->menu = array(
                                         'imageUrl' => false,
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
                                     ),
-                                    'delete' => array(
-                                        'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
-                                        'options' => array('title' => 'Eliminar'),
-                                        'imageUrl' => false,
-                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
-                                    ),
+//                                    'delete' => array(
+//                                        'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
+//                                        'options' => array('title' => 'Eliminar'),
+//                                        'imageUrl' => false,
+//                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
+//                                    ),
                                 ),
                                 'htmlOptions' => array(
                                     'width' => '100px'

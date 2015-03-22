@@ -69,8 +69,8 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
-                                       <?php // echo Comunion::model()->count() ?>
+                                        
+                                       <?php echo Comunion::model()->count() ?>
                                     </h3>
                                     <p>
                                         Comuniones

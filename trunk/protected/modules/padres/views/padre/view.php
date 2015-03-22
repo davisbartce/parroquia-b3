@@ -1,27 +1,69 @@
 <?php
 /** @var PadreController $this */
 /** @var Padre $model */
+?>
+<aside class="right-side">
+    <section class="content-header">
+        <h1 class="header-title">
+              <!--<small>-->
+            <i class="fa fa-male"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
+                
+             </div>-->
+            <!--</small>-->
+        </h1>
+    </section>
 
-$this->menu=array(
-    //array('label' => Yii::t('AweCrud.app', 'List') . ' ' . Padre::label(2), 'icon' => 'list', 'url' => array('index')),
-    array('label' => "<div>" . CHtml::image(Yii::app()->baseUrl . "/images/topbar/administrar.png") . "</div>" . Yii::t('AweCrud.app', 'Manage'), 'url' => array('admin')),
-    array('label' => "<div>" . CHtml::image(Yii::app()->baseUrl . "/images/topbar/nuevo.png") . "</div>" .  Yii::t('AweCrud.app', 'Create'), 'url' => array('create')),
-    //array('label' => Yii::t('AweCrud.app', 'View'), 'icon' => 'eye-open', 'itemOptions'=>array('class'=>'active')),
-    //array('label' => Yii::t('AweCrud.app', 'Update'), 'icon' => 'pencil', 'url' => array('update', 'id' => $model->id)),
-    //array('label' => Yii::t('AweCrud.app', 'Delete'), 'icon' => 'trash', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => Yii::t('AweCrud.app', 'Are you sure you want to delete this item?'))),
-    
-);
+    <div class="col-lg-12   col-sm-12 ">
+
+        <br>
+        <!--<div class="panel panel-informacion">-->
+        <!--<div class="panel-heading">-->
+        <!--<h3 class="panel-title" style="display: inline-block"> Bautizo </h3>--> 
+        <!--</div>-->
+
+        <!--            <div class="panel-body">-->
+        <div class="col-lg-12   col-sm-12 ">
+            <div class="box box-solid box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Información del Padre</h3>
+                    <!--                    <div class="box-tools pull-right no-print">
+                                            <button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                            <button class="btn btn-primary btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                        </div>-->
+                    <!--                        <div class="box-tools pull-right">
+                                                <div class="label bg-aqua">Label</div>
+                                            </div>-->
+                </div>
+                <div class="box-body">
+                    <div class="">
+
+<?php
+$this->widget('booster.widgets.TbDetailView', array(
+    'data' => $model,
+    'attributes' => array(
+        'nombres',
+        'apellidos',
+        'fecha_nacimiento',
+    ),
+));
 ?>
 
-<fieldset>
-    <legend><?php echo Yii::t('AweCrud.app', 'View'); ?> </legend>
+                    </div><!-- /.box-body -->
 
-<?php $this->widget('booster.widgets.TbDetailView',array(
-	'data' => $model,
-	'attributes' => array(
-                  'Nombres',
-             'Apellidos',
-             'fecha_nacimiento',
-	),
-)); ?>
-</fieldset>
+                </div>
+                <!--                 <div class="overlay"></div>
+                                    <div class="loading-img"></div>-->
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    <!--</div>-->
+
+
+
+
+</aside>
