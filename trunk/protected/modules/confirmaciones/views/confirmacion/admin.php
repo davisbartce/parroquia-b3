@@ -44,7 +44,7 @@ $this->menu = array(
                         'columns' => array(
                             array(
                                 'name'=>'persona_id',
-                                'value'=>'$data->persona->nombres." ".$data->persona->apellidos'
+                                'value'=>'$data->persona->campo_completo'
                             ),
 //                            'persona_id',
                             'fecha_confirmacion',
@@ -52,16 +52,16 @@ $this->menu = array(
 //                            'padre_parroquia_id',
                               array(
                                 'name'=>'padre_parroquia_id',
-                                'value'=>'$data->padre->nombres." ".$data->persona->apellidos'
+                                'value'=>'$data->padre->nombres." ".$data->padre->apellidos'
                             ),
                             
                              array(
                                 'name'=>'papa_id',
-                                'value'=>'$data->papa->nombres." ".$data->papa->apellidos'
+                                'value'=>'$data->papa->campo_completo'
                             ),
                              array(
                                 'name'=>'mama_id',
-                                'value'=>'$data->mama->nombres." ".$data->mama->apellidos'
+                                'value'=>'$data->mama->campo_completo'
                             ),
 //                            'papa_id',
 //                            'mama_id',
