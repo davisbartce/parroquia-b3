@@ -129,7 +129,7 @@ Util::tsRegisterAssetJs('_form.js');
                 ?>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="Confirmacion_papa_id">Papa <span ></span></label>
+                    <label class="col-sm-3 control-label" for="Confirmacion_papa_id">Papá <span ></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
                         <?php
@@ -152,7 +152,7 @@ Util::tsRegisterAssetJs('_form.js');
                     <?php echo $form->error($model, 'papa_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 control-label" for="Confirmacion_mama_id">Mama <span></span></label>
+                    <label class="col-sm-3 control-label" for="Confirmacion_mama_id">Mamá <span></span></label>
                     <div class=" col-sm-9">
                         <!--<div class="input-group">-->
                         <?php
