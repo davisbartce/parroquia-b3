@@ -52,10 +52,18 @@ $this->menu = array(
 //                            'padre_parroquia_id',
                               array(
                                 'name'=>'padre_parroquia_id',
-                                'value'=>'$data->padre->nombres." ".$data->persona->apellidos'
+                                'value'=>'$data->padre->nombres." ".$data->padre->apellidos'
                             ),
-                            'papa_id',
-                            'mama_id',
+                              array(
+                                'name'=>'papa_id',
+                                'value'=>'$data->papa->campo_completo'
+                            ),
+                             array(
+                                'name'=>'mama_id',
+                                'value'=>'$data->mama->campo_completo'
+                            ),
+//                            'papa_id',
+//                            'mama_id',
                             /*
                               'feligreses_de',
                               'padrino_id',

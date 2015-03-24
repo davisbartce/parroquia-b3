@@ -39,12 +39,24 @@ $this->menu = array(
                     'type' => 'striped bordered hover advance',
                     'dataProvider' => $model->search(),
                     'columns' => array(
+                         array(
+                                'name'=>'novio_id',
+                                'value'=>'$data->novio->campo_completo'
+                            ),
+                         array(
+                                'name'=>'novia_id',
+                                'value'=>'$data->novia->campo_completo'
+                            ),
                         'fecha_matrimonio',
                         'iglesia',
-                        'padre_parroquia_id',
-                        'novio_id',
-                        'papa_novio_id',
-                        'mama_novio_id',
+//                        'padre_parroquia_id',
+                        array(
+                                'name'=>'padre_parroquia_id',
+                                'value'=>'$data->padre->nombres." ".$data->padre->apellidos'
+                            ),
+//                        'novio_id',
+//                        'papa_novio_id',
+//                        'mama_novio_id',
                         /*
                           'testigo_novio_1',
                           'testigo_novio_2',
