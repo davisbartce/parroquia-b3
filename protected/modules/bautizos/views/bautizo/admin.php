@@ -44,7 +44,7 @@ $this->menu = array(
                         'columns' => array(
                             array(
                                 'name'=>'persona_id',
-                                'value'=>'$data->persona->nombres." ".$data->persona->apellidos'
+                                'value'=>'$data->persona->campo_completo'
                             ),
 //                            'persona_id',
                             'fecha_bautizo',

@@ -4,7 +4,7 @@ Yii::import('personas.models._base.BasePersona');
 
 class Persona extends BasePersona {
 
-        public $campo_completo;
+        private $campo_completo;
     
     /**
      * @return Persona
@@ -45,7 +45,7 @@ class Persona extends BasePersona {
         $criteria->compare('apellidos', $this->apellidos, true);
         $criteria->compare('fecha_nacimiento', $this->fecha_nacimiento, true);
         $criteria->compare('lugar_nacimiento', $this->lugar_nacimiento, true);
-//        $criteria->compare('campo_completo', $this->lugar_nacimiento, true);
+        $criteria->compare('CONCAT(IFNULL(CONCAT(t.nombres," "),""),IFNULL(t.apellidos,""))', $this->campo_completo, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -57,6 +57,7 @@ class Persona extends BasePersona {
             array('fecha_nacimiento', 'uniqueValidator', 'attributeName' => array(
                     'nombres', 'apellidos', 'fecha_nacimiento')),
                array('documento',  'unique'),
+            array('campo_completo', 'safe', 'on' => 'search'), 
 //            array('nombres', 'unique', 'criteria'=>array(
 //            'condition'=>'`apellidos`=:secondKey AND `fecha_nacimiento`=:thirdKey ',
 //            'params'=>array(

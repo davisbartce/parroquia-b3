@@ -7,6 +7,7 @@ class Bautizo extends BaseBautizo
     /**
      * @return Bautizo
      */
+   
     public static function model($className = __CLASS__)
     {
         return parent::model($className);
@@ -16,6 +17,12 @@ class Bautizo extends BaseBautizo
     {
         return Yii::t('app', 'Bautizo|Bautizos', $n);
     }
+    
+//    public function rules(){
+//        return array_merge(parent::rules(),array(
+//            array('nombre_completo', 'safe', 'on' => 'search'), 
+//        ));
+//    }
       public function relations() {
         return array(
                 'persona' => array(self::BELONGS_TO, 'Persona', 'persona_id'),
