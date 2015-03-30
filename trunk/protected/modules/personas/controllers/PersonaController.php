@@ -76,6 +76,17 @@ class PersonaController extends AweController {
          
          
     }
+    public function actionReporteDashboard() {
+        
+        Persona::model()->generateColumnReport(date('01/01/Y'), date('31/12/Y'));
+        
+          if (Yii::app()->request->isAjaxRequest) {
+        
+         $this->renderPartial('modal', array( 'model'=>$model), false, true);
+          }
+         
+         
+    }
     
     
 

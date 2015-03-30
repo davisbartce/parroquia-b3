@@ -89,6 +89,50 @@ class Persona extends BasePersona {
         $this->campo_completo = $campo_completo;
         return $this->campo_completo;
     }
+    
+    public function generateColumnReport($inicio, $fin) {
+        $inicio = DateTime::createFromFormat('d/m/Y', $inicio)->setTime(0, 0, 0);
+        $fin = DateTime::createFromFormat('d/m/Y', $fin)->setTime(0, 0, 0);
+       
+        $interval = DateInterval::createFromDateString('1 day');
+        $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
+        $dias = 0;
+        $report = array();
+        $report['title']['text'] = 'Mails';
+        $report['credits']['enabled'] = false;
+        $report['chart']['height'] = '320';
+        $report['subtitle']['text'] = ' Desde: ' . $inicio->format('d-m-Y') . '  Hasta: ' . $fin->format('d-m-Y');
+        $report['xAxis']['labels'] = array("rotation" => -45);
+        $report['yAxis']['min'] = 0;
+        $report['yAxis']['title']['text'] = "Número de Mails";
+        $report['yAxis']['allowDecimals'] = false;
+        $report['xAxis']['categories'] = array();
+        $report['series'] = array();
+        foreach ($period as $date) {
+            $dias++;
+        }
+        switch (true) {
+            case ($dias >= 84):
+                $interval = DateInterval::createFromDateString('1 month');
+                $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
+                    $data = array();
+                    foreach ($period as $date) {
+                        $date->modify('first day of this month');
+                        $inicio = $date->format('Y-m-d H:i:s');
+                        $categoria = $date->format('F');
+                        $date->modify('last day of this month');
+                        $date->add(new DateInterval('PT23H59M59S'));
+                        $fin = $date->format('Y-m-d H:i:s');
+                        $report['xAxis']['categories'][] = $categoria;
+                        array_push($data, $this->consulta( $inicio, $fin));
+                    }
+                    array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column')
+                    );
+                break;
+        }
+
+        return $report;
+    }
 
 
 }
