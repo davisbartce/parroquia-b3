@@ -4,8 +4,8 @@ Yii::import('personas.models._base.BasePersona');
 
 class Persona extends BasePersona {
 
-        private $campo_completo;
-    
+    private $campo_completo;
+
     /**
      * @return Persona
      */
@@ -16,23 +16,23 @@ class Persona extends BasePersona {
     public static function label($n = 1) {
         return Yii::t('app', 'Persona|Personas', $n);
     }
-    
-     public function relations() {
+
+    public function relations() {
         return array(
             'direccions' => array(self::HAS_MANY, 'Direccion', 'persona_id'),
-             'bautizos' => array(self::BELONGS_TO, 'Bautizo', 'persona_id'),
+            'bautizos' => array(self::BELONGS_TO, 'Bautizo', 'persona_id'),
         );
     }
-    
-      public function attributeLabels() {
+
+    public function attributeLabels() {
         return array(
-                'id' => Yii::t('app', 'ID'),
-                'documento' => Yii::t('app', 'Documento'),
-                'nombres' => Yii::t('app', 'Nombres'),
-                'apellidos' => Yii::t('app', 'Apellidos'),
-                'fecha_nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
-                'lugar_nacimiento' => Yii::t('app', 'Lugar Nacimiento'),
-                'campo_completo' => Yii::t('app', 'Persona'),
+            'id' => Yii::t('app', 'ID'),
+            'documento' => Yii::t('app', 'Documento'),
+            'nombres' => Yii::t('app', 'Nombres'),
+            'apellidos' => Yii::t('app', 'Apellidos'),
+            'fecha_nacimiento' => Yii::t('app', 'Fecha Nacimiento'),
+            'lugar_nacimiento' => Yii::t('app', 'Lugar Nacimiento'),
+            'campo_completo' => Yii::t('app', 'Persona'),
         );
     }
 
@@ -53,21 +53,21 @@ class Persona extends BasePersona {
     }
 
     public function rules() {
-        return array_merge(parent::rules(),array(
+        return array_merge(parent::rules(), array(
             array('fecha_nacimiento', 'uniqueValidator', 'attributeName' => array(
                     'nombres', 'apellidos', 'fecha_nacimiento')),
-               array('documento',  'unique'),
-            array('campo_completo', 'safe', 'on' => 'search'), 
+            array('documento', 'unique'),
+            array('campo_completo', 'safe', 'on' => 'search'),
 //            array('nombres', 'unique', 'criteria'=>array(
 //            'condition'=>'`apellidos`=:secondKey AND `fecha_nacimiento`=:thirdKey ',
 //            'params'=>array(
 //                ':secondKey'=>$this->apellidos,
 //                ':thirdKey'=>$this->fecha_nacimiento
-            )
+                )
 //        )),
         );
     }
-    
+
     public function getListSelect2($search_value) {
 //        echo $search_value;
         $command = Yii::app()->db->createCommand()
@@ -78,22 +78,22 @@ class Persona extends BasePersona {
                 ->limit(10);
         return $command->queryAll();
     }
-    
-     public function getCampo_completo() {
+
+    public function getCampo_completo() {
         if (!$this->campo_completo)
             $this->campo_completo = $this->nombres . ' ' . $this->apellidos;
         return $this->campo_completo;
     }
-    
+
     public function setCampo_completo($campo_completo) {
         $this->campo_completo = $campo_completo;
         return $this->campo_completo;
     }
-    
+
     public function generateColumnReport($inicio, $fin) {
         $inicio = DateTime::createFromFormat('d/m/Y', $inicio)->setTime(0, 0, 0);
         $fin = DateTime::createFromFormat('d/m/Y', $fin)->setTime(0, 0, 0);
-       
+
         $interval = DateInterval::createFromDateString('1 day');
         $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
         $dias = 0;
@@ -111,28 +111,31 @@ class Persona extends BasePersona {
         foreach ($period as $date) {
             $dias++;
         }
-        switch (true) {
-            case ($dias >= 84):
-                $interval = DateInterval::createFromDateString('1 month');
-                $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
-                    $data = array();
-                    foreach ($period as $date) {
-                        $date->modify('first day of this month');
-                        $inicio = $date->format('Y-m-d H:i:s');
-                        $categoria = $date->format('F');
-                        $date->modify('last day of this month');
-                        $date->add(new DateInterval('PT23H59M59S'));
-                        $fin = $date->format('Y-m-d H:i:s');
-                        $report['xAxis']['categories'][] = $categoria;
-                        array_push($data, $this->consulta( $inicio, $fin));
-                    }
-                    array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column')
-                    );
-                break;
+        $interval = DateInterval::createFromDateString('1 month');
+        $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
+        $data = array();
+        foreach ($period as $date) {
+            $date->modify('first day of this month');
+            $inicio = $date->format('Y-m-d H:i:s');
+            $categoria = $date->format('F');
+            $date->modify('last day of this month');
+            $date->add(new DateInterval('PT23H59M59S'));
+            $fin = $date->format('Y-m-d H:i:s');
+            $report['xAxis']['categories'][] = $categoria;
+            var_dump($inicio, $fin);
+//                        array_push($data, $this->consulta( $inicio, $fin));
         }
+//                    array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column')
+//                    );
 
         return $report;
     }
 
+    public function obtenerDatos($inicio, $fin) {
+        $command = Yii::app()->db->createCommand()
+                ->select('t.id ,t.nombre as text')
+                ->from('contacto t')
+                ->where('t.estado = :estado', array(':estado' => Cuenta::ESTADO_ACTIVO));
+    }
 
 }
