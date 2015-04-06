@@ -692,6 +692,12 @@ class Util {
         $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
         return $meses[date('n') - 1];
     }
+    
+    
+    public static function retornarMestraduciso($n) {
+        $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+        return $meses[$n - 1];
+    }
 
 }
 ?>

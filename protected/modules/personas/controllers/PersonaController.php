@@ -233,7 +233,11 @@ class PersonaController extends AweController {
     }
     public function actionReporte() {
 //        var_dump($search_value);
-        Persona::model()->generateColumnReport("01/01/2015", "31/12/2015");
+        $consulta=Persona::model()->generateColumnReport("01/01/2015", "31/12/2015");
+        
+        $this->renderPartial('_reporte', array(
+                'consulta' => $consulta,
+                    ), false, true);
 //        Persona::model()->generateColumnReport("2015-01-01", "2015-12-31");
 //        if (Yii::app()->request->isAjaxRequest) {
 //            echo CJSON::encode(Persona::model()->getListSelect2($search_value));
