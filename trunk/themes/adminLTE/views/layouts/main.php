@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                            ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                             ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
         <!-- Select2 -->
@@ -44,7 +44,7 @@
 
     <body class="skin-blue">
         <header class="header ">
-            <a href="<?php echo  Yii::app()->baseUrl?>" class="logo">
+            <a href="<?php echo Yii::app()->baseUrl ?>" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Sistema Parroquial
             </a>
@@ -384,6 +384,8 @@
             </aside>
 
 
+
+
             <!-- Content Header (Page header) -->
 <!--                <section class="content-header">
                 <h1>
@@ -403,10 +405,21 @@
 <!--                        <section class="col-lg-12 connectedSortable">                            
 
 </section>-->
-            <?php echo $content; ?>
-            <!--</div>-->
-            <!--</section>-->
-            <!--            </aside>-->
+            <div class="content-wrapper" style="min-height: 918px;">
+                <?php echo $content; ?>
+                <!--</div>-->
+                <!--</section>-->
+                <!--            </aside>-->
+            </div>   <!-- Wrapper -->
+            
+            <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 2.0
+        </div>
+        <strong>Copyright © 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+      </footer>
+            
+            
         </div>   <!-- Wrapper -->
         <div class="row">
             <?php

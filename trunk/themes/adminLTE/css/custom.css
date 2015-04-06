@@ -108,3 +108,39 @@ background: #FFF!important;
   width: auto;
 }
 
+/*@media (min-width: 768px){
+.sidebar-collapse .content-wrapper, .sidebar-collapse .right-side, .sidebar-collapse .main-footer {
+  margin-left: 0;
+}
+}*/
+
+.main-footer {
+  background: #fff;
+  padding: 15px;
+  color: #444;
+  border-top: 1px solid #eee;
+}
+
+/*.content-wrapper, .right-side, .main-footer {
+  -webkit-transition: -webkit-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -moz-transition: -moz-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -o-transition: -o-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  transition: transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -webkit-transition: margin-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -o-transition: margin-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  transition: margin-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  margin-left: 230px;
+  z-index: 820;
+}*/
+
+ .main-footer {
+  -webkit-transition: -webkit-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -moz-transition: -moz-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -o-transition: -o-transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  transition: transform .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -webkit-transition: margin-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  -o-transition: margin-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  transition: margin-left .3s cubic-bezier(.32, 1.25, .375, 1.15);
+  margin-left: 230px;
+  z-index: 820;
+}
