@@ -98,13 +98,13 @@ class Persona extends BasePersona {
         $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
         $dias = 0;
         $report = array();
-        $report['title']['text'] = 'Mails';
+        $report['title']['text'] = 'Reporte';
         $report['credits']['enabled'] = false;
         $report['chart']['height'] = '320';
         $report['subtitle']['text'] = ' Desde: ' . $inicio->format('d-m-Y') . '  Hasta: ' . $fin->format('d-m-Y');
         $report['xAxis']['labels'] = array("rotation" => -45);
         $report['yAxis']['min'] = 0;
-        $report['yAxis']['title']['text'] = "Número de Mails";
+        $report['yAxis']['title']['text'] = "Número";
         $report['yAxis']['allowDecimals'] = false;
         $report['xAxis']['categories'] = array();
         $report['series'] = array();
@@ -114,28 +114,103 @@ class Persona extends BasePersona {
         $interval = DateInterval::createFromDateString('1 month');
         $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
         $data = array();
-        foreach ($period as $date) {
-            $date->modify('first day of this month');
-            $inicio = $date->format('Y-m-d H:i:s');
-            $categoria = $date->format('F');
-            $date->modify('last day of this month');
-            $date->add(new DateInterval('PT23H59M59S'));
-            $fin = $date->format('Y-m-d H:i:s');
-            $report['xAxis']['categories'][] = $categoria;
-            var_dump($inicio, $fin);
-//                        array_push($data, $this->consulta( $inicio, $fin));
+        $series = array('BAUTIZOS', 'MATRIMONIOS', 'COMUNIONES', 'CONFIRMACIONES');
+        foreach ($series as $value) {
+            $data = array();
+            foreach ($period as $date) {
+                $date->modify('first day of this month');
+                $inicio = $date->format('Y-m-d H:i:s');
+//                $categoria = $date->format('F');
+                $categoria = Util::retornarMestraduciso($date->format('m'));
+                $date->modify('last day of this month');
+                $date->add(new DateInterval('PT23H59M59S'));
+                $fin = $date->format('Y-m-d H:i:s');
+                $report['xAxis']['categories'][] = $categoria;
+//            var_dump($inicio, $fin,$value,$this->obtenerDatosEntidad($inicio, $fin,$value));
+//            var_dump($this->obtenerDatos($inicio, $fin));
+                array_push($data, $this->obtenerDatosEntidad($inicio, $fin,$value));
+//                         array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column'));
+            }
+                    array_push($report['series'], array('name' =>$value, 'data' => $data, 'type' => 'column'));
+//var_dump($data);
         }
-//                    array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column')
-//                    );
+//                    die();
+
+//        var_dump($data);
+//        die();
+//        );
 
         return $report;
     }
 
     public function obtenerDatos($inicio, $fin) {
         $command = Yii::app()->db->createCommand()
-                ->select('t.id ,t.nombre as text')
-                ->from('contacto t')
-                ->where('t.estado = :estado', array(':estado' => Cuenta::ESTADO_ACTIVO));
+                ->select('count(b.id) as count ,"Bautizos" as name')
+                ->from('bautizo b')
+                ->where('b.fecha_bautizo between :inicio AND :fin');
+
+        $command2 = Yii::app()->db->createCommand()
+                ->select('count(m.id) as count ,"Matrimonios" as name')
+                ->from('matrimonio m')
+                ->where('m.fecha_matrimonio between :inicio AND :fin');
+
+        $command->union($command2->text);
+        $command3 = Yii::app()->db->createCommand()
+                ->select('count(c.id) as count ,"Comuniones" as name')
+                ->from('comunion c')
+                ->where('c.fecha_comunion between :inicio AND :fin');
+        $command->union($command3->text);
+        $command4 = Yii::app()->db->createCommand()
+                ->select('count(co.id) as count ,"Confirmaciones" as name')
+                ->from('confirmacion co')
+                ->where('co.fecha_confirmacion between :inicio AND :fin');
+        $command->union($command4->text);
+        $command->params = (array(':inicio' => $inicio, ':fin' => $fin));
+        return $command->queryAll();
+    }
+
+    public function obtenerDatosEntidad($inicio, $fin, $entidad) {
+      
+  $data = array();
+        switch (true) {
+            case $entidad == 'BAUTIZOS':
+//                  var_dump($entidad,'en metodo  BAUTIZOS');
+                $command = Yii::app()->db->createCommand()
+                        ->select('count(b.id) as count ,"Bautizos" as name')
+                        ->from('bautizo b')
+                        ->where('b.fecha_bautizo between :inicio AND :fin');
+                break;
+            case $entidad == 'MATRIMONIOS':
+//                  var_dump($entidad,'en metodo MATRIMONIOS');
+                $command = Yii::app()->db->createCommand()
+                        ->select('count(m.id) as count ,"Matrimonios" as name')
+                        ->from('matrimonio m')
+                        ->where('m.fecha_matrimonio between :inicio AND :fin');
+                break;
+            case $entidad == 'COMUNIONES':
+//                  var_dump($entidad,'en metodo COMUNIONES');
+                $command = Yii::app()->db->createCommand()
+                        ->select('count(c.id) as count ,"Comuniones" as name')
+                        ->from('comunion c')
+                        ->where('c.fecha_comunion between :inicio AND :fin');
+                break;
+            case $entidad == 'CONFIRMACIONES':
+//                  var_dump($entidad,'en metodo CONFIRMACIONES');
+                $command = Yii::app()->db->createCommand()
+                        ->select('count(co.id) as count ,"Confirmaciones" as name')
+                        ->from('confirmacion co')
+                        ->where('co.fecha_confirmacion between :inicio AND :fin');
+                break;
+        }
+
+        $command->params = (array(':inicio' => $inicio, ':fin' => $fin));
+        $options = $command->queryAll();
+        if (!empty($options)) {
+            $data[] = (int) $options['0']['count'];
+        } else {
+            $data[] = (int) '0';
+        }
+        return $data;
     }
 
 }
