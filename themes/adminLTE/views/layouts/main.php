@@ -414,9 +414,9 @@
             
             <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.0
+          <!--<b>Version</b> 2.0-->
         </div>
-        <strong>Copyright © 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        <strong>Copyright © 2015-2016 <a href="#">David Paredes</a>.</strong> All rights reserved.
       </footer>
             
             
