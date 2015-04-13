@@ -20,7 +20,7 @@ class Persona extends BasePersona {
     public function relations() {
         return array(
             'direccions' => array(self::HAS_MANY, 'Direccion', 'persona_id'),
-            'bautizos' => array(self::BELONGS_TO, 'Bautizo', 'persona_id'),
+            'bautizos' => array(self::BELONGS_TO, 'Bautizo', array('id'=>'persona_id')),
         );
     }
 
