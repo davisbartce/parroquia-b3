@@ -1,29 +1,91 @@
 <?php
 /** @var PersonaController $this */
 /** @var Persona $model */
-
-$this->menu=array(
-    //array('label' => Yii::t('AweCrud.app', 'List') . ' ' . Persona::label(2), 'icon' => 'list', 'url' => array('index')),
-    array('label' => "<div>" . CHtml::image(Yii::app()->baseUrl . "/images/topbar/administrar.png") . "</div>" . Yii::t('AweCrud.app', 'Manage'), 'url' => array('admin')),
-    array('label' => "<div>" . CHtml::image(Yii::app()->baseUrl . "/images/topbar/nuevo.png") . "</div>" .  Yii::t('AweCrud.app', 'Create'), 'url' => array('create')),
-    //array('label' => Yii::t('AweCrud.app', 'View'), 'icon' => 'eye-open', 'itemOptions'=>array('class'=>'active')),
-    //array('label' => Yii::t('AweCrud.app', 'Update'), 'icon' => 'pencil', 'url' => array('update', 'id' => $model->id)),
-    //array('label' => Yii::t('AweCrud.app', 'Delete'), 'icon' => 'trash', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => Yii::t('AweCrud.app', 'Are you sure you want to delete this item?'))),
-    
-);
 ?>
 
-<fieldset>
-    <legend><?php echo Yii::t('AweCrud.app', 'View'); ?> </legend>
+<aside class="right-side">
+    <section class="content-header">
+        <h1 class="header-title">
+              <!--<small>-->
+            <i class="fa fa-user"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
+                
+             </div>-->
+            <!--</small>-->
+        </h1>
+    </section>
+    <br>
+    <div class="col-lg-12   col-sm-12 ">
+        <div class="alert alert-info alert-dismissable">
+            <i class="fa fa-info"></i>
+            <!--<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>-->
+            <b><?php echo $model->campo_completo ?></b>
+        </div>
+        <div class="col-lg-5  col-sm-5">
 
-<?php $this->widget('booster.widgets.TbDetailView',array(
-	'data' => $model,
-	'attributes' => array(
-                  'documento',
-             'nombres',
-             'apellidos',
-             'fecha_nacimiento',
-             'lugar_nacimiento',
-	),
-)); ?>
-</fieldset>
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Información</h3>
+                    <div class="box-tools pull-right">
+                        <!--<div class="label bg-aqua">Label</div>-->
+                    </div>
+                </div>
+                <div class="box-body">
+                    <?php
+                    $this->widget('booster.widgets.TbDetailView', array(
+                        'data' => $model,
+                        'attributes' => array(
+                            'documento',
+                            'nombres',
+                            'apellidos',
+                            'fecha_nacimiento',
+                            'lugar_nacimiento',
+                        ),
+                    ));
+                    ?>
+
+                </div><!-- /.box-body -->
+
+                <!--                                <div class="box-footer">
+                                                    <code>.box-footer</code>
+                                                </div> /.box-footer-->
+            </div>
+        </div>
+        <div class="col-lg-7  col-sm-7">
+
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Bautizos</h3>
+                    <div class="box-tools pull-right">
+                        <!--<div class="label bg-aqua">Label</div>-->
+                    </div>
+                </div>
+                <div class="box-body">
+                                            <?php // die('murio'); ?>
+<?php if($model->bautizos) :?>
+                    <?php
+                    
+//                                        var_dump($model->bautizos);
+//                                        die();
+                    $this->widget('booster.widgets.TbDetailView', array(
+                        'data' => $model->bautizos,
+                        'attributes' => array(
+                            'iglesia',
+                            'padre_parroquia_id',
+                            'apellidos',
+                            'fecha_nacimiento',
+                            'lugar_nacimiento',
+                        ),
+                    ));
+                    ?>
+                    <?php endif;?>
+
+                </div><!-- /.box-body -->
+                <!--                                <div class="box-footer">
+                                                    <code>.box-footer</code>
+                                                </div> /.box-footer-->
+            </div>
+        </div>
+
+
+    </div>
+</aside>

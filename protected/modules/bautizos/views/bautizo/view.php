@@ -3,8 +3,8 @@
 /** @var Bautizo $model */
 ?>
 <aside class="right-side">
-    <section class="content-header">
-        <h1 class="header-title">
+    <section class="content-header ">
+        <h1 class="header-title" >
               <!--<small>-->
             <i class="fa fa-child"></i>  <?php echo Yii::t('AweCrud.app', 'View'); ?><!--            <div class="icon">
                 
