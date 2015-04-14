@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                             ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                              ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
         <!-- Select2 -->
@@ -30,6 +30,9 @@
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/morris/morris.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/AdminLTE.css" rel="stylesheet">
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/AdminLTE_v2.css" rel="stylesheet">
+
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/ionicons/css/ionicons.min.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/custom.css" rel="stylesheet">
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/custom.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/slicebox.css" rel="stylesheet">-->
@@ -411,15 +414,15 @@
                 <!--</section>-->
                 <!--            </aside>-->
             </div>   <!-- Wrapper -->
-            
+
             <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <!--<b>Version</b> 2.0-->
-        </div>
-        <strong>Copyright © 2015-2016 <a href="#">David Paredes</a>.</strong> All rights reserved.
-      </footer>
-            
-            
+                <div class="pull-right hidden-xs">
+                    <!--<b>Version</b> 2.0-->
+                </div>
+                <strong>Copyright © 2015-2016 <a href="#">David Paredes</a>.</strong> All rights reserved.
+            </footer>
+
+
         </div>   <!-- Wrapper -->
         <div class="row">
             <?php
