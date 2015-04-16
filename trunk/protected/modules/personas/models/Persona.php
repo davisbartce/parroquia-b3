@@ -21,6 +21,8 @@ class Persona extends BasePersona {
         return array(
             'direccions' => array(self::HAS_MANY, 'Direccion', 'persona_id'),
             'bautizos' => array(self::BELONGS_TO, 'Bautizo', array('id'=>'persona_id')),
+            'comuniones' => array(self::BELONGS_TO, 'Comunion', array('id'=>'persona_id')),
+            'confirmaciones' => array(self::BELONGS_TO, 'Confirmacion', array('id'=>'persona_id')),
         );
     }
 
