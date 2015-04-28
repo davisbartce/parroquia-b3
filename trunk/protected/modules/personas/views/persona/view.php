@@ -104,9 +104,9 @@
                                                 </div>-->
 
                         <div class="info-box">
-                            <span class="info-box-icon bg-green"><i class="fa fa-child"></i></span>
+                            <span class="info-box-icon bg-green"><i class="fa fa-slideshare"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">NO TIENE REGISTRADO CONFIRMACION</span>
+                                <span class="info-box-text">NO TIENE REGISTRADO CONFIRMACIÓN</span>
 
                             </div><!-- /.info-box-content -->
                         </div>

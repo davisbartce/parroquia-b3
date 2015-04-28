@@ -92,7 +92,7 @@ function cerrarpopover() {
 }
 
 function savePersona(form) {
-    alert();
+//    alert();
 
     ajaxValidarFormulario({
         formId: form,
