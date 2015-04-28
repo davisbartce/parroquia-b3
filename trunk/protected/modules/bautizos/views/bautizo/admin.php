@@ -41,10 +41,13 @@ $this->menu = array(
                         'id' => 'bautizo-grid',
                         'type' => 'striped bordered hover advance',
                         'dataProvider' => $model->search(),
+//                        'filters'=>true,
+                        'filter'=>$model,
                         'columns' => array(
                             array(
                                 'name'=>'persona_id',
-                                'value'=>'$data->persona->campo_completo'
+                                'value'=>'$data->persona->campo_completo',
+                                'filter'=> CHtml::listData(Persona::model()->findAll(), 'id', 'nombres'),
                             ),
 //                            'persona_id',
                             'fecha_bautizo',

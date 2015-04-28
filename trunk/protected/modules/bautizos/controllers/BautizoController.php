@@ -128,5 +128,11 @@ class BautizoController extends AweController {
             Yii::app()->end();
         }
     }
+    
+       public function actionAjaxlistPersonasBautizos($search_value) {
+        if (Yii::app()->request->isAjaxRequest) {
+            echo CJSON::encode(Bautizo::model()->getListSelect2($search_value));
+        }
+    }
 
 }
