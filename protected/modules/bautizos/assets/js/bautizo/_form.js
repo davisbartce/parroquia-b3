@@ -21,6 +21,7 @@ $(function() {
         },
         content: function() {
             $('#persona-form').trigger("reset");
+//            alert();
 
             return $("#popover-content-Persona").html(datos);
         }
