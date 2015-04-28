@@ -22,7 +22,7 @@
         </div>
         <div class="col-lg-5  col-sm-5">
 
-            <div class="box box-info">
+            <div class="box box-primary">
                 <div class="box-header">
                     <h3 class="box-title">Información  </h3> 
                     <div class="box-tools pull-right">
@@ -77,7 +77,7 @@
 //                                        var_dump($model->bautizos);
 //                                        die();
                                 $this->widget('booster.widgets.TbDetailView', array(
-                                    'data' => $model->bautizos,
+                                    'data' => $model->confirmaciones,
                                     'attributes' => array(
                                         'iglesia',
                                         'padre_parroquia_id',
@@ -121,7 +121,7 @@
         </div>
         <div class="col-lg-7  col-sm-7">
 
-            <div class="box box-danger">
+            <div class="box box-info">
                 <div class="box-header">
                     <h3 class="box-title">Bautizo</h3>
                     <div class="box-tools pull-right">

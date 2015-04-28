@@ -243,5 +243,7 @@ class PersonaController extends AweController {
 //            echo CJSON::encode(Persona::model()->getListSelect2($search_value));
 //        }
     }
+    
+   
 
 }
