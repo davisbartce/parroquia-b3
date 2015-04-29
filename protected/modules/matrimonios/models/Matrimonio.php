@@ -42,19 +42,18 @@ class Matrimonio extends BaseMatrimonio {
             'rc_fecha' => Yii::t('app', 'Rc Fecha'),
         );
     }
-    
-      public function relations() {
+
+    public function relations() {
         return array(
-                'novio' => array(self::BELONGS_TO, 'Persona', 'novio_id'),
-                'novia' => array(self::BELONGS_TO, 'Persona', 'novia_id'),
-                'papa_novio' => array(self::BELONGS_TO, 'Persona', 'papa_novio_id'),
-                'papa_novia' => array(self::BELONGS_TO, 'Persona', 'papa_novia_id'),
-                'mama_novio' => array(self::BELONGS_TO, 'Persona', 'mama_novio_id'),
-                'mama_novia' => array(self::BELONGS_TO, 'Persona', 'mama_novio_id'),
-                'padre' => array(self::BELONGS_TO, 'Padre', 'padre_parroquia_id'),
+            'novio' => array(self::BELONGS_TO, 'Persona', 'novio_id'),
+            'novia' => array(self::BELONGS_TO, 'Persona', 'novia_id'),
+            'papa_novio' => array(self::BELONGS_TO, 'Persona', 'papa_novio_id'),
+            'papa_novia' => array(self::BELONGS_TO, 'Persona', 'papa_novia_id'),
+            'mama_novio' => array(self::BELONGS_TO, 'Persona', 'mama_novio_id'),
+            'mama_novia' => array(self::BELONGS_TO, 'Persona', 'mama_novio_id'),
+            'padre' => array(self::BELONGS_TO, 'Padre', 'padre_parroquia_id'),
+            'libro' => array(self::BELONGS_TO, 'Libro', 'tomo_id'),
         );
     }
-
-    
 
 }

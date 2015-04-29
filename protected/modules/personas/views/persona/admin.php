@@ -65,7 +65,7 @@ $this->menu = array(
                             'lugar_nacimiento',
                             array(
                                 'class' => 'CButtonColumn',
-                                'template' => '{update} ',
+                                'template' => '{update} {view}',
                                 'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -77,6 +77,12 @@ $this->menu = array(
                                     'update' => array(
                                         'label' => '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
                                         'options' => array('title' => 'Actualizar'),
+                                        'imageUrl' => false,
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
+                                    ),
+                                    'view' => array(
+                                        'label' => '<button class="btn btn-success"><i class="fa fa-eye"></i></button>',
+                                        'options' => array('title' => 'Ver'),
                                         'imageUrl' => false,
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
                                     ),

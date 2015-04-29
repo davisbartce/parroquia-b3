@@ -25,6 +25,7 @@ class Comunion extends BaseComunion
                 'padrino' => array(self::BELONGS_TO, 'Persona', 'padrino_id'),
                 'madrina' => array(self::BELONGS_TO, 'Persona', 'madrina_id'),
                 'padre' => array(self::BELONGS_TO, 'Padre', 'padre_parroquia_id'),
+            'libro' => array(self::BELONGS_TO, 'Libro', 'tomo_id'),
         );
     }
     
