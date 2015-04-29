@@ -50,7 +50,7 @@
                                                     <code>.box-footer</code>
                                                 </div> /.box-footer-->
             </div>
-            
+
             <div class="box box-success">
                 <div class="box-header">
                     <h3 class="box-title">Confirmación</h3>
@@ -74,16 +74,44 @@
 
 
                                 <?php
-//                                        var_dump($model->bautizos);
+//                                        var_dump($model->confirmaciones->padre);
 //                                        die();
                                 $this->widget('booster.widgets.TbDetailView', array(
                                     'data' => $model->confirmaciones,
                                     'attributes' => array(
                                         'iglesia',
-                                        'padre_parroquia_id',
-                                        'apellidos',
-                                        'fecha_nacimiento',
-                                        'lugar_nacimiento',
+//                                        'padre_parroquia_id',
+//                                        array(
+//                                            'name' => 'padre_parroquia_id',
+//                                            'value' => ($model->confirmaciones->padre->getNombre_completo()),
+//                                            'type' => 'html',
+//                                        ),
+                                        array(
+                                            'name' => 'padre_parroquia_id',
+                                            'value' => ($model->confirmaciones->padre->getNombre_completo()),
+                                            'type' => 'html',
+                                        ),
+                                        'fecha_confirmacion',
+                                        'feligreses_de',
+                                          array(
+                                            'name' => 'padrino_id',
+                                            'value' => ($model->confirmaciones->padrino !== null) ? $model->confirmaciones->padrino->campo_completo : null,
+                                            'type' => 'html',
+                                        ),
+                                         array(
+                                            'name' => 'madrina_id',
+                                            'value' => ($model->confirmaciones->madrina !== null) ? $model->confirmaciones->madrina->campo_completo : null,
+                                            'type' => 'html',
+                                        ),
+//                                        'tomo_id',
+                                        array(
+                                            'name' => 'tomo_id',
+                                            'value' => ($model->confirmaciones->libro !== null) ? $model->confirmaciones->libro->tomo : null,
+                                            'type' => 'html',
+                                        ),
+                                        'pagina',
+                                        'numero',
+                                       
                                     ),
                                 ));
                                 ?>
@@ -130,7 +158,7 @@
                 </div>
                 <div class="box-body">
 
-                    <?php // die('murio'); ?>
+                    <?php // die('murio');   ?>
                     <?php if ($model->bautizos) : ?>
                         <div class="row">
                             <div class="col-sm-2">
