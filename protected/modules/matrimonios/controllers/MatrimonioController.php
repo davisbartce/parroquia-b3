@@ -99,8 +99,14 @@ class MatrimonioController extends AweController {
     public function actionAdmin() {
         $model = new Matrimonio('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Matrimonio']))
+        if (isset($_GET['Matrimonio'])){
             $model->attributes = $_GET['Matrimonio'];
+        }
+        
+           if (isset($_GET['searchValue'])){
+              $model->de_persona($_GET['searchValue']);
+        }
+
 
         $this->render('admin', array(
             'model' => $model,

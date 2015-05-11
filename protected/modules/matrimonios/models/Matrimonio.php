@@ -55,5 +55,20 @@ class Matrimonio extends BaseMatrimonio {
             'libro' => array(self::BELONGS_TO, 'Libro', 'tomo_id'),
         );
     }
+    
+      public function de_persona($search_value)
+    {
+        $this->getDbCriteria()->mergeWith(
+            array(
+                'with' => array('novio','novia'),
+                'condition' => "CONCAT(IFNULL(CONCAT(novio.nombres,' '),''),IFNULL(novio.apellidos,'')) like '%$search_value%' or CONCAT(IFNULL(CONCAT(novia.nombres,' '),''),IFNULL(novia.apellidos,'')) like '%$search_value%'",
+//                'params' => array(
+//                    ':inicio' => $inicio,
+//                    ':fin' => $fin
+//                ),
+            )
+        );
+        return $this;
+    }
 
 }

@@ -1,11 +1,5 @@
 <?php
-/** @var BautizoController $this */
-/** @var Bautizo $model */
-$this->menu = array(
-    array('label' => Yii::t('AweCrud.app', 'Create'), 'icon' => 'plus', 'url' => array('create'),
-//'visible' => (Util::checkAccess(array('action_incidenciaPrioridad_create')))
-    ),
-);
+Util::tsRegisterAssetJs('admin.js');
 ?>
 <aside class="right-side">
     <section class="content-header">
@@ -32,6 +26,12 @@ $this->menu = array(
                 <h3 class="panel-title"><?php echo 'Administrar' . ' ' . Bautizo::label(2); ?></h3>
             </div>
             <div class="panel-body">
+                  <div class="input-group input-group-sm col-sm-4">
+                    <input type="text" id="busquedaSearch" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
                 <div class="scrollable">
 
 
@@ -42,12 +42,12 @@ $this->menu = array(
                         'type' => 'striped bordered hover advance',
                         'dataProvider' => $model->search(),
 //                        'filters'=>true,
-                        'filter'=>$model,
+//                        'filter'=>$model,
                         'columns' => array(
                             array(
                                 'name'=>'persona_id',
                                 'value'=>'$data->persona->campo_completo',
-                                'filter'=> CHtml::listData(Persona::model()->findAll(), 'id', 'nombres'),
+//                                'filter'=> CHtml::listData(Persona::model()->findAll(), 'id', 'nombres'),
                             ),
 //                            'persona_id',
                             'fecha_bautizo',
@@ -83,7 +83,7 @@ $this->menu = array(
                              */
                             array(
                                 'class' => 'CButtonColumn',
-                                'template' => '{view} {update} {delete}',
+                                'template' => '{view} {update} {delete} {print}',
                                 'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -108,6 +108,13 @@ $this->menu = array(
                                         'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
                                         'options' => array('title' => 'Eliminar'),
                                         'imageUrl' => false,
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
+                                    ),
+                                    'print' => array(
+                                        'label' => '<button class="btn btn-default"><i class="fa fa-print"></i></button>',
+                                        'options' => array('title' => 'Imprimir'),
+                                        'imageUrl' => false,
+                                        'url' => 'Yii::app()->createUrl("bautizos/bautizo/viewPrint", array("id"=>$data->id))',
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
                                     ),
                                 ),

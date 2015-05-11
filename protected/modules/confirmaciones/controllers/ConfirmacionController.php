@@ -99,8 +99,12 @@ class ConfirmacionController extends AweController {
     public function actionAdmin() {
         $model = new Confirmacion('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Confirmacion']))
+        if (isset($_GET['Confirmacion'])){
             $model->attributes = $_GET['Confirmacion'];
+        }
+         if (isset($_GET['searchValue'])){
+              $model->de_persona($_GET['searchValue']);
+        }
 
         $this->render('admin', array(
             'model' => $model,

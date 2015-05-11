@@ -150,8 +150,12 @@ class PersonaController extends AweController {
     public function actionAdmin() {
         $model = new Persona('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Persona']))
-            $model->attributes = $_GET['Persona'];
+    if (isset($_GET['Persona'])){
+    $model->attributes = $_GET['Persona'];}
+    if (isset($_GET['searchValue'])){
+              $model->de_persona($_GET['searchValue']);
+        }
+        
 
         $this->render('admin', array(
             'model' => $model,

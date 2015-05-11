@@ -25,6 +25,12 @@ class BautizoController extends AweController {
             'model' => $this->loadModel($id),
         ));
     }
+    public function actionViewPrint($id) {
+        $this->layout='//layouts/print';
+        $this->render('print', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
 
     /**
      * Creates a new model.
@@ -98,8 +104,15 @@ class BautizoController extends AweController {
     public function actionAdmin() {
         $model = new Bautizo('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Bautizo']))
-            $model->attributes = $_GET['Bautizo'];
+        if (isset($_GET['Bautizo'])){
+        $model->attributes = $_GET['Bautizo'];
+       
+       }
+       
+        if (isset($_GET['searchValue'])){
+              $model->de_persona($_GET['searchValue']);
+        }
+        
 
         $this->render('admin', array(
             'model' => $model,

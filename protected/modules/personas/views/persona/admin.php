@@ -1,11 +1,5 @@
 <?php
-/** @var PersonaController $this */
-/** @var Persona $model */
-$this->menu = array(
-    array('label' => Yii::t('AweCrud.app', 'Create'), 'icon' => 'plus', 'url' => array('create'),
-//'visible' => (Util::checkAccess(array('action_incidenciaPrioridad_create')))
-    ),
-);
+Util::tsRegisterAssetJs('admin.js');
 ?>
 <aside class="right-side">
     <section class="content-header">
@@ -49,6 +43,14 @@ $this->menu = array(
             ?>
             </div>
             <div class="panel-body">
+                
+                 <div class="input-group input-group-sm col-sm-4">
+                    <input type="text" id="busquedaSearch" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+
                 <div class="scrollable">
 
 
