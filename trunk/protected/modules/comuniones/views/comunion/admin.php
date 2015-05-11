@@ -1,11 +1,5 @@
 <?php
-/** @var ComunionController $this */
-/** @var Comunion $model */
-$this->menu = array(
-    array('label' => Yii::t('AweCrud.app', 'Create'), 'icon' => 'plus', 'url' => array('create'),
-//'visible' => (Util::checkAccess(array('action_incidenciaPrioridad_create')))
-    ),
-);
+Util::tsRegisterAssetJs('admin.js');
 ?>
 <aside class="right-side">
     <section class="content-header">
@@ -32,6 +26,13 @@ $this->menu = array(
                 <h3 class="panel-title"><?php echo 'Administrar' . ' ' . Comunion::label(2); ?></h3>
             </div>
             <div class="panel-body">
+
+                <div class="input-group input-group-sm col-sm-4">
+                    <input type="text" id="busquedaSearch" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
 
                 <?php
                 $this->widget('booster.widgets.TbGridView', array(
@@ -85,23 +86,23 @@ $this->menu = array(
                 }',
                             'buttons' => array(
                                 'view' => array(
-                                        'label' => '<button class="btn btn-info"><i class="fa fa-eye"></i></button>',
-                                        'options' => array('title' => 'Ver'),
-                                        'imageUrl' => false,
-                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
-                                    ),
-                                    'update' => array(
-                                        'label' => '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
-                                        'options' => array('title' => 'Actualizar'),
-                                        'imageUrl' => false,
-                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
-                                    ),
-                                    'delete' => array(
-                                        'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
-                                        'options' => array('title' => 'Eliminar'),
-                                        'imageUrl' => false,
-                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
-                                    ),
+                                    'label' => '<button class="btn btn-info"><i class="fa fa-eye"></i></button>',
+                                    'options' => array('title' => 'Ver'),
+                                    'imageUrl' => false,
+                                //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
+                                ),
+                                'update' => array(
+                                    'label' => '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
+                                    'options' => array('title' => 'Actualizar'),
+                                    'imageUrl' => false,
+                                //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
+                                ),
+                                'delete' => array(
+                                    'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
+                                    'options' => array('title' => 'Eliminar'),
+                                    'imageUrl' => false,
+                                //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
+                                ),
                             ),
                             'htmlOptions' => array(
                                 'width' => '140px'

@@ -214,5 +214,20 @@ class Persona extends BasePersona {
         }
         return $data;
     }
+    
+     public function de_persona($search_value)
+    {
+        $this->getDbCriteria()->mergeWith(
+            array(
+             
+                'condition' => "CONCAT(IFNULL(CONCAT(t.nombres,' '),''),IFNULL(t.apellidos,'')) like '%$search_value%'",
+//                'params' => array(
+//                    ':inicio' => $inicio,
+//                    ':fin' => $fin
+//                ),
+            )
+        );
+        return $this;
+    }
 
 }

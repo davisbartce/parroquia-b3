@@ -2634,11 +2634,12 @@ Component: timeline
     Page: Invoice
 */
 .invoice {
-  position: relative;
-  width: 90%;
-  margin: 10px auto;
+   position: relative;
+  /* width: 90%; */
   background: #fff;
   border: 1px solid #f4f4f4;
+  margin: 10px 25px;
+  padding: 20px;
 }
 .invoice-title {
   margin-top: 0;

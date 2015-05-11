@@ -98,9 +98,17 @@ class ComunionController extends AweController {
     public function actionAdmin() {
         $model = new Comunion('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Comunion']))
-            $model->attributes = $_GET['Comunion'];
+//         var_dump($_GET);
+        if (isset($_GET['Comunion'])){
+               $model->attributes = $_GET['Comunion'];
+       
+        }
+        if (isset($_GET['searchValue'])){
+              $model->de_persona($_GET['searchValue']);
+        }
+        
 
+//        $model->de_persona('Ashley D');
         $this->render('admin', array(
             'model' => $model,
         ));

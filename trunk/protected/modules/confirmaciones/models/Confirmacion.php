@@ -50,5 +50,20 @@ class Confirmacion extends BaseConfirmacion
                 'rc_fecha' => Yii::t('app', 'Rc Fecha'),
         );
     }
+    
+      public function de_persona($search_value)
+    {
+        $this->getDbCriteria()->mergeWith(
+            array(
+                'with' => 'persona',
+                'condition' => "CONCAT(IFNULL(CONCAT(persona.nombres,' '),''),IFNULL(persona.apellidos,'')) like '%$search_value%'",
+//                'params' => array(
+//                    ':inicio' => $inicio,
+//                    ':fin' => $fin
+//                ),
+            )
+        );
+        return $this;
+    }
 
 }

@@ -7,6 +7,8 @@ class Comunion extends BaseComunion
     /**
      * @return Comunion
      */
+    
+       public $nombres_persona;
     public static function model($className = __CLASS__)
     {
         return parent::model($className);
@@ -51,6 +53,21 @@ class Comunion extends BaseComunion
                 'rc_acta' => Yii::t('app', 'Rc Acta'),
                 'rc_fecha' => Yii::t('app', 'Rc Fecha'),
         );
+    }
+    
+     public function de_persona($search_value)
+    {
+        $this->getDbCriteria()->mergeWith(
+            array(
+                'with' => 'persona',
+                'condition' => "CONCAT(IFNULL(CONCAT(persona.nombres,' '),''),IFNULL(persona.apellidos,'')) like '%$search_value%'",
+//                'params' => array(
+//                    ':inicio' => $inicio,
+//                    ':fin' => $fin
+//                ),
+            )
+        );
+        return $this;
     }
 
 }
