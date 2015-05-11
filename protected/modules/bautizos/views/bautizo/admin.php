@@ -111,7 +111,7 @@ Util::tsRegisterAssetJs('admin.js');
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
                                     ),
                                     'print' => array(
-                                        'label' => '<button class="btn btn-default"><i class="fa fa-print"></i></button>',
+                                        'label' => '<button class="btn btn-success"><i class="fa fa-file-text"></i></button>',
                                         'options' => array('title' => 'Imprimir','target'=>'_blank'),
                                         'imageUrl' => false,
                                         'url' => 'Yii::app()->createUrl("bautizos/bautizo/viewPrint", array("id"=>$data->id))',
@@ -119,7 +119,7 @@ Util::tsRegisterAssetJs('admin.js');
                                     ),
                                 ),
                                 'htmlOptions' => array(
-                                    'width' => '140px'
+                                    'width' => '180px'
                                 )
                             ),
                         ),
