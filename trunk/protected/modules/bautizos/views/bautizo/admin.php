@@ -112,7 +112,7 @@ Util::tsRegisterAssetJs('admin.js');
                                     ),
                                     'print' => array(
                                         'label' => '<button class="btn btn-default"><i class="fa fa-print"></i></button>',
-                                        'options' => array('title' => 'Imprimir'),
+                                        'options' => array('title' => 'Imprimir','target'=>'_blank'),
                                         'imageUrl' => false,
                                         'url' => 'Yii::app()->createUrl("bautizos/bautizo/viewPrint", array("id"=>$data->id))',
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
