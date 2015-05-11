@@ -60,6 +60,10 @@ Util::tsRegisterAssetJs('_form.js');
                         )
                 );
                 ?>
+                
+                 <?php  if($model->isNewRecord){
+                    $model->iglesia=Constants::INGLESIAPARROQUIA;
+                } ?>
 
                 <?php echo $form->textFieldGroup($model, 'iglesia', array('maxlength' => 60)) ?>
 
