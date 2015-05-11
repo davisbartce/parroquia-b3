@@ -55,7 +55,28 @@
 
                     </div>
                     <div class="col-xs-9">
-<?php var_dump($model->libro) ?>
+                        
+                        <h2 >CERTIFICADO DE BAUTISMO</h2>
+                        <br>
+                         <p>
+                             El suscrito, en legal forma, certifica que en los registros bautismalesde este archivo parroquial, se halla inscrita una partida, con los siguientes datos:
+                             <br>
+
+                            </p>
+                            
+                            <p>
+                                El día <?php echo date('d',  strtotime($model->fecha_bautizo))?> , del mes de <?php echo Util::retornarMestraduciso(date('m',  strtotime($model->fecha_bautizo)))?> ,  del año del Señor <?php echo date('Y',  strtotime($model->fecha_bautizo)) ?><br>
+                            </p>
+                            <p>
+                              En la iglesia parroquial <?php  echo $model->iglesia?>.<br>
+                            </p>
+                            <p>
+                              El Padre <?php echo $model->padre->getNombre_completo() ?>
+ 
+                            </p>
+                            
+                        
+<?php var_dump($model->attributes) ?>
                     </div>
                 </div>
                 

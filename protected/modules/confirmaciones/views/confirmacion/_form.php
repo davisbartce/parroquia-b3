@@ -102,7 +102,11 @@ Util::tsRegisterAssetJs('_form.js');
                 );
                 ?>
 
-
+                <?php
+                if ($model->isNewRecord) {
+                    $model->iglesia = Constants::INGLESIAPARROQUIA;
+                }
+                ?>
                 <?php echo $form->textFieldGroup($model, 'iglesia', array('maxlength' => 60)) ?>
 
                 <?php
@@ -149,7 +153,7 @@ Util::tsRegisterAssetJs('_form.js');
                             <!--<span class="input-group-addon">.00</span>-->
 
                     </div>
-                    <?php echo $form->error($model, 'papa_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'papa_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="Confirmacion_mama_id">Mamá <span></span></label>
@@ -170,13 +174,13 @@ Util::tsRegisterAssetJs('_form.js');
                             <!--<span class="input-group-addon">.00</span>-->
 
                     </div>
-                    <?php echo $form->error($model, 'mama_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'mama_id', array('class' => 'help-block error')); ?>
                 </div>
 
 
                 <?php // echo $form->textFieldGroup($model, 'mama_id')   ?>
 
-                <?php echo $form->textFieldGroup($model, 'feligreses_de') ?>
+<?php echo $form->textFieldGroup($model, 'feligreses_de') ?>
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="Confirmacion_padrino_id">Padrino <span></span></label>
@@ -194,7 +198,7 @@ Util::tsRegisterAssetJs('_form.js');
                         ?> 
 
                     </div>
-                    <?php echo $form->error($model, 'padrino_id', array('class' => 'help-block error')); ?>
+<?php echo $form->error($model, 'padrino_id', array('class' => 'help-block error')); ?>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label" for="Confirmacion_madrina_id">Madrina <span></span></label>
@@ -212,12 +216,12 @@ Util::tsRegisterAssetJs('_form.js');
                         ?> 
 
                     </div>
-                    <?php echo $form->error($model, 'madrina_id', array('class' => 'help-block error')); ?>
+                <?php echo $form->error($model, 'madrina_id', array('class' => 'help-block error')); ?>
                 </div>
 
                 <?php // echo $form->textFieldGroup($model, 'padrino_id')   ?>
 
-                <?php // echo $form->textFieldGroup($model, 'madrina_id')  ?>
+<?php // echo $form->textFieldGroup($model, 'madrina_id')   ?>
 
                 <div class="form-group">
                     <div class="col-lg-5 col-lg-offset-2">
@@ -265,7 +269,7 @@ Util::tsRegisterAssetJs('_form.js');
                         'class' => '',
                     ),
                     'widgetOptions' => array(
-                        'data' => CHtml::listData(Libro::model()->de_tipo(Libro::CONFIRMACIONES)->findAll(), 'id', 'tomo','ano'),
+                        'data' => CHtml::listData(Libro::model()->de_tipo(Libro::CONFIRMACIONES)->findAll(), 'id', 'tomo', 'ano'),
 //                                    'empty'=>'seleccione',
                         'htmlOptions' => array(),
                     )
@@ -279,7 +283,7 @@ Util::tsRegisterAssetJs('_form.js');
 
                 <?php echo $form->textFieldGroup($model, 'numero') ?>
 
-                <?php echo $form->textFieldGroup($model, 'nota', array('maxlength' => 150)) ?>
+<?php echo $form->textFieldGroup($model, 'nota', array('maxlength' => 150)) ?>
 
 
             </div>
@@ -347,7 +351,7 @@ Util::tsRegisterAssetJs('_form.js');
                 ?>
 
 
-                <?php // echo $form->datePickerGroup($model, 'rc_fecha', array('prepend' => '<i class="icon-calendar"></i>'))   ?>
+<?php // echo $form->datePickerGroup($model, 'rc_fecha', array('prepend' => '<i class="icon-calendar"></i>'))    ?>
             </div>
         </div>
     </div>
@@ -355,7 +359,7 @@ Util::tsRegisterAssetJs('_form.js');
 
 
 
-    <?php $this->endWidget(); ?>
+<?php $this->endWidget(); ?>
     <div class="hide">
         <div id="popover-head-Persona" class="hide popover-head">Nueva Persona</div>
         <div id="popover-content-Persona" class="popover-content popover-style">
