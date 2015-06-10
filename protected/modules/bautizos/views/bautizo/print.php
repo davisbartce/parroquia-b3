@@ -85,7 +85,11 @@
 
                
                     hijo(a) de <?php echo $model->papa ? $model->papa->campo_completo : " .............. " ?>
+                    y de <?php echo $model->mama ? $model->mama->campo_completo : " .............. " ?>
 
+                </p>
+                <p>
+                    Fuerón sus Padrinos 
                 </p>
             </div>
 
