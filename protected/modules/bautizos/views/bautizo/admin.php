@@ -27,7 +27,7 @@ Util::tsRegisterAssetJs('admin.js');
             </div>
             <div class="panel-body">
                   <div class="input-group input-group-sm col-sm-4">
-                    <input type="text" id="busquedaSearch" class="form-control">
+                      <input type="text" id="busquedaSearch" class="form-control" placeholder=" Buscar Persona">
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
                     </span>
@@ -59,11 +59,11 @@ Util::tsRegisterAssetJs('admin.js');
                             ),
                               array(
                                 'name'=>'papa_id',
-                                'value'=>'$data->papa->campo_completo'
+                                'value'=>'$data->papa ? $data->papa->campo_completo : ""'
                             ),
                              array(
                                 'name'=>'mama_id',
-                                'value'=>'$data->mama->campo_completo'
+                                'value'=>'$data->mama ? $data->mama->campo_completo : ""'
                             ),
 //                            'papa_id',
 //                            'mama_id',

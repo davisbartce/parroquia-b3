@@ -19,6 +19,12 @@ class Comunion extends BaseComunion
         return Yii::t('app', 'Comunión|Comuniones', $n);
     }
     
+     public function rules(){
+        return array_merge(parent::rules(),array(
+            array('persona_id', 'unique','message'=>'Esta  {attribute} ya esta registrada.'), 
+        ));
+    }
+    
     public function relations() {
         return array(
                 'persona' => array(self::BELONGS_TO, 'Persona', 'persona_id'),
