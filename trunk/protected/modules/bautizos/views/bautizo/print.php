@@ -80,21 +80,45 @@
                 <p>
                     Bautizó solemnemente a: <?php echo $model->persona->campo_completo ?>
 
-               
-                      nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : " " ?> el <?php echo (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) ?> 
 
-               
+                    nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : " " ?> el <?php echo (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) ?> 
+
+
                     hijo(a) de <?php echo $model->papa ? $model->papa->campo_completo : " .............. " ?>
                     y de <?php echo $model->mama ? $model->mama->campo_completo : " .............. " ?>
 
                 </p>
                 <p>
-                    Fuerón sus Padrinos 
+                    <?php $model->obtenerTextoPadrinos(); ?>
+
                 </p>
+
+                <p>
+                    A quien..... se advirtió sus obligaciones y parentezco espirtual.
+                </p>
+                <p>
+                    Certifica
+                </p>
+                
+                <p>
+                    Son datos tomados finalmente del origina, al que me remito en caso necesario.
+                </p>
+                
+                
             </div>
+            
+            <p>
+                Lo Certifico, ........................................................................
+            </p>
+            
+            <br>
+            
+            <p>
+               Quito, 
+            </p>
+            
 
 
-            <?php var_dump($model->persona) ?>
         </div>
     </div>
 

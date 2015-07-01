@@ -27,6 +27,12 @@ class Confirmacion extends BaseConfirmacion
                 'libro' => array(self::BELONGS_TO, 'Libro', 'tomo_id'),
         );
     }
+    
+      public function rules(){
+        return array_merge(parent::rules(),array(
+            array('persona_id', 'unique','message'=>'Esta  {attribute} ya se ha confirmado.'), 
+        ));
+    }
      public function attributeLabels() {
         return array(
                 'id' => Yii::t('app', 'ID'),

@@ -15,11 +15,12 @@ class Bautizo extends BaseBautizo {
         return Yii::t('app', 'Bautizo|Bautizos', $n);
     }
 
-//    public function rules(){
-//        return array_merge(parent::rules(),array(
-//            array('nombre_completo', 'safe', 'on' => 'search'), 
-//        ));
-//    }
+    public function rules() {
+        return array_merge(parent::rules(), array(
+            array('persona_id', 'unique', 'message' => 'Esta  {attribute} ya se ha bautizado.'),
+        ));
+    }
+
     public function relations() {
         return array(
             'persona' => array(self::BELONGS_TO, 'Persona', 'persona_id'),
@@ -61,27 +62,46 @@ class Bautizo extends BaseBautizo {
                 ->select('p.id,CONCAT(IFNULL(CONCAT(p.documento," "),""),IFNULL(CONCAT(p.nombres," "),""),IFNULL(p.apellidos,"")) as text')
                 ->from('bautizo t')
                 ->leftJoin('persona p', 'p.id=t.persona_id')
-                
                 ->where("p.documento like '$search_value%' OR CONCAT(IFNULL(CONCAT(p.nombres,' '),''),IFNULL(p.apellidos,'')) like '$search_value%'");
 //                ->andWhere('t.estado = :estado', array(':estado' => Cuenta::ESTADO_ACTIVO));
-       
 //        $command->limit(10);
         return $command->queryAll();
     }
-    
-      public function de_persona($search_value)
-    {
+
+    public function de_persona($search_value) {
         $this->getDbCriteria()->mergeWith(
-            array(
-                'with' => 'persona',
-                'condition' => "CONCAT(IFNULL(CONCAT(persona.nombres,' '),''),IFNULL(persona.apellidos,'')) like '%$search_value%'",
+                array(
+                    'with' => 'persona',
+                    'condition' => "CONCAT(IFNULL(CONCAT(persona.nombres,' '),''),IFNULL(persona.apellidos,'')) like '%$search_value%'",
 //                'params' => array(
 //                    ':inicio' => $inicio,
 //                    ':fin' => $fin
 //                ),
-            )
+                )
         );
         return $this;
+    }
+
+    public function obtenerTextoPadrinos() {
+
+        $padrino = $this->padrino;
+        $madrina = $this->madrina;
+        $mensaje=null;
+
+        if ($padrino && $madrina) {
+           $mensaje="Fueron sus    .......adrin......   ". $padrino->campo_completo. "  y  ".$madrina->campo_completo;
+        } else if ($padrino && !$madrina) {
+              $mensaje="Fue su  padrino  ". $padrino->campo_completo. "";
+            
+        } else if ($madrina && !$padrino) {
+            
+        }
+        echo $mensaje;
+        
+        
+
+
+//        var_dump($padrino,$madrina);
     }
 
 }
