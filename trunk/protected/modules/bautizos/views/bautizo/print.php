@@ -101,7 +101,7 @@
                 </p>
                 
                 <p>
-                    Son datos tomados finalmente del origina, al que me remito en caso necesario.
+                    Son datos tomados finalmente del original, al que me remito en caso necesario.
                 </p>
                 
                 
