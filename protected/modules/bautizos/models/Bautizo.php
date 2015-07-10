@@ -87,14 +87,14 @@ class Bautizo extends BaseBautizo {
         $padrino = $this->padrino;
         $madrina = $this->madrina;
         $mensaje=null;
-
+//        var_dump($padrino,$madrina);
         if ($padrino && $madrina) {
-           $mensaje="Fueron sus    .......adrin......   ". $padrino->campo_completo. "  y  ".$madrina->campo_completo;
+           $mensaje="Fueron sus    padrinos   ". $padrino->campo_completo. "  y  ".$madrina->campo_completo;
         } else if ($padrino && !$madrina) {
-              $mensaje="Fue su  padrino  ". $padrino->campo_completo. "";
+              $mensaje="Fue su  Padrino  ". $padrino->campo_completo. "";
             
         } else if ($madrina && !$padrino) {
-            
+             $mensaje="Fue su  Madrina  ". $madrina->campo_completo. "";
         }
         echo $mensaje;
         
