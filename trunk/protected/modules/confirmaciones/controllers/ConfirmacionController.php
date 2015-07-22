@@ -38,7 +38,7 @@ class ConfirmacionController extends AweController {
         if (isset($_POST['Confirmacion'])) {
             $model->attributes = $_POST['Confirmacion'];
              $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'Y-m-d');
-            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
+//            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }
@@ -57,7 +57,7 @@ class ConfirmacionController extends AweController {
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
          $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'd-m-Y');
-        $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
+//        $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
 
 
         $this->performAjaxValidation($model, 'confirmacion-form');
@@ -65,7 +65,7 @@ class ConfirmacionController extends AweController {
         if (isset($_POST['Confirmacion'])) {
             $model->attributes = $_POST['Confirmacion'];
                $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'Y-m-d');
-            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
+//            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }

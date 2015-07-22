@@ -63,7 +63,7 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
+<!--                        <li class="dropdown messages-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope"></i>
                                 <span class="label label-success">4</span>
@@ -71,12 +71,12 @@
                             <ul class="dropdown-menu">
                                 <li class="header">You have 4 messages</li>
                                 <li>
-                                    <!-- inner menu: contains the actual data -->
+                                     inner menu: contains the actual data 
                                     <ul class="menu">
-                                        <li><!-- start message -->
+                                        <li> start message 
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <!--<img src="img/avatar3.png" class="img-circle" alt="User Image"/>-->
+                                                    <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
                                                 </div>
                                                 <h4>
                                                     Support Team
@@ -84,11 +84,11 @@
                                                 </h4>
                                                 <p>Why not buy a new awesome theme?</p>
                                             </a>
-                                        </li><!-- end message -->
+                                        </li> end message 
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <!--<img src="img/avatar2.png" class="img-circle" alt="user image"/>-->
+                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     AdminLTE Design Team
@@ -100,7 +100,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <!--<img src="img/avatar.png" class="img-circle" alt="user image"/>-->
+                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Developers
@@ -112,7 +112,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <!--<img src="img/avatar2.png" class="img-circle" alt="user image"/>-->
+                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Sales Department
@@ -124,7 +124,7 @@
                                         <li>
                                             <a href="#">
                                                 <div class="pull-left">
-                                                    <!--<img src="img/avatar.png" class="img-circle" alt="user image"/>-->
+                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
                                                 </div>
                                                 <h4>
                                                     Reviewers
@@ -137,7 +137,7 @@
                                 </li>
                                 <li class="footer"><a href="#">See All Messages</a></li>
                             </ul>
-                        </li>
+                        </li>-->
 
 
                         <!-- Notifications: style can be found in dropdown.less -->
@@ -321,13 +321,13 @@
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class=" principal">
+<!--                        <li class=" principal">
                             <a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/widgets" ?>">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                             </a>
-                        </li>
+                        </li>-->
 
-                        <li class="treeview principal">
+<!--                        <li class="treeview principal">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
                                 <span>UI Elements</span>
@@ -343,7 +343,7 @@
                                 <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/generalForm" ?>"><i class="fa fa-folder"></i> General Form</a></li>
                                 <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="treeview principal <?php echo YiiBase::app()->getController()->getId() == "persona" ? "active" : "" ?> ">
                             <a href="#">
                                 <i class="fa fa-th-list"></i> <span>Catálogos</span>

@@ -130,7 +130,16 @@
                                 //        'feligreses_de',
                                 //        'padrino_id',
                                 //        'madrina_id',
-                                'tomo_id',
+                                 array(
+                                            'name' => 'tomo_id',
+                                            'value' => ($model->libro !== null) ? $model->libro->tomo : null,
+                                            'type' => 'html',
+                                        ),
+                                        array(
+                                            'name' => 'Año',
+                                            'value' => ($model->libro !== null) ? $model->libro->ano : null,
+                                            'type' => 'html',
+                                        ),
                                 'pagina',
                                 'numero',
                                 'nota',
