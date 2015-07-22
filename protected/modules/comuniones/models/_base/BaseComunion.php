@@ -23,11 +23,6 @@
  * @property integer $pagina
  * @property integer $numero
  * @property string $nota
- * @property string $rc_ano
- * @property string $rc_tomo
- * @property integer $rc_folio
- * @property integer $rc_acta
- * @property string $rc_fecha
  *
  */
 abstract class BaseComunion extends AweActiveRecord {
@@ -46,15 +41,13 @@ abstract class BaseComunion extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('persona_id, fecha_comunion, padre_parroquia_id, tomo_id, pagina, numero, rc_tomo, rc_folio, rc_acta, rc_fecha', 'required'),
-            array('persona_id, padre_parroquia_id, papa_id, mama_id, padrino_id, madrina_id, tomo_id, pagina, numero, rc_folio, rc_acta', 'numerical', 'integerOnly'=>true),
+            array('persona_id, fecha_comunion, padre_parroquia_id, tomo_id, pagina, numero', 'required'),
+            array('persona_id, padre_parroquia_id, papa_id, mama_id, padrino_id, madrina_id, tomo_id, pagina, numero', 'numerical', 'integerOnly'=>true),
             array('iglesia', 'length', 'max'=>60),
             array('feligreses_de', 'length', 'max'=>64),
             array('nota', 'length', 'max'=>150),
-            array('rc_ano', 'length', 'max'=>4),
-            array('rc_tomo', 'length', 'max'=>20),
-            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota, rc_ano', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, persona_id, fecha_comunion, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota, rc_ano, rc_tomo, rc_folio, rc_acta, rc_fecha', 'safe', 'on'=>'search'),
+            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, persona_id, fecha_comunion, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota', 'safe', 'on'=>'search'),
         );
     }
 
@@ -82,11 +75,6 @@ abstract class BaseComunion extends AweActiveRecord {
                 'pagina' => Yii::t('app', 'Pagina'),
                 'numero' => Yii::t('app', 'Numero'),
                 'nota' => Yii::t('app', 'Nota'),
-                'rc_ano' => Yii::t('app', 'Rc Ano'),
-                'rc_tomo' => Yii::t('app', 'Rc Tomo'),
-                'rc_folio' => Yii::t('app', 'Rc Folio'),
-                'rc_acta' => Yii::t('app', 'Rc Acta'),
-                'rc_fecha' => Yii::t('app', 'Rc Fecha'),
         );
     }
 
@@ -107,11 +95,6 @@ abstract class BaseComunion extends AweActiveRecord {
         $criteria->compare('pagina', $this->pagina);
         $criteria->compare('numero', $this->numero);
         $criteria->compare('nota', $this->nota, true);
-        $criteria->compare('rc_ano', $this->rc_ano, true);
-        $criteria->compare('rc_tomo', $this->rc_tomo, true);
-        $criteria->compare('rc_folio', $this->rc_folio);
-        $criteria->compare('rc_acta', $this->rc_acta);
-        $criteria->compare('rc_fecha', $this->rc_fecha, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

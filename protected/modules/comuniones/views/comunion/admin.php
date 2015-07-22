@@ -76,7 +76,7 @@ Util::tsRegisterAssetJs('admin.js');
                          */
                         array(
                             'class' => 'CButtonColumn',
-                            'template' => '{view} {update} {delete}',
+                            'template' => '{view} {update} {delete} {print}',
                             'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -103,9 +103,16 @@ Util::tsRegisterAssetJs('admin.js');
                                     'imageUrl' => false,
                                 //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
                                 ),
+                                 'print' => array(
+                                        'label' => '<button class="btn btn-success"><i class="fa fa-file-text"></i></button>',
+                                        'options' => array('title' => 'Imprimir','target'=>'_blank'),
+                                        'imageUrl' => false,
+                                        'url' => 'Yii::app()->createUrl("comuniones/comunion/viewPrint", array("id"=>$data->id))',
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
+                                    ),
                             ),
                             'htmlOptions' => array(
-                                'width' => '140px'
+                                'width' => '180px'
                             )
                         ),
                     ),

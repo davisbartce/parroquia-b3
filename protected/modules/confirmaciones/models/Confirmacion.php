@@ -49,11 +49,7 @@ class Confirmacion extends BaseConfirmacion
                 'pagina' => Yii::t('app', 'Página'),
                 'numero' => Yii::t('app', 'Número'),
                 'nota' => Yii::t('app', 'Nota'),
-                'rc_ano' => Yii::t('app', 'Rc Año'),
-                'rc_tomo' => Yii::t('app', 'Rc Tomo'),
-                'rc_folio' => Yii::t('app', 'Rc Folio'),
-                'rc_acta' => Yii::t('app', 'Rc Acta'),
-                'rc_fecha' => Yii::t('app', 'Rc Fecha'),
+      
         );
     }
     

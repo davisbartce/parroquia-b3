@@ -25,6 +25,13 @@ class ComunionController extends AweController {
             'model' => $this->loadModel($id),
         ));
     }
+    
+    public function actionViewPrint($id) {
+        $this->layout='//layouts/print';
+        $this->render('print', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
 
     /**
      * Creates a new model.
@@ -38,7 +45,7 @@ class ComunionController extends AweController {
         if (isset($_POST['Comunion'])) {
             $model->attributes = $_POST['Comunion'];
             $model->fecha_comunion = Util::FormatDate($model->fecha_comunion, 'Y-m-d');
-            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
+//            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }
@@ -57,14 +64,14 @@ class ComunionController extends AweController {
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
         $model->fecha_comunion = Util::FormatDate($model->fecha_comunion, 'd-m-Y');
-        $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
+//        $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
 
         $this->performAjaxValidation($model, 'comunion-form');
 
         if (isset($_POST['Comunion'])) {
             $model->attributes = $_POST['Comunion'];
              $model->fecha_comunion = Util::FormatDate($model->fecha_comunion, 'Y-m-d');
-            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
+//            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
             }
