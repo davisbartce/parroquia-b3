@@ -34,12 +34,12 @@ class Bautizo extends BaseBautizo {
     }
 
     public function attributeLabels() {
-        return array(
+      return   array_merge(parent::attributeLabels(),array(
             'id' => Yii::t('app', 'ID'),
             'persona_id' => Yii::t('app', 'Persona'),
             'fecha_bautizo' => Yii::t('app', 'Fecha Bautizo'),
             'iglesia' => Yii::t('app', 'Iglesia'),
-            'padre_parroquia_id' => Yii::t('app', 'Padre Parroquia'),
+            'padre_parroquia_id' => Yii::t('app', 'Bautizado Por'),
             'papa_id' => Yii::t('app', 'Papá'),
             'mama_id' => Yii::t('app', 'Mamá'),
             'feligreses_de' => Yii::t('app', 'Feligreses De'),
@@ -51,10 +51,10 @@ class Bautizo extends BaseBautizo {
             'nota' => Yii::t('app', 'Nota'),
             'rc_ano' => Yii::t('app', 'Rc Año'),
             'rc_tomo' => Yii::t('app', 'Rc Tomo'),
-            'rc_folio' => Yii::t('app', 'Rc Folio'),
+            'rc_folio' => Yii::t('app', 'Rc Página'),
             'rc_acta' => Yii::t('app', 'Rc Acta'),
             'rc_fecha' => Yii::t('app', 'Rc Fecha'),
-        );
+        ));
     }
 
     public function getListSelect2($search_value) {
@@ -81,6 +81,7 @@ class Bautizo extends BaseBautizo {
         );
         return $this;
     }
+    
 
     public function obtenerTextoPadrinos() {
 

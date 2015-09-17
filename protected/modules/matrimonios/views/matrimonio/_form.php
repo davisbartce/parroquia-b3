@@ -75,7 +75,7 @@ Util::tsRegisterAssetJs('_form.js');
                         'class' => '',
                     ),
                     'widgetOptions' => array(
-                        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'nombres')),
+                        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'campo_completo')),
 //                        'empty' => 'seleccione',
                         'htmlOptions' => array(),
                     )
@@ -234,6 +234,8 @@ Util::tsRegisterAssetJs('_form.js');
                         </div><!-- /.box -->
                     </div>
                 </div>
+                
+                    <?php echo $form->textFieldGroup($model, 'acta_preparada_por', array('maxlength' => 50)) ?>
 
 
 

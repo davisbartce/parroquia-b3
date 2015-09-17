@@ -54,6 +54,8 @@
                                     'name' => 'padre_parroquia_id',
                                     'value' => $model->padre->nombres . ' ' . $model->padre->apellidos
                                 ),
+                                
+                                'acta_preparada_por',
 //                                array(
 //                                    'name' => 'papa_novio_id',
 //                                    'value' => $model->papa_novio_id ? $model->papa_novio->nombres . ' ' . $model->papa_novio->apellidos : ""

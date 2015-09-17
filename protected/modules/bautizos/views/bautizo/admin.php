@@ -55,7 +55,7 @@ Util::tsRegisterAssetJs('admin.js');
 //                            'padre_parroquia_id',
                               array(
                                 'name'=>'padre_parroquia_id',
-                                'value'=>'$data->padre->nombres." ".$data->padre->apellidos'
+                                'value'=>'$data->padre->campo_completo'
                             ),
                               array(
                                 'name'=>'papa_id',

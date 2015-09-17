@@ -191,6 +191,7 @@
                                 'rc_tomo',
                                 'rc_folio',
                                 'rc_acta',
+                                'rc_lugar',
                                 'rc_fecha',
                             ),
                         ));

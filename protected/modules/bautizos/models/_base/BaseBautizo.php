@@ -28,6 +28,7 @@
  * @property integer $rc_folio
  * @property integer $rc_acta
  * @property string $rc_fecha
+ * @property string $rc_lugar
  *
  */
 abstract class BaseBautizo extends AweActiveRecord {
@@ -53,8 +54,9 @@ abstract class BaseBautizo extends AweActiveRecord {
             array('nota', 'length', 'max'=>150),
             array('rc_ano', 'length', 'max'=>4),
             array('rc_tomo', 'length', 'max'=>20),
-            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota, rc_ano', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, persona_id, fecha_bautizo, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota, rc_ano, rc_tomo, rc_folio, rc_acta, rc_fecha', 'safe', 'on'=>'search'),
+            array('rc_lugar', 'length', 'max'=>50),
+            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota, rc_ano, rc_lugar', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, persona_id, fecha_bautizo, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota, rc_ano, rc_tomo, rc_folio, rc_acta, rc_fecha, rc_lugar', 'safe', 'on'=>'search'),
         );
     }
 
@@ -73,20 +75,21 @@ abstract class BaseBautizo extends AweActiveRecord {
                 'fecha_bautizo' => Yii::t('app', 'Fecha Bautizo'),
                 'iglesia' => Yii::t('app', 'Iglesia'),
                 'padre_parroquia_id' => Yii::t('app', 'Padre Parroquia'),
-                'papa_id' => Yii::t('app', 'Papá'),
-                'mama_id' => Yii::t('app', 'Mamá'),
+                'papa_id' => Yii::t('app', 'Papa'),
+                'mama_id' => Yii::t('app', 'Mama'),
                 'feligreses_de' => Yii::t('app', 'Feligreses De'),
                 'padrino_id' => Yii::t('app', 'Padrino'),
                 'madrina_id' => Yii::t('app', 'Madrina'),
                 'tomo_id' => Yii::t('app', 'Tomo'),
-                'pagina' => Yii::t('app', 'Página'),
-                'numero' => Yii::t('app', 'Número'),
+                'pagina' => Yii::t('app', 'Pagina'),
+                'numero' => Yii::t('app', 'Numero'),
                 'nota' => Yii::t('app', 'Nota'),
                 'rc_ano' => Yii::t('app', 'Rc Ano'),
                 'rc_tomo' => Yii::t('app', 'Rc Tomo'),
                 'rc_folio' => Yii::t('app', 'Rc Folio'),
                 'rc_acta' => Yii::t('app', 'Rc Acta'),
                 'rc_fecha' => Yii::t('app', 'Rc Fecha'),
+                'rc_lugar' => Yii::t('app', 'Rc Lugar'),
         );
     }
 
@@ -112,6 +115,7 @@ abstract class BaseBautizo extends AweActiveRecord {
         $criteria->compare('rc_folio', $this->rc_folio);
         $criteria->compare('rc_acta', $this->rc_acta);
         $criteria->compare('rc_fecha', $this->rc_fecha, true);
+        $criteria->compare('rc_lugar', $this->rc_lugar, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

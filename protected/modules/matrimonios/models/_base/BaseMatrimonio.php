@@ -32,6 +32,7 @@
  * @property integer $rc_acta
  * @property string $rc_lugar
  * @property string $rc_fecha
+ * @property string $acta_preparada_por
  *
  */
 abstract class BaseMatrimonio extends AweActiveRecord {
@@ -55,9 +56,10 @@ abstract class BaseMatrimonio extends AweActiveRecord {
             array('iglesia, testigo_novio_1, testigo_novio_2, testigo_novia_1, testigo_novia_2, rc_lugar', 'length', 'max'=>60),
             array('rc_ano', 'length', 'max'=>4),
             array('rc_tomo', 'length', 'max'=>20),
+            array('acta_preparada_por', 'length', 'max'=>50),
             array('rc_fecha', 'safe'),
-            array('iglesia, papa_novio_id, mama_novio_id, testigo_novio_1, testigo_novio_2, papa_novia_id, mama_novia_id, testigo_novia_1, testigo_novia_2, pagina, rc_tomo, rc_folio, rc_acta, rc_lugar, rc_fecha', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, fecha_matrimonio, iglesia, padre_parroquia_id, novio_id, papa_novio_id, mama_novio_id, testigo_novio_1, testigo_novio_2, novia_id, papa_novia_id, mama_novia_id, testigo_novia_1, testigo_novia_2, tomo_id, pagina, numero, rc_ano, rc_tomo, rc_folio, rc_acta, rc_lugar, rc_fecha', 'safe', 'on'=>'search'),
+            array('iglesia, papa_novio_id, mama_novio_id, testigo_novio_1, testigo_novio_2, papa_novia_id, mama_novia_id, testigo_novia_1, testigo_novia_2, pagina, rc_tomo, rc_folio, rc_acta, rc_lugar, rc_fecha, acta_preparada_por', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, fecha_matrimonio, iglesia, padre_parroquia_id, novio_id, papa_novio_id, mama_novio_id, testigo_novio_1, testigo_novio_2, novia_id, papa_novia_id, mama_novia_id, testigo_novia_1, testigo_novia_2, tomo_id, pagina, numero, rc_ano, rc_tomo, rc_folio, rc_acta, rc_lugar, rc_fecha, acta_preparada_por', 'safe', 'on'=>'search'),
         );
     }
 
@@ -94,6 +96,7 @@ abstract class BaseMatrimonio extends AweActiveRecord {
                 'rc_acta' => Yii::t('app', 'Rc Acta'),
                 'rc_lugar' => Yii::t('app', 'Rc Lugar'),
                 'rc_fecha' => Yii::t('app', 'Rc Fecha'),
+                'acta_preparada_por' => Yii::t('app', 'Acta Preparada Por'),
         );
     }
 
@@ -123,6 +126,7 @@ abstract class BaseMatrimonio extends AweActiveRecord {
         $criteria->compare('rc_acta', $this->rc_acta);
         $criteria->compare('rc_lugar', $this->rc_lugar, true);
         $criteria->compare('rc_fecha', $this->rc_fecha, true);
+        $criteria->compare('acta_preparada_por', $this->acta_preparada_por, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
