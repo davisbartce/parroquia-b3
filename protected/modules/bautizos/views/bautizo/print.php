@@ -123,7 +123,7 @@
 
                     En la iglesia parroquial <?php echo $model->iglesia ?>. 
 
-                    El Padre <?php echo $model->padre->getNombre_completo() ?>
+                    El Padre <?php echo $model->padre->campo_completo ?>
                     Bautizó solemnemente a: <?php echo $model->persona->campo_completo ?>
                     nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : " " ?> el <?php echo (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) ?> 
 

@@ -158,6 +158,50 @@
                 <!--</div>-->
             </div>
             
+            <div class="box box-solid box-warning">
+                <div class="box-header">
+                  <i class="fa fa-child"></i>   <h3 class="box-title">Bautizo  </h3>
+<!--                    <div class="box-tools pull-right no-print">
+                        <button class="btn btn-warning btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-warning btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>-->
+                    <!--                        <div class="box-tools pull-right">
+                                                <div class="label bg-aqua">Label</div>
+                                            </div>-->
+                </div>
+                <div class="box-body">
+                    <div class="">
+                        <?php
+                        $this->widget('booster.widgets.TbDetailView', array(
+                            'data' => $model,
+                            'attributes' => array(
+//                                    'persona_id',
+//                                    'fecha_bautizo',
+                                //        'iglesia',
+                                //        'padre_parroquia_id',
+                                //        'papa_id',
+                                //        'mama_id',
+                                //        'feligreses_de',
+                                //        'padrino_id',
+                                //        'madrina_id',
+//                                        'tomo_id',
+//                                        'pagina',
+//                                        'numero',
+//                                        'nota',
+                                'ano_bautizo',
+                                'tomo_bautizo',
+                                'pagina_bautizo',
+                                'numero_bautizo',
+                                'lugar_bautizo',
+                                'fecha_bautizo',
+                            ),
+                        ));
+                        ?>
+
+                    </div><!-- /.box-body -->
+                </div>
+            </div>
+            
 
 
 

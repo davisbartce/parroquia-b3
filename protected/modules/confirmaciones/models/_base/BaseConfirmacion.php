@@ -23,6 +23,12 @@
  * @property integer $pagina
  * @property integer $numero
  * @property string $nota
+ * @property string $ano_bautizo
+ * @property integer $tomo_bautizo
+ * @property integer $pagina_bautizo
+ * @property integer $numero_bautizo
+ * @property string $lugar_bautizo
+ * @property string $fecha_bautizo
  *
  */
 abstract class BaseConfirmacion extends AweActiveRecord {
@@ -42,12 +48,15 @@ abstract class BaseConfirmacion extends AweActiveRecord {
     public function rules() {
         return array(
             array('persona_id, fecha_confirmacion, padre_parroquia_id, tomo_id, pagina, numero', 'required'),
-            array('persona_id, padre_parroquia_id, papa_id, mama_id, padrino_id, madrina_id, tomo_id, pagina, numero', 'numerical', 'integerOnly'=>true),
+            array('persona_id, padre_parroquia_id, papa_id, mama_id, padrino_id, madrina_id, tomo_id, pagina, numero, tomo_bautizo, pagina_bautizo, numero_bautizo', 'numerical', 'integerOnly'=>true),
             array('iglesia', 'length', 'max'=>60),
             array('feligreses_de', 'length', 'max'=>64),
             array('nota', 'length', 'max'=>150),
-            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota', 'default', 'setOnEmpty' => true, 'value' => null),
-            array('id, persona_id, fecha_confirmacion, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota', 'safe', 'on'=>'search'),
+            array('ano_bautizo', 'length', 'max'=>4),
+            array('lugar_bautizo', 'length', 'max'=>40),
+            array('fecha_bautizo', 'safe'),
+            array('iglesia, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, nota, ano_bautizo, tomo_bautizo, pagina_bautizo, numero_bautizo, lugar_bautizo, fecha_bautizo', 'default', 'setOnEmpty' => true, 'value' => null),
+            array('id, persona_id, fecha_confirmacion, iglesia, padre_parroquia_id, papa_id, mama_id, feligreses_de, padrino_id, madrina_id, tomo_id, pagina, numero, nota, ano_bautizo, tomo_bautizo, pagina_bautizo, numero_bautizo, lugar_bautizo, fecha_bautizo', 'safe', 'on'=>'search'),
         );
     }
 
@@ -75,6 +84,12 @@ abstract class BaseConfirmacion extends AweActiveRecord {
                 'pagina' => Yii::t('app', 'Pagina'),
                 'numero' => Yii::t('app', 'Numero'),
                 'nota' => Yii::t('app', 'Nota'),
+                'ano_bautizo' => Yii::t('app', 'Ano Bautizo'),
+                'tomo_bautizo' => Yii::t('app', 'Tomo Bautizo'),
+                'pagina_bautizo' => Yii::t('app', 'Pagina Bautizo'),
+                'numero_bautizo' => Yii::t('app', 'Numero Bautizo'),
+                'lugar_bautizo' => Yii::t('app', 'Lugar Bautizo'),
+                'fecha_bautizo' => Yii::t('app', 'Fecha Bautizo'),
         );
     }
 
@@ -95,6 +110,12 @@ abstract class BaseConfirmacion extends AweActiveRecord {
         $criteria->compare('pagina', $this->pagina);
         $criteria->compare('numero', $this->numero);
         $criteria->compare('nota', $this->nota, true);
+        $criteria->compare('ano_bautizo', $this->ano_bautizo, true);
+        $criteria->compare('tomo_bautizo', $this->tomo_bautizo);
+        $criteria->compare('pagina_bautizo', $this->pagina_bautizo);
+        $criteria->compare('numero_bautizo', $this->numero_bautizo);
+        $criteria->compare('lugar_bautizo', $this->lugar_bautizo, true);
+        $criteria->compare('fecha_bautizo', $this->fecha_bautizo, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

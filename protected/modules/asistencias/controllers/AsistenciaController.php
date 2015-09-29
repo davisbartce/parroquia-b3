@@ -35,6 +35,7 @@ class AsistenciaController extends AweController {
 	public function actionCreate()
 	{
 		$model = new Asistencia;
+                $model->fecha=  date('Y-m-d h:i:s');
 
         $this->performAjaxValidation($model, 'asistencia-form');
 
@@ -135,4 +136,58 @@ class AsistenciaController extends AweController {
 			Yii::app()->end();
 		}
 	}
+        
+        
+    public function generateColumnReport($inicio, $fin) {
+        $inicio = DateTime::createFromFormat('d/m/Y', $inicio)->setTime(0, 0, 0);
+        $fin = DateTime::createFromFormat('d/m/Y', $fin)->setTime(0, 0, 0);
+
+        $interval = DateInterval::createFromDateString('1 day');
+        $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
+        $dias = 0;
+        $report = array();
+        $report['title']['text'] = 'Reporte';
+        $report['credits']['enabled'] = false;
+        $report['chart']['height'] = '320';
+        $report['subtitle']['text'] = ' Desde: ' . $inicio->format('d-m-Y') . '  Hasta: ' . $fin->format('d-m-Y');
+        $report['xAxis']['labels'] = array("rotation" => -45);
+        $report['yAxis']['min'] = 0;
+        $report['yAxis']['title']['text'] = "Número";
+        $report['yAxis']['allowDecimals'] = false;
+        $report['xAxis']['categories'] = array();
+        $report['series'] = array();
+        foreach ($period as $date) {
+            $dias++;
+        }
+        $interval = DateInterval::createFromDateString('1 month');
+        $period = new DatePeriod($inicio, $interval, $fin); //frecuencia del intervalo a calcular
+        $data = array();
+        $series = array('BAUTIZOS', 'MATRIMONIOS', 'COMUNIONES', 'CONFIRMACIONES');
+        foreach ($series as $value) {
+            $data = array();
+            foreach ($period as $date) {
+                $date->modify('first day of this month');
+                $inicio = $date->format('Y-m-d H:i:s');
+//                $categoria = $date->format('F');
+                $categoria = Util::retornarMestraduciso($date->format('m'));
+                $date->modify('last day of this month');
+                $date->add(new DateInterval('PT23H59M59S'));
+                $fin = $date->format('Y-m-d H:i:s');
+                $report['xAxis']['categories'][] = $categoria;
+//            var_dump($inicio, $fin,$value,$this->obtenerDatosEntidad($inicio, $fin,$value));
+//            var_dump($this->obtenerDatos($inicio, $fin));
+                array_push($data, $this->obtenerDatosEntidad($inicio, $fin,$value));
+//                         array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column'));
+            }
+                    array_push($report['series'], array('name' =>$value, 'data' => $data, 'type' => 'column'));
+//var_dump($data);
+        }
+//                    die();
+
+//        var_dump($data);
+//        die();
+//        );
+
+        return $report;
+    }
 }

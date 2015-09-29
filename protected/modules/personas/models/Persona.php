@@ -20,11 +20,11 @@ class Persona extends BasePersona {
     public function relations() {
         return array(
             'direccions' => array(self::HAS_MANY, 'Direccion', 'persona_id'),
-            'bautizos' => array(self::BELONGS_TO, 'Bautizo', array('id'=>'persona_id')),
-            'comuniones' => array(self::BELONGS_TO, 'Comunion', array('id'=>'persona_id')),
-            'matrimoniosNovio' => array(self::BELONGS_TO, 'Matrimonio', array('id'=>'novio_id')),
-            'matrimoniosNovia' => array(self::BELONGS_TO, 'Matrimonio', array('id'=>'novia_id')),
-            'confirmaciones' => array(self::BELONGS_TO, 'Confirmacion', array('id'=>'persona_id')),
+            'bautizos' => array(self::BELONGS_TO, 'Bautizo', array('id' => 'persona_id')),
+            'comuniones' => array(self::BELONGS_TO, 'Comunion', array('id' => 'persona_id')),
+            'matrimoniosNovio' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'novio_id')),
+            'matrimoniosNovia' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'novia_id')),
+            'confirmaciones' => array(self::BELONGS_TO, 'Confirmacion', array('id' => 'persona_id')),
         );
     }
 
@@ -129,19 +129,20 @@ class Persona extends BasePersona {
                 $date->modify('last day of this month');
                 $date->add(new DateInterval('PT23H59M59S'));
                 $fin = $date->format('Y-m-d H:i:s');
-                $report['xAxis']['categories'][] = $categoria;
+                if (!in_array($categoria, $report['xAxis']['categories'])) {
+                    $report['xAxis']['categories'][] = $categoria;
+                }
 //            var_dump($inicio, $fin,$value,$this->obtenerDatosEntidad($inicio, $fin,$value));
 //            var_dump($this->obtenerDatos($inicio, $fin));
-                array_push($data, $this->obtenerDatosEntidad($inicio, $fin,$value));
+                array_push($data, $this->obtenerDatosEntidad($inicio, $fin, $value));
 //                         array_push($report['series'], array('name' => Util::Truncate('$motivo->nombre', 21), 'data' => $data, 'type' => 'column'));
             }
-                    array_push($report['series'], array('name' =>$value, 'data' => $data, 'type' => 'column'));
+            array_push($report['series'], array('name' => $value, 'data' => $data, 'type' => 'column'));
 //var_dump($data);
         }
 //                    die();
-
-//        var_dump($data);
-//        die();
+        var_dump($report['series']);
+        die();
 //        );
 
         return $report;
@@ -174,8 +175,8 @@ class Persona extends BasePersona {
     }
 
     public function obtenerDatosEntidad($inicio, $fin, $entidad) {
-      
-  $data = array();
+
+        $data = array();
         switch (true) {
             case $entidad == 'BAUTIZOS':
 //                  var_dump($entidad,'en metodo  BAUTIZOS');
@@ -216,18 +217,16 @@ class Persona extends BasePersona {
         }
         return $data;
     }
-    
-     public function de_persona($search_value)
-    {
+
+    public function de_persona($search_value) {
         $this->getDbCriteria()->mergeWith(
-            array(
-             
-                'condition' => "CONCAT(IFNULL(CONCAT(t.nombres,' '),''),IFNULL(t.apellidos,'')) like '%$search_value%'",
+                array(
+                    'condition' => "CONCAT(IFNULL(CONCAT(t.nombres,' '),''),IFNULL(t.apellidos,'')) like '%$search_value%'",
 //                'params' => array(
 //                    ':inicio' => $inicio,
 //                    ':fin' => $fin
 //                ),
-            )
+                )
         );
         return $this;
     }

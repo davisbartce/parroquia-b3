@@ -375,6 +375,11 @@
                                 <i class="fa fa-bell"></i> <span>Comuniones</span> 
                             </a>
                         </li>
+                        <li class="principal ">
+                            <a href="<?php echo Yii::app()->baseUrl . "/asistencias/asistencia/admin" ?>">
+                                <i class="fa fa-institution"></i> <span>Asistencia</span> 
+                            </a>
+                        </li>
                         <!--                        <li>
                                                     <a href="pages/calendar.html">
                                                         <i class="fa fa-calendar"></i> <span>Calendar</span>

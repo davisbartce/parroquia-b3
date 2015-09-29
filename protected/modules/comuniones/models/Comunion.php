@@ -43,7 +43,7 @@ class Comunion extends BaseComunion
                 'persona_id' => Yii::t('app', 'Persona'),
                 'fecha_comunion' => Yii::t('app', 'Fecha Comunión'),
                 'iglesia' => Yii::t('app', 'Iglesia'),
-                'padre_parroquia_id' => Yii::t('app', 'Padre Parroquia'),
+                'padre_parroquia_id' => Yii::t('app', 'Dio la comunión'),
                 'papa_id' => Yii::t('app', 'Papá'),
                 'mama_id' => Yii::t('app', 'Mamá'),
                 'feligreses_de' => Yii::t('app', 'Feligreses De'),

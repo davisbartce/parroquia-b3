@@ -1,21 +1,16 @@
-<?php
-/** @var AsistenciaController $this */
-/** @var Asistencia $model */
-$this->menu = array(
-array('label' => Yii::t('AweCrud.app', 'Create'), 'icon' => 'plus', 'url' => array('create'), 
-//'visible' => (Util::checkAccess(array('action_incidenciaPrioridad_create')))
-),
-);
-?>
+
 <aside class="right-side">
     <section class="content-header">
-        <h1>
+        <h1 class="header-title">
             <!--<small>-->
            <i class="fa fa-user"></i>  Asistencia<!--            <div class="icon">
                
             </div>-->
             <!--</small>-->
         </h1>
+         <a class="btn btn-success actionMenuAdmin" href="<?php echo Yii::app()->createUrl('asistencias/asistencia/create') ?>"><i
+                class="fa fa-plus"></i>&nbsp; Crear 
+        </a>
     </section>
 
     <div class="col-lg-12 col-sm-12">
@@ -41,7 +36,8 @@ array('label' => Yii::t('AweCrud.app', 'Create'), 'icon' => 'plus', 'url' => arr
                                         'numero_comulgados',
                                     array(
                 'class' => 'CButtonColumn',
-                'template' => '{update} {delete}',
+//                'template' => '{update} {delete}',
+                'template' => '{delete}',
                 'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -57,7 +53,7 @@ array('label' => Yii::t('AweCrud.app', 'Create'), 'icon' => 'plus', 'url' => arr
                 //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
                 ),
                 'delete' => array(
-                'label' => '<button class="btn btn-danger"><i class="icon-trash"></i></button>',
+               'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
                 'options' => array('title' => 'Eliminar'),
                 'imageUrl' => false,
                 //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'

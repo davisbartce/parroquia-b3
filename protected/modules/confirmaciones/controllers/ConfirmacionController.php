@@ -37,7 +37,10 @@ class ConfirmacionController extends AweController {
 
         if (isset($_POST['Confirmacion'])) {
             $model->attributes = $_POST['Confirmacion'];
-             $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'Y-m-d');
+            $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'Y-m-d');
+            if ($model->fecha_bautizo) {
+                $model->fecha_bautizo = Util::FormatDate($model->fecha_bautizo, 'Y-m-d');
+            }
 //            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
@@ -56,7 +59,10 @@ class ConfirmacionController extends AweController {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-         $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'd-m-Y');
+        $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'd-m-Y');
+        if ($model->fecha_bautizo) {
+            $model->fecha_bautizo = Util::FormatDate($model->fecha_bautizo, 'd-m-Y');
+        }
 //        $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
 
 
@@ -64,7 +70,10 @@ class ConfirmacionController extends AweController {
 
         if (isset($_POST['Confirmacion'])) {
             $model->attributes = $_POST['Confirmacion'];
-               $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'Y-m-d');
+            $model->fecha_confirmacion = Util::FormatDate($model->fecha_confirmacion, 'Y-m-d');
+            if ($model->fecha_bautizo) {
+                $model->fecha_bautizo = Util::FormatDate($model->fecha_bautizo, 'Y-m-d');
+            }
 //            $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'Y-m-d');
             if ($model->save()) {
                 $this->redirect(array('admin'));
@@ -99,11 +108,11 @@ class ConfirmacionController extends AweController {
     public function actionAdmin() {
         $model = new Confirmacion('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Confirmacion'])){
+        if (isset($_GET['Confirmacion'])) {
             $model->attributes = $_GET['Confirmacion'];
         }
-         if (isset($_GET['searchValue'])){
-              $model->de_persona($_GET['searchValue']);
+        if (isset($_GET['searchValue'])) {
+            $model->de_persona($_GET['searchValue']);
         }
 
         $this->render('admin', array(

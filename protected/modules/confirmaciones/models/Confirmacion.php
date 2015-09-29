@@ -39,7 +39,7 @@ class Confirmacion extends BaseConfirmacion
                 'persona_id' => Yii::t('app', 'Persona'),
                 'fecha_confirmacion' => Yii::t('app', 'Fecha Confirmación'),
                 'iglesia' => Yii::t('app', 'Iglesia'),
-                'padre_parroquia_id' => Yii::t('app', 'Padre Parroquia'),
+                'padre_parroquia_id' => Yii::t('app', 'Confirmado por'),
                 'papa_id' => Yii::t('app', 'Papá'),
                 'mama_id' => Yii::t('app', 'Mamá'),
                 'feligreses_de' => Yii::t('app', 'Feligreses De'),
@@ -49,6 +49,12 @@ class Confirmacion extends BaseConfirmacion
                 'pagina' => Yii::t('app', 'Página'),
                 'numero' => Yii::t('app', 'Número'),
                 'nota' => Yii::t('app', 'Nota'),
+              'ano_bautizo' => Yii::t('app', 'Año'),
+                'tomo_bautizo' => Yii::t('app', 'Tomo'),
+                'pagina_bautizo' => Yii::t('app', 'Página'),
+                'numero_bautizo' => Yii::t('app', 'Nùmero'),
+                'lugar_bautizo' => Yii::t('app', 'Lugar'),
+                'fecha_bautizo' => Yii::t('app', 'Fecha'),
       
         );
     }

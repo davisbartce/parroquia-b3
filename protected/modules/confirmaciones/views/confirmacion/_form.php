@@ -85,7 +85,7 @@ Util::tsRegisterAssetJs('_form.js');
                         $model, 'fecha_confirmacion', array(
                     'widgetOptions' => array(
                         'options' => array(
-                            'format' => 'dd/mm/yyyy',
+                            'format' => 'dd-mm-yyyy',
                             'autoclose' => true
                         ),
                         'htmlOptions' => array(
@@ -124,7 +124,7 @@ Util::tsRegisterAssetJs('_form.js');
                         'class' => '',
                     ),
                     'widgetOptions' => array(
-                        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'nombres')),
+                        'data' => (CHtml::listData(Padre::model()->findAll(), 'id', 'campo_completo')),
 //                        'empty' => 'seleccione',
                         'htmlOptions' => array(),
                     )
@@ -286,6 +286,74 @@ Util::tsRegisterAssetJs('_form.js');
 <?php // echo $form->textFieldGroup($model, 'nota', array('maxlength' => 150)) ?>
 
 
+            </div>
+        </div>
+        
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Campos Bautizo</h3>
+            </div>
+            <div class="panel-body">
+
+                <?php // echo $form->textFieldGroup($model, 'rc_año', array('maxlength' => 4))  ?>
+                <?php
+                echo $form->datePickerGroup(
+                        $model, 'ano_bautizo', array(
+                    'widgetOptions' => array(
+                        'options' => array(
+                            'format' => 'yyyy',
+                            'startView' => 2,
+                            'minViewMode' => 2,
+                            'autoclose' => true
+                        ),
+                        'htmlOptions' => array(
+                            'class' => 'hasDatepicker',
+                            'readonly' => 'readonly',
+                        ),
+                    ),
+                    'wrapperHtmlOptions' => array(
+//					'class' => 'col-sm-7 col-lg-7',
+//                        'readonly' => 'readonly',
+//                        'class' => 'hasDatepicker'
+                    ),
+//				'hint' => 'Click inside! This is a super cool date field.',
+                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+                        )
+                );
+                ?>
+
+                <?php echo $form->textFieldGroup($model, 'tomo_bautizo', array('maxlength' => 20)) ?>
+
+                <?php echo $form->textFieldGroup($model, 'pagina_bautizo') ?>
+                <?php echo $form->textFieldGroup($model, 'numero_bautizo') ?>
+
+                <?php echo $form->textFieldGroup($model, 'lugar_bautizo') ?>
+
+
+                <?php
+                echo $form->datePickerGroup(
+                        $model, 'fecha_bautizo', array(
+                    'widgetOptions' => array(
+                        'options' => array(
+                            'format' => 'dd-mm-yyyy',
+                            'autoclose' => true
+                        ),
+                        'htmlOptions' => array(
+                            'class' => 'hasDatepicker',
+                            'readonly' => 'readonly',
+                        ),
+                    ),
+                    'wrapperHtmlOptions' => array(
+//					'class' => 'col-sm-12',
+                    ),
+//				'hint' => 'Click inside! This is a super cool date field.',
+                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+                        )
+                );
+                ?>
+
+
+                <?php // echo $form->datePickerGroup($model, 'rc_fecha', array('prepend' => '<i class="icon-calendar"></i>'))   ?>
             </div>
         </div>
     </div>
