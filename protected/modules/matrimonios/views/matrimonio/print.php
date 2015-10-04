@@ -32,7 +32,7 @@
     }
     p.parrafo{
         line-height: 30px;
-        font-size: 15px;
+        font-size: 12px;
         text-align: justify; 
     }
     h3 {
@@ -51,13 +51,19 @@
         font-size: 17px;
 
     }
-
+    h4, .h4, h5, .h5, h6, .h6 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .margen-izquierda{
+        margin-left: 105px;
+    }
 
 
 
 
 </style>
-<section class="invoice" style="padding: 40px">
+<section class="invoice" style="padding: 20px">
     <!-- title row -->
     <div class="row">
         <div class="col-xs-2">
@@ -90,7 +96,7 @@
         </div>
     </div>
     <br>
-    <h2 class="text-center" >CERTIFICADO DE BAUTISMO</h2>
+    <h2 class="text-center" >CERTIFICADO DE MATRIMONIO</h2>
     <br>
     <div class="pull-right">
         Quito, <?php echo Util::traducirFechaActual(); ?>
@@ -99,31 +105,41 @@
     <div class="row invoice-info">
         <div class="col-xs-3">
             <br>
-            <p class="elipsis">
-            </p>
-            <br>
-            <p class="elipsis">
-            </p>
-            <br>
-            <p class="elipsis">
-            </p>
-            <br>
-            <p></p>
-            <p>
-                <b>Registro Parroquial</b><br>
+
+            <b>Registro Parroquial</b><br>
 
             </p>
             <b>Año:</b> <?php echo $model->libro->ano; ?> <br>
             <b>Tomo:</b> <?php echo $model->libro->tomo; ?> <br>
             <b>Folio:</b> <?php echo $model->pagina; ?> <br>
             <b>Acta:</b> <?php echo $model->numero; ?> <br>
-            <b>Nota marginal:</b> <?php echo $model->nota ? $model->nota :  '<p class="elipsis">
-            </p>
             <br>
-            <p class="elipsis">
-            </p>
-            <br>' ; ?> 
+            <!--<b>Nota marginal:</b>--> 
+                <?php
+//             echo $model->nota ? $model->nota :  '<p class="elipsis">
+//            </p>
+//            <br>
+//            <p class="elipsis">
+//            </p>
+//            <br>' ;
+//                
+            ?> 
             <p></p>
+            <p>
+                <b><?php echo strtoupper($model->novio->apellidos . " " . $model->novio->nombres) ?></b> <br>
+
+            </p>
+            <p> Con </p>
+            <p>
+                <b><?php echo strtoupper($model->novia->apellidos . " " . $model->novia->nombres) ?></b> 
+                <br>
+                <br>
+
+
+            </p>
+            <p>
+
+            </p>
 
 
 <!--            <p class="elipsis">
@@ -132,16 +148,16 @@
             <p class="elipsis">
             </p>
             <br>-->
-            
+
             <p>
                 <b>Registro Civil</b><br>
 
             </p>
-             <b>Año:</b> <?php echo $model->rc_ano; ?> <br>
+            <b>Año:</b> <?php echo $model->rc_ano; ?> <br>
             <b>Tomo:</b> <?php echo $model->rc_tomo; ?> <br>
             <b>Folio:</b> <?php echo $model->rc_folio; ?> <br>
             <b>Acta:</b> <?php echo $model->rc_acta; ?> <br>
-           
+
 
             <!--                <div class="ellipsis">
             
@@ -153,25 +169,35 @@
             <br>
             <div class="descripcion-certificado">
                 <p class="parrafo">
-                    El suscrito, en legal forma, certifica que en los registros bautismales de este archivo parroquial, se halla inscrita una partida, con los siguientes datos:
+                    El que suscribe a petición de la parte interesada, en legal forma certifica que en el registro de matrimonios de este archivo parroquial, se halla inscrita la siguiente partida:
                     <br>
                 </p>
                 <p class="parrafo">
-                    El día <?php echo date('d', strtotime($model->fecha_bautizo)) ?> , del mes de <?php echo Util::retornarMestraduciso(date('m', strtotime($model->fecha_bautizo))) ?> ,  del año del Señor <?php echo date('Y', strtotime($model->fecha_bautizo)) ?>,
+                    El día <?php echo date('d', strtotime($model->fecha_matrimonio)) ?> , del mes de <?php echo Util::retornarMestraduciso(date('m', strtotime($model->fecha_matrimonio))) ?> ,  del año del Señor <?php echo date('Y', strtotime($model->fecha_matrimonio)) ?>,
 
-                    en la Iglesia parroquial <?php echo $model->iglesia ?>.
+                    en la Iglesia de <?php echo $model->iglesia ?>. Obtenida la dispensa de proclamas y <strong>NO</strong> habiendo impedimento alguno.
 
                     El Padre <?php echo $model->padre->campo_completo ?>
-                    Bautizó solemnemente a: <?php echo $model->persona->campo_completo ?>
-                    nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : " " ?> el <?php echo (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) ?> 
-
-
-                    hijo(a) de <?php echo $model->papa ? $model->papa->campo_completo : " .............. " ?>
-                    y de <?php echo $model->mama ? $model->mama->campo_completo : " .............. " ?>.
+                    precensió y bendijo fuera de la Santa Misa el matrimonio que contrajo: 
+                    <br>
                 </p>
                 <p class="parrafo">
-                    <?php $model->obtenerTextoPadrinos(); ?>;
-                    a quien(es) se advirtió sus obligaciones y parentezco espirtual.
+                    El Sr.: <?php echo $model->novio->campo_completo ?>
+
+                    hijo de los Señores:  <?php echo $model->papa_novio ? $model->papa_novio->campo_completo : " .................................... " ?>
+                    y de <?php echo $model->mama_novio ? $model->mama_novio->campo_completo : " .................................... " ?>.
+                </p>
+                <p class="parrafo">
+                    Con la Srta.: <?php echo $model->novia->campo_completo ?>
+
+                    hija de los Señores:  <?php echo $model->papa_novia ? $model->papa_novia->campo_completo : " .................................... " ?>
+                    y de <?php echo $model->mama_novia ? $model->mama_novia->campo_completo : " .................................... " ?>.
+                </p>
+                <p class="parrafo">
+                    Feligreses de esta Parroquia <?php echo Constants::INGLESIAPARROQUIA ?>.
+                </p>
+                <p class="parrafo">
+                    Fuerón testigos: <?php echo $model->testigo_novio_1 . ", " . $model->testigo_novio_2 . ", " . $model->testigo_novia_1 . " y  " . $model->testigo_novia_2; ?>.
                 </p>
                 <p class="parrafo ">
                     Lo certifica Padre <?php echo $model->padre->campo_completo ?>.
@@ -185,6 +211,10 @@
             <p class="parrafo">
                 Lo Certifico, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....................................
             </p>
+            <br>
+            <p class="margen-izquierda">
+                Parroco
+            </p>
 
 
 
@@ -197,5 +227,5 @@
 
 
 
-    <?php // var_dump($model) ?>
+    <?php // var_dump($model)  ?>
 </section>

@@ -88,7 +88,7 @@
 //                                        ),
                                         array(
                                             'name' => 'padre_parroquia_id',
-                                            'value' => ($model->confirmaciones->padre ? $model->confirmaciones->padre->getNombre_completo() : ""),
+                                            'value' => ($model->confirmaciones->padre ? $model->confirmaciones->padre->campo_completo : ""),
                                             'type' => 'html',
                                         ),
                                         'fecha_confirmacion',
@@ -184,7 +184,7 @@
                                         'iglesia',
                                         array(
                                             'name' => 'padre_parroquia_id',
-                                            'value' => ($model->bautizos->padre ? $model->bautizos->padre->getNombre_completo() : ""),
+                                            'value' => ($model->bautizos->padre ? $model->bautizos->padre->campo_completo() : ""),
                                             'type' => 'html',
                                         ),
                                         'fecha_bautizo',
@@ -290,7 +290,7 @@
             'iglesia',
             array(
                 'name' => 'padre_parroquia_id',
-                'value' => ($matrimonios->padre ? $matrimonios->padre->getNombre_completo() : ""),
+                'value' => ($matrimonios->padre ? $matrimonios->padre->campo_completo : ""),
                 'type' => 'html',
             ),
             'fecha_matrimonio',

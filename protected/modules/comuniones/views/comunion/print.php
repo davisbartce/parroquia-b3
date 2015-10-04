@@ -49,24 +49,37 @@
 <section class="invoice">
     <!-- title row -->
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-2">
+
+            <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo2.jpg' ?>" class="img-circle" alt="JEUS EL BUEN PASTOR" />
+        </div><!-- /.col -->
+        <div class="col-xs-8">
             <div class="" style="text-align: center">
 
-                <h1 class="">
+                <h4 class="">
                     <!--<i class="fa fa-globe"></i>--> 
-                    ARQUIDIOSESIS DE QUITO
+                    <?php echo Constants::ARQUIDIOSESIS; ?>
                     <!--<small class="pull-right">Date: 2/10/2014</small>-->
-                </h1>
-                <h3>SERVICIO PASTORAL DE LA IGLESIA</h3>
-                <h3> "JESUS EL BUEN PASTOR DE LA KENNEDY" </h3>
-                <h5>Urb. Matovelle Calle K y Azunos. Telf.: 2813-866</h5>
-                <br>
-                <h4>
-                    CERTIFICADO
                 </h4>
-                                <br>
+                <h5>Parroquia</h5>
+                <h4 class="font-serif font-bolder font-h3"> <?php echo Constants::INGLESIAPARROQUIA . " " . Constants::DELAKENNEDY ?> </h4>
+                <h5>
+                    <?php echo Constants::DIRECCION . ' &nbsp;&nbsp;' . Constants::URBANIZACION . ' &nbsp;&nbsp; ' . Constants::TELEFONO; ?>
 
+                </h5>
+                <h5 class="font-bolder"> 
+                    QUITO-ECUADOR
+                </h5>
             </div>
+
+        </div><!-- /.col -->
+        <div class="col-xs-2">
+            <img style="max-height: 150px" src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo3.gif' ?>" class="img-circle" alt="JEUS EL BUEN PASTOR" />
+
+        </div>
+    </div>
+    <div class="row">
+<h2 class="text-center" >CERTIFICADO</h2>
             <div class="center" >
                 <p class="elipsis90 parrafo">
                     <span class="espacio">A  </span><span class="espacio"> l...</span>Sr....

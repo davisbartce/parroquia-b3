@@ -22,8 +22,13 @@ class AsistenciaReporteController extends AweController {
      */
     public function actionReporte() {
         $model = New AsistenciaReporte();
+        $model->fechas= date('01/m/Y').' - '.date(Util::obtenerUltimoDiaMes().'/m/Y');
         $reporte = null;
-        if (isset($_POST['AsistenciaReporte']['fechas']) && !empty($_POST['AsistenciaReporte']['fechas'])) {
+        if ((isset($_POST['AsistenciaReporte']['fechas']) && !empty($_POST['AsistenciaReporte']['fechas']))|| $model->fechas !=null) {
+            
+            if(!isset($_POST['AsistenciaReporte']['fechas'])){
+                $_POST['AsistenciaReporte']['fechas']=$model->fechas;
+            }
             $model->fechas = $_POST['AsistenciaReporte']['fechas'];
             $fechas = explode(" - ", $model->fechas);
             $fecha_inicio = $fechas[0] ;

@@ -43,8 +43,8 @@
 
 
 
-    <!--<body >-->
-    <body onload="window.print();">
+    <body >
+    <!--<body onload="window.print(); ">-->
         <div class="wrapper">
             <!-- Main content -->
             <!-- /.content -->

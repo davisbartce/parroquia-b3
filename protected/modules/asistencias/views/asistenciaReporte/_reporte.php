@@ -31,35 +31,47 @@
             <div class="panel-body">
 
 
+                <div class="row">
+
+                    <div class="col-sm-6">
 
 
-
-                <?php
-                echo $form->dateRangeGroup(
-                        $model, 'fechas', array(
-                    'widgetOptions' => array(
+                        <?php
+                        echo $form->dateRangeGroup(
+                                $model, 'fechas', array(
+                            'widgetOptions' => array(
 //                        'callback' => 'js:function(start, end){console.log(start.toString("MMMM d, yyyy") + " - " + end.toString("MMMM d, yyyy"));}',
-                        'options' => array(
-                            'format' => 'DD/MM/YYYY',
-                           // 'autoclose' => true
-                        ),
-                    ),
-                    'wrapperHtmlOptions' => array(
-                        'class' => 'col-sm-5',
-                    ),
+                                'options' => array(
+                                    'format' => 'DD/MM/YYYY',
+//                         "startDate"=> "30/09/2015",
+//    "endDate"=> "30/12/2015",
+                                ),
+                            ),
+//                    'presetDropdown' => true,
+//                    'hideInput' => true,
+                            'wrapperHtmlOptions' => array(
+//                                'class' => 'col-sm-5',
+                            ),
 //				'hint' => 'Click inside! An even a date range field!.',
-                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
-                        )
-                );
-                ?>
+                            'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+                                )
+                        );
+                        ?>
 
+                    </div>
+                   
+                    <div class="col-sm-6">
 
-                <?php
-                $this->widget('booster.widgets.TbButton', array(
-                    'buttonType' => 'submit',
-                    'label' => 'Buscar',
-                ));
-                ?>
+                        <?php
+                        $this->widget('booster.widgets.TbButton', array(
+                            'buttonType' => 'submit',
+                            'label' => 'Buscar',
+                            'context' => 'warning',
+                        ));
+                        ?>
+                    </div>
+                </div>
+
                 <?php if ($reporte) : ?>
                     <?php
                     $this->Widget('ext.highcharts.HighchartsWidget', array(

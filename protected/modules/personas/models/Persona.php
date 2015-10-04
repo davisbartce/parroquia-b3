@@ -141,8 +141,8 @@ class Persona extends BasePersona {
 //var_dump($data);
         }
 //                    die();
-        var_dump($report['series']);
-        die();
+//        var_dump($report['series']);
+//        die();
 //        );
 
         return $report;

@@ -135,5 +135,12 @@ class MatrimonioController extends AweController {
             Yii::app()->end();
         }
     }
+    
+      public function actionViewPrint($id) {
+        $this->layout='//layouts/print';
+        $this->render('print', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
 
 }

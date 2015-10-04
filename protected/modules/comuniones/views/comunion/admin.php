@@ -33,91 +33,93 @@ Util::tsRegisterAssetJs('admin.js');
                         <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
                     </span>
                 </div>
+                <div class="scrollable">
 
-                <?php
-                $this->widget('booster.widgets.TbGridView', array(
-                    'id' => 'comunion-grid',
-                    'type' => 'striped bordered hover advance',
-                    'dataProvider' => $model->search(),
-                    'columns' => array(
-                        array(
-                            'name' => 'persona_id',
-                            'value' => '$data->persona->campo_completo'
-                        ),
-                        'fecha_comunion',
-                        'iglesia',
-                        array(
-                            'name' => 'padre_parroquia_id',
-                            'value' => '$data->padre->nombres." ".$data->padre->apellidos'
-                        ),
-                        array(
-                            'name' => 'papa_id',
+                    <?php
+                    $this->widget('booster.widgets.TbGridView', array(
+                        'id' => 'comunion-grid',
+                        'type' => 'striped bordered hover advance',
+                        'dataProvider' => $model->search(),
+                        'columns' => array(
+                            array(
+                                'name' => 'persona_id',
+                                'value' => '$data->persona->campo_completo'
+                            ),
+                            'fecha_comunion',
+                            'iglesia',
+                            array(
+                                'name' => 'padre_parroquia_id',
+                                'value' => '$data->padre->nombres." ".$data->padre->apellidos'
+                            ),
+                            array(
+                                'name' => 'papa_id',
 //                            'value' => '$data->papa->nombres." ".$data->papa->apellidos'
-                            'value' => '$data->papa->campo_completo'
-                        ),
-                        array(
-                            'name' => 'mama_id',
-                            'value' => '$data->mama->campo_completo'
+                                'value' => '$data->papa->campo_completo'
+                            ),
+                            array(
+                                'name' => 'mama_id',
+                                'value' => '$data->mama->campo_completo'
 //                            'value' => '$data->mama->nombres." ".$data->mama->apellidos'
-                        ),
-                        /*
-                          'feligreses_de',
-                          'padrino_id',
-                          'madrina_id',
-                          'tomo_id',
-                          'pagina',
-                          'numero',
-                          'nota',
-                          'rc_ano',
-                          'rc_tomo',
-                          'rc_folio',
-                          'rc_acta',
-                          'rc_fecha',
-                         */
-                        array(
-                            'class' => 'CButtonColumn',
-                            'template' => '{view} {update} {delete} {print}',
-                            'afterDelete' => 'function(link,success,data){ 
+                            ),
+                            /*
+                              'feligreses_de',
+                              'padrino_id',
+                              'madrina_id',
+                              'tomo_id',
+                              'pagina',
+                              'numero',
+                              'nota',
+                              'rc_ano',
+                              'rc_tomo',
+                              'rc_folio',
+                              'rc_acta',
+                              'rc_fecha',
+                             */
+                            array(
+                                'class' => 'CButtonColumn',
+                                'template' => '{view} {update} {delete} {print}',
+                                'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
                 $("#flashMsg").css("display","");
                 $("#flashMsg").html(data).animate({opacity: 1.0}, 5500).fadeOut("slow");
                 }
                 }',
-                            'buttons' => array(
-                                'view' => array(
-                                    'label' => '<button class="btn btn-info"><i class="fa fa-eye"></i></button>',
-                                    'options' => array('title' => 'Ver'),
-                                    'imageUrl' => false,
-                                //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
-                                ),
-                                'update' => array(
-                                    'label' => '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
-                                    'options' => array('title' => 'Actualizar'),
-                                    'imageUrl' => false,
-                                //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
-                                ),
-                                'delete' => array(
-                                    'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
-                                    'options' => array('title' => 'Eliminar'),
-                                    'imageUrl' => false,
-                                //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
-                                ),
-                                 'print' => array(
+                                'buttons' => array(
+                                    'view' => array(
+                                        'label' => '<button class="btn btn-info"><i class="fa fa-eye"></i></button>',
+                                        'options' => array('title' => 'Ver'),
+                                        'imageUrl' => false,
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
+                                    ),
+                                    'update' => array(
+                                        'label' => '<button class="btn btn-primary"><i class="fa fa-pencil"></i></button>',
+                                        'options' => array('title' => 'Actualizar'),
+                                        'imageUrl' => false,
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
+                                    ),
+                                    'delete' => array(
+                                        'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
+                                        'options' => array('title' => 'Eliminar'),
+                                        'imageUrl' => false,
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
+                                    ),
+                                    'print' => array(
                                         'label' => '<button class="btn btn-success"><i class="fa fa-file-text"></i></button>',
-                                        'options' => array('title' => 'Imprimir','target'=>'_blank'),
+                                        'options' => array('title' => 'Imprimir', 'target' => '_blank'),
                                         'imageUrl' => false,
                                         'url' => 'Yii::app()->createUrl("comuniones/comunion/viewPrint", array("id"=>$data->id))',
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
                                     ),
+                                ),
+                                'htmlOptions' => array(
+                                    'width' => '180px'
+                                )
                             ),
-                            'htmlOptions' => array(
-                                'width' => '180px'
-                            )
                         ),
-                    ),
-                ));
-                ?>
+                    ));
+                    ?>
+                </div>
             </div>
         </div>
     </div>

@@ -21,7 +21,7 @@
         <!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>-->
         <!--<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/fonts/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                              ?>/css/font-awesome.min.css" rel="stylesheet">-->
+        <!--<link href="<?php // echo Yii::app()->theme->baseUrl;                               ?>/css/font-awesome.min.css" rel="stylesheet">-->
         <!--<link href="< ?php echo Yii::app()->theme->baseUrl; ?>/css/ionicons.min.css" rel="stylesheet">-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/ladda-themeless.min.css" rel="stylesheet">
         <!-- Select2 -->
@@ -63,81 +63,81 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-<!--                        <li class="dropdown messages-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-envelope"></i>
-                                <span class="label label-success">4</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                     inner menu: contains the actual data 
-                                    <ul class="menu">
-                                        <li> start message 
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li> end message 
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    AdminLTE Design Team
-                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Developers
-                                                    <small><i class="fa fa-clock-o"></i> Today</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
-                        </li>-->
+                        <!--                        <li class="dropdown messages-menu">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-envelope"></i>
+                                                        <span class="label label-success">4</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="header">You have 4 messages</li>
+                                                        <li>
+                                                             inner menu: contains the actual data 
+                                                            <ul class="menu">
+                                                                <li> start message 
+                                                                    <a href="#">
+                                                                        <div class="pull-left">
+                                                                            <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
+                                                                        </div>
+                                                                        <h4>
+                                                                            Support Team
+                                                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                                        </h4>
+                                                                        <p>Why not buy a new awesome theme?</p>
+                                                                    </a>
+                                                                </li> end message 
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="pull-left">
+                                                                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                                                                        </div>
+                                                                        <h4>
+                                                                            AdminLTE Design Team
+                                                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                                                        </h4>
+                                                                        <p>Why not buy a new awesome theme?</p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="pull-left">
+                                                                            <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                                                        </div>
+                                                                        <h4>
+                                                                            Developers
+                                                                            <small><i class="fa fa-clock-o"></i> Today</small>
+                                                                        </h4>
+                                                                        <p>Why not buy a new awesome theme?</p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="pull-left">
+                                                                            <img src="img/avatar2.png" class="img-circle" alt="user image"/>
+                                                                        </div>
+                                                                        <h4>
+                                                                            Sales Department
+                                                                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                                                        </h4>
+                                                                        <p>Why not buy a new awesome theme?</p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#">
+                                                                        <div class="pull-left">
+                                                                            <img src="img/avatar.png" class="img-circle" alt="user image"/>
+                                                                        </div>
+                                                                        <h4>
+                                                                            Reviewers
+                                                                            <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                                                        </h4>
+                                                                        <p>Why not buy a new awesome theme?</p>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="footer"><a href="#">See All Messages</a></li>
+                                                    </ul>
+                                                </li>-->
 
 
                         <!-- Notifications: style can be found in dropdown.less -->
@@ -285,7 +285,7 @@
                                                                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                                                                         </div>-->
                                     <div class="pull-right">
-                                        <?php echo CHtml::link('<i class=" btn btn-danger icon-off">Cerrar Sesiòn</i>&nbsp;&nbsp;', Yii::app()->user->ui->logoutUrl) ?>             
+                                        <?php echo CHtml::link('<i class=" btn btn-danger icon-off">Cerrar Sesi&oacuten</i>&nbsp;&nbsp;', Yii::app()->user->ui->logoutUrl) ?>             
                                         <!--<a href="#" class="btn btn-default btn-flat">Sign out</a>-->
                                     </div>
                                 </li>
@@ -316,18 +316,21 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
+                      
                         <li class="principal">
                             <a href="<?php echo Yii::app()->homeUrl ?>">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
-<!--                        <li class=" principal">
+                          <?php if( Constants::MENU_ACCIONES) : ?>
+
+                        <li class=" principal">
                             <a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/widgets" ?>">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
                             </a>
-                        </li>-->
+                        </li>
 
-<!--                        <li class="treeview principal">
+                        <li class="treeview principal">
                             <a href="#">
                                 <i class="fa fa-laptop"></i>
                                 <span>UI Elements</span>
@@ -343,10 +346,34 @@
                                 <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/generalForm" ?>"><i class="fa fa-folder"></i> General Form</a></li>
                                 <li><a href="<?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
                             </ul>
-                        </li>-->
+                        </li>
+                        <?php endif;     ?>
+                        <!--                        <li class=" principal">
+                                                    <a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/widgets" ?>">
+                                                        <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+                                                    </a>
+                                                </li>-->
+
+                        <!--                        <li class="treeview principal">
+                                                    <a href="#">
+                                                        <i class="fa fa-laptop"></i>
+                                                        <span>UI Elements</span>
+                                                        <i class="fa fa-angle-left pull-right"></i>
+                                                    </a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/general" ?>"><i class="fa fa-angle-double-right"></i> General</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/icons" ?>"><i class="fa fa-angle-double-right"></i> Icons</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/buttons" ?>"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/sliders" ?>"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/timeline" ?>"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/invoice" ?>"><i class="fa fa-folder"></i> Invoice</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/generalForm" ?>"><i class="fa fa-folder"></i> General Form</a></li>
+                                                        <li><a href="< ?php echo Yii::app()->baseUrl . "/dashboard/dashboard/advanced" ?>"><i class="fa fa-folder"></i> Advanced Form</a></li>
+                                                    </ul>
+                                                </li>-->
                         <li class="treeview principal <?php echo YiiBase::app()->getController()->getId() == "persona" ? "active" : "" ?> ">
                             <a href="#">
-                                <i class="fa fa-th-list"></i> <span>Catálogos</span>
+                                <i class="fa fa-th-list"></i> <span>Cat&aacutelogos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -424,14 +451,14 @@
                 <div class="pull-right hidden-xs">
                     <!--<b>Version</b> 2.0-->
                 </div>
-                <strong>Copyright © 2015-2016 <a href="#">David Paredes</a>.</strong> All rights reserved.
+                <strong>Copyright 2015-2016 <a href="#">David Paredes</a>.</strong> All rights reserved.
             </footer>
 
 
         </div>   <!-- Wrapper -->
         <div class="row">
             <?php
-// El modal de la página
+// El modal de la pÃ¡gina
             $this->beginWidget('booster.widgets.TbModal', array('id' => 'mainModal', 'options' => array('backdrop' => 'static')));
             $this->endWidget();
             ?>
