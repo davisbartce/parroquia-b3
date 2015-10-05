@@ -261,7 +261,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/avatar-5.png' ?>" class="img-circle" alt="User Image" />
+                                    <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo1.png' ?>" class="img-circle" alt="User Image" />
                                     <p>
                                         <?php echo Yii::app()->user->name ? Yii::app()->user->name : "Guest" ?>
                                         <!--<small>Member since Nov. 2012</small>-->

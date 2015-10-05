@@ -23,9 +23,13 @@
             <div class="box-header">
                 <h3 class="box-title">Info Solid Box</h3>
                 <div class="box-tools pull-right">
-                    <!--<button class="btn btn-info btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-                    <button class="btn btn-warning btn-sm" ><i class="fa  fa-line-chart"></i>  <a class="" style="color:white; font-weight: bolder;" href="<?php echo Yii::app()->createUrl('asistencias/asistenciaReporte/reporte') ?>">&nbsp; Reporte 
-                        </a></button>
+                    <a class="btn btn-warning btn-sm" style="color:white" href="<?php echo Yii::app()->createUrl('asistencias/asistenciaReporte/reporte') ?>"><i
+                            class="fa fa-line-chart"></i>&nbsp; Reportes 
+                    </a>
+
+<!--<button class="btn btn-info btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+<!--                    <button class="btn btn-warning btn-sm" ><i class="fa  fa-line-chart"></i>  <a class="" style="color:white; font-weight: bolder;" href="<?php echo Yii::app()->createUrl('asistencias/asistenciaReporte/reporte') ?>">&nbsp; Reporte 
+    </a></button>-->
                 </div>
             </div>
             <div class="box-body">
