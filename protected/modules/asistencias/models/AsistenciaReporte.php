@@ -86,7 +86,7 @@ class AsistenciaReporte extends CFormModel {
                 ->from('asistencia a')
                 ->where('a.fecha between :inicio AND :fin');
         $command->group('DATE_FORMAT(a.fecha,"%d-%m-%Y")');
-        $command->order('DATE_FORMAT(a.fecha,"%d-%m-%Y") desc');
+        $command->order('a.fecha asc');
         $command->params = (array(':inicio' => $inicio, ':fin' => $fin));
         $options = $command->queryAll();
 

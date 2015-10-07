@@ -4,9 +4,9 @@
 $this->pageTitle = Yii::t('app', 'Administrador de Usuarios');
 ?>
 <br/>
-    <div class="panel panel-default">
+    <div class="panel panel-info">
         <div class="panel-heading"> <?php echo ucwords(CrugeTranslator::t('admin', 'Manage Users')); ?></div>
-        <div class="panel-body">
+            <div class="panel-body">
             <?php
             /*
               para darle los atributos al CGridView de forma de ser consistente con el sistema Cruge

@@ -10,6 +10,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!--<link rel="shortcut icon" href="<?php echo Yii::app()->theme->baseUrl; ?>/img/favicon.ico">-->
+                        <link rel="shortcut icon" href="<?php echo Yii::app()->theme->baseUrl; ?>/img/favicon.png" type="image/x-icon"/>
+
 
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 

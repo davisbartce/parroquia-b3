@@ -108,7 +108,6 @@
 
             <b>Registro Parroquial</b><br>
 
-            </p>
             <b>Año:</b> <?php echo $model->libro->ano; ?> <br>
             <b>Tomo:</b> <?php echo $model->libro->tomo; ?> <br>
             <b>Folio:</b> <?php echo $model->pagina; ?> <br>

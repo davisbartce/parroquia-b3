@@ -16,13 +16,13 @@
  * @property integer $novio_id
  * @property integer $papa_novio_id
  * @property integer $mama_novio_id
- * @property string $testigo_novio_1
- * @property string $testigo_novio_2
+ * @property integer $testigo_novio_1
+ * @property integer $testigo_novio_2
  * @property integer $novia_id
  * @property integer $papa_novia_id
  * @property integer $mama_novia_id
- * @property string $testigo_novia_1
- * @property string $testigo_novia_2
+ * @property integer $testigo_novia_1
+ * @property integer $testigo_novia_2
  * @property integer $tomo_id
  * @property integer $pagina
  * @property integer $numero
@@ -52,8 +52,8 @@ abstract class BaseMatrimonio extends AweActiveRecord {
     public function rules() {
         return array(
             array('fecha_matrimonio, padre_parroquia_id, novio_id, novia_id, tomo_id, numero, rc_ano', 'required'),
-            array('padre_parroquia_id, novio_id, papa_novio_id, mama_novio_id, novia_id, papa_novia_id, mama_novia_id, tomo_id, pagina, numero, rc_folio, rc_acta', 'numerical', 'integerOnly'=>true),
-            array('iglesia, testigo_novio_1, testigo_novio_2, testigo_novia_1, testigo_novia_2, rc_lugar', 'length', 'max'=>60),
+            array('padre_parroquia_id, novio_id, papa_novio_id, mama_novio_id, testigo_novio_1, testigo_novio_2, novia_id, papa_novia_id, mama_novia_id, testigo_novia_1, testigo_novia_2, tomo_id, pagina, numero, rc_folio, rc_acta', 'numerical', 'integerOnly'=>true),
+            array('iglesia, rc_lugar', 'length', 'max'=>60),
             array('rc_ano', 'length', 'max'=>4),
             array('rc_tomo', 'length', 'max'=>20),
             array('acta_preparada_por', 'length', 'max'=>50),
@@ -110,13 +110,13 @@ abstract class BaseMatrimonio extends AweActiveRecord {
         $criteria->compare('novio_id', $this->novio_id);
         $criteria->compare('papa_novio_id', $this->papa_novio_id);
         $criteria->compare('mama_novio_id', $this->mama_novio_id);
-        $criteria->compare('testigo_novio_1', $this->testigo_novio_1, true);
-        $criteria->compare('testigo_novio_2', $this->testigo_novio_2, true);
+        $criteria->compare('testigo_novio_1', $this->testigo_novio_1);
+        $criteria->compare('testigo_novio_2', $this->testigo_novio_2);
         $criteria->compare('novia_id', $this->novia_id);
         $criteria->compare('papa_novia_id', $this->papa_novia_id);
         $criteria->compare('mama_novia_id', $this->mama_novia_id);
-        $criteria->compare('testigo_novia_1', $this->testigo_novia_1, true);
-        $criteria->compare('testigo_novia_2', $this->testigo_novia_2, true);
+        $criteria->compare('testigo_novia_1', $this->testigo_novia_1);
+        $criteria->compare('testigo_novia_2', $this->testigo_novia_2);
         $criteria->compare('tomo_id', $this->tomo_id);
         $criteria->compare('pagina', $this->pagina);
         $criteria->compare('numero', $this->numero);

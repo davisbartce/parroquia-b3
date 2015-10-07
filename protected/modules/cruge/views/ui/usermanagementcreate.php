@@ -4,16 +4,12 @@
 /** @var Boolean $boolIsUserManagement true o false.  si es true indica que esta operandose bajo el action de adminstracion de usuarios, si es false indica que se esta operando bajo 'editar tu perfil' */
 $this->pageTitle = Yii::t('app', 'Administrador de Usuarios');
 ?>
-
-<div class="widget blue">
-    <div class="widget-title">
-        <h4><i class="icon-user"></i> <?php echo ucwords(CrugeTranslator::t("crear nuevo usuario")); ?></h4>
-        <span class="tools">
-            <a href="javascript:;" class="icon-chevron-down"></a>
-            <!--a href="javascript:;" class="icon-remove"></a-->
-        </span>
+<br>
+ <div class="panel panel-info">
+         <div class="panel-heading">
+        <h4><i class="fa fa-user"></i> <?php echo ucwords(CrugeTranslator::t("crear nuevo usuario")); ?></h4>
     </div>
-    <div class="widget-body">
+           <div class="panel-body">
         <?php
         $form = $this->beginWidget('ext.AweCrud.components.AweActiveForm', array(
             'type' => 'horizontal',

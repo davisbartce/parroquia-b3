@@ -4,18 +4,15 @@ $this->pageTitle = Yii::t('app', 'Roles y Asignaciones');
 
 
 
-<div class="widget blue">
-    <div class="widget-title">
-        <h4><i class="icon-key"></i> <?php echo ucwords(CrugeTranslator::t("roles"));?></h4>
-        <span class="tools">
-            <a href="javascript:;" class="icon-chevron-down"></a>
-            <!--a href="javascript:;" class="icon-remove"></a-->
-        </span>
+<br/>
+    <div class="panel panel-info">
+       <div class="panel-heading">
+        <h4><i class="fa fa-key"></i> <?php echo ucwords(CrugeTranslator::t("roles"));?></h4>
      </div>
-    <div class="widget-body">
-        <div class="row-fluid">
-            <div class='span12'>
-            <?php echo CHtml::link('<i class="icon-plus icon-white"></i> '.CrugeTranslator::t("Crear Nuevo Rol")
+           <div class="panel-body">
+        <div class="row">
+            <div class='col-sm-12'>
+            <?php echo CHtml::link('<i class=" fa fa-plus icon-white"></i> '.CrugeTranslator::t("Crear Nuevo Rol")
                     ,Yii::app()->user->ui->getRbacAuthItemCreateUrl(CAuthItem::TYPE_ROLE),
                     array('class'=>'btn btn-success pull-right'));?>
             </div>

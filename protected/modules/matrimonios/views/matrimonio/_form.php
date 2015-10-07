@@ -153,9 +153,43 @@ Util::tsRegisterAssetJs('_form.js');
                                 ));
                                 ?> 
 
-                                <?php echo $form->textFieldGroup($model, 'testigo_novio_1', array('maxlength' => 60)) ?>
+                                <?php // echo $form->textFieldGroup($model, 'testigo_novio_1', array('maxlength' => 60)) ?>
+                                 <?php
+                                $htmlOptions = array('class' => "form-control");
+                                if ($model->testigo_novio_1) {
+                                    $model_novio_testigo1 = Persona::model()->findByPk($model->testigo_novio_1);
 
-                                <?php echo $form->textFieldGroup($model, 'testigo_novio_2', array('maxlength' => 60)) ?>
+                                    $htmlOptions = array_merge(
+                                            $htmlOptions, array(
+                                        'selected-text' => $model_novio_testigo1->nombres . ' ' . $model_novio_testigo1->apellidos . ' ' . $model_novio_testigo1->fecha_nacimiento
+                                            )
+                                    );
+                                }
+                                echo $form->textFieldGroup($model, 'testigo_novio_1', array(
+                                    'widgetOptions' => array(
+                                        'htmlOptions' => $htmlOptions,
+                                    ),
+                                ));
+                                ?> 
+
+                                <?php // echo $form->textFieldGroup($model, 'testigo_novio_2', array('maxlength' => 60)) ?>
+                                  <?php
+                                $htmlOptions = array('class' => "form-control");
+                                if ($model->testigo_novio_2) {
+                                    $model_novio_testigo2 = Persona::model()->findByPk($model->testigo_novio_2);
+
+                                    $htmlOptions = array_merge(
+                                            $htmlOptions, array(
+                                        'selected-text' => $model_novio_testigo2->nombres . ' ' . $model_novio_testigo2->apellidos . ' ' . $model_novio_testigo2->fecha_nacimiento
+                                            )
+                                    );
+                                }
+                                echo $form->textFieldGroup($model, 'testigo_novio_2', array(
+                                    'widgetOptions' => array(
+                                        'htmlOptions' => $htmlOptions,
+                                    ),
+                                ));
+                                ?> 
 
                             </div><!-- /.box-body -->
                         </div><!-- /.box -->
@@ -226,9 +260,43 @@ Util::tsRegisterAssetJs('_form.js');
                                 ));
                                 ?> 
 
-                                <?php echo $form->textFieldGroup($model, 'testigo_novia_1', array('maxlength' => 60)) ?>
+                                <?php // echo $form->textFieldGroup($model, 'testigo_novia_1', array('maxlength' => 60)) ?>
+                                 <?php
+                                $htmlOptions = array('class' => "form-control");
+                                if ($model->testigo_novia_1) {
+                                    $model_novia_testigo1 = Persona::model()->findByPk($model->testigo_novia_1);
 
-                                <?php echo $form->textFieldGroup($model, 'testigo_novia_2', array('maxlength' => 60)) ?>
+                                    $htmlOptions = array_merge(
+                                            $htmlOptions, array(
+                                        'selected-text' => $model_novia_testigo1->nombres . ' ' . $model_novia_testigo1->apellidos . ' ' . $model_novia_testigo1->fecha_nacimiento
+                                            )
+                                    );
+                                }
+                                echo $form->textFieldGroup($model, 'testigo_novia_1', array(
+                                    'widgetOptions' => array(
+                                        'htmlOptions' => $htmlOptions,
+                                    ),
+                                ));
+                                ?> 
+
+                                <?php // echo $form->textFieldGroup($model, 'testigo_novia_2', array('maxlength' => 60)) ?>
+                                <?php
+                                $htmlOptions = array('class' => "form-control");
+                                if ($model->testigo_novia_2) {
+                                    $model_novia_testigo2 = Persona::model()->findByPk($model->testigo_novia_2);
+
+                                    $htmlOptions = array_merge(
+                                            $htmlOptions, array(
+                                        'selected-text' => $model_novia_testigo2->nombres . ' ' . $model_novia_testigo2->apellidos . ' ' . $model_novia_testigo2->fecha_nacimiento
+                                            )
+                                    );
+                                }
+                                echo $form->textFieldGroup($model, 'testigo_novia_2', array(
+                                    'widgetOptions' => array(
+                                        'htmlOptions' => $htmlOptions,
+                                    ),
+                                ));
+                                ?> 
 
                             </div><!-- /.box-body -->
                         </div><!-- /.box -->

@@ -28,7 +28,7 @@ $(function() {
 
 
 
-    $("#Matrimonio_novio_id, #Matrimonio_novia_id, #Matrimonio_papa_novio_id,#Matrimonio_mama_novio_id,#Matrimonio_papa_novia_id,#Matrimonio_mama_novia_id").select2({
+    $("#Matrimonio_novio_id, #Matrimonio_novia_id, #Matrimonio_papa_novio_id,#Matrimonio_mama_novio_id,#Matrimonio_papa_novia_id,#Matrimonio_mama_novia_id,#Matrimonio_testigo_novio_1,#Matrimonio_testigo_novio_2,#Matrimonio_testigo_novia_1,#Matrimonio_testigo_novia_2").select2({
         enable: true,
         initSelection: function(element, callback) {
             if ($(element).val()) {

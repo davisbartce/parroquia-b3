@@ -51,6 +51,9 @@
         font-size: 17px;
 
     }
+     .margen-izquierda{
+        margin-left: 125px;
+    }
 
 
 
@@ -184,6 +187,10 @@
             <br>
             <p class="parrafo">
                 Lo Certifico, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....................................
+            </p>
+            <br>
+             <p class="margen-izquierda">
+                Parroco
             </p>
 
 
