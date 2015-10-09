@@ -65,7 +65,7 @@
     <div class="row">
         <div class="col-xs-2">
 
-            <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo2.jpg' ?>" class="img-circle" alt="JEUS EL BUEN PASTOR" />
+            <img src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo2.jpg' ?>" class="" alt="JEUS EL BUEN PASTOR" />
         </div><!-- /.col -->
         <div class="col-xs-8">
             <div class="" style="text-align: center">
@@ -88,7 +88,7 @@
 
         </div><!-- /.col -->
         <div class="col-xs-2">
-            <img style="max-height: 150px" src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo3.gif' ?>" class="img-circle" alt="JEUS EL BUEN PASTOR" />
+            <img style="max-height: 150px" src="<?php echo Yii::app()->baseUrl . '/themes/adminLTE/img/logo3.gif' ?>" class="" alt="JEUS EL BUEN PASTOR" />
 
         </div>
     </div>
@@ -176,9 +176,9 @@
                     <?php $model->obtenerTextoPadrinos(); ?>;
                     a quien(es) se advirtió sus obligaciones y parentezco espirtual.
                 </p>
-                <p class="parrafo ">
-                    Lo certifica Padre <?php echo $model->padre->campo_completo ?>.
-                </p>
+<!--                <p class="parrafo ">
+                    Lo certifica Padre < ?php echo $model->padre->campo_completo ?>.
+                </p>-->
                 <p class="parrafo">
                     Son datos tomados finalmente del original, al que me remito en caso necesario.
                 </p>

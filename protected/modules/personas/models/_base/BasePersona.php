@@ -35,7 +35,7 @@ abstract class BasePersona extends AweActiveRecord {
 
     public function rules() {
         return array(
-            array('nombres, apellidos, fecha_nacimiento', 'required'),
+            array('nombres, apellidos', 'required'),
             array('documento', 'length', 'max'=>20),
             array('nombres, apellidos, lugar_nacimiento', 'length', 'max'=>60),
             array('estado_civil', 'length', 'max'=>13),

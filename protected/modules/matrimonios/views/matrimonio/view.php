@@ -121,8 +121,16 @@
                                                 'name' => 'mama_novio_id',
                                                 'value' => $model->mama_novio_id ? $model->mama_novio->nombres . ' ' . $model->mama_novio->apellidos : ""
                                             ),
-                                            'testigo_novio_1',
-                                            'testigo_novio_2',
+                                            array(
+                                                'name' => 'testigo_novio_1',
+                                                'value' => $model->testigo_novio_uno ? $model->testigo_novio_uno->nombres . ' ' . $model->testigo_novio_uno->apellidos : ""
+                                            ),
+                                            array(
+                                                'name' => 'testigo_novio_2',
+                                                'value' => $model->testigo_novio_dos ? $model->testigo_novio_dos->nombres . ' ' . $model->testigo_novio_dos->apellidos : ""
+                                            ),
+//                                            'testigo_novio_1',
+//                                            'testigo_novio_1',
                                         ),
                                     ));
                                     ?>
@@ -155,8 +163,14 @@
                                                 'name' => 'mama_novia_id',
                                                 'value' => $model->mama_novia_id ? $model->mama_novia->nombres . ' ' . $model->mama_novia->apellidos : ""
                                             ),
-                                            'testigo_novia_1',
-                                            'testigo_novia_2',
+                                             array(
+                                                'name' => 'testigo_novia_1',
+                                                'value' => $model->testigo_novia_uno ? $model->testigo_novia_uno->nombres . ' ' . $model->testigo_novia_uno->apellidos : ""
+                                            ),
+                                            array(
+                                                'name' => 'testigo_novia_2',
+                                                'value' => $model->testigo_novia_dos ? $model->testigo_novia_dos->nombres . ' ' . $model->testigo_novia_dos->apellidos : ""
+                                            ),
                                         ),
                                     ));
                                     ?>

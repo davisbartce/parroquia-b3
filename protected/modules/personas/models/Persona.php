@@ -58,8 +58,8 @@ class Persona extends BasePersona {
 
     public function rules() {
         return array_merge(parent::rules(), array(
-            array('fecha_nacimiento', 'uniqueValidator', 'attributeName' => array(
-                    'nombres', 'apellidos', 'fecha_nacimiento')),
+            array('nombres', 'uniqueValidator', 'attributeName' => array(
+                    'nombres', 'apellidos')),
             array('documento', 'unique'),
             array('campo_completo', 'safe', 'on' => 'search'),
 //            array('nombres', 'unique', 'criteria'=>array(
@@ -75,7 +75,9 @@ class Persona extends BasePersona {
     public function getListSelect2($search_value) {
 //        echo $search_value;
         $command = Yii::app()->db->createCommand()
-                ->select('p.id,concat(p.nombres," ",p.apellidos," (",YEAR(p.fecha_nacimiento),")") as text')
+                ->select('p.id,concat(p.nombres," ",p.apellidos) as text')
+//                ->select('concat(p.id,concat(p.nombres," ",p.apellidos),if(p.fecha_nacimiento is not null ,p.fecha_nacimiento,"")) as text')
+//                ->select('p.id,concat(p.nombres," ",p.apellidos," (",YEAR(p.fecha_nacimiento),")") as text')
                 ->from('persona p')
                 ->where("concat(p.nombres,' ',p.apellidos) like '%$search_value%'")
 //                ->andWhere('pc.estado = :estado', array(':estado' => ProduccionCategoria::ESTADO_ACTIVO))
@@ -108,7 +110,7 @@ class Persona extends BasePersona {
         $report['subtitle']['text'] = ' Desde: ' . $inicio->format('d-m-Y') . '  Hasta: ' . $fin->format('d-m-Y');
         $report['xAxis']['labels'] = array("rotation" => -45);
         $report['yAxis']['min'] = 0;
-        $report['yAxis']['title']['text'] = "Número";
+        $report['yAxis']['title']['text'] = "NÃºmero";
         $report['yAxis']['allowDecimals'] = false;
         $report['xAxis']['categories'] = array();
         $report['series'] = array();

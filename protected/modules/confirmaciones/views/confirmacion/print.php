@@ -86,7 +86,7 @@
                     <?php echo $model->persona->campo_completo ?>
                 </p>
                 <p class="parrafo">
-                    Por Haber Relaizado: <strong>LA PRIMERA COMUNIÓN.</strong>
+                    Por Haber Relaizado: <strong>LA CONFIRMACIÓN.</strong>
                     <br>
                     Es lo que podemos expresar en honor a la verdad.
                 </p>

@@ -81,7 +81,7 @@ Util::tsRegisterAssetJs('admin.js');
                              */
                             array(
                                 'class' => 'CButtonColumn',
-                                'template' => '{view} {update} {delete}',
+                                'template' => '{view} {update} {delete} {print}',
                                 'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -106,6 +106,13 @@ Util::tsRegisterAssetJs('admin.js');
                                         'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
                                         'options' => array('title' => 'Eliminar'),
                                         'imageUrl' => false,
+                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
+                                    ),
+                                    'print' => array(
+                                        'label' => '<button class="btn btn-success"><i class="fa fa-file-text"></i></button>',
+                                        'options' => array('title' => 'Imprimir', 'target' => '_blank'),
+                                        'imageUrl' => false,
+                                        'url' => 'Yii::app()->createUrl("confirmaciones/confirmacion/viewPrint", array("id"=>$data->id))',
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
                                     ),
                                 ),

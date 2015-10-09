@@ -267,7 +267,7 @@ Util::tsRegisterAssetJs('_form.js');
                         'class' => '',
                     ),
                     'widgetOptions' => array(
-                        'data' => CHtml::listData(Libro::model()->de_tipo(Libro::BAUTIZOS)->findAll(), 'id', 'tomo','ano'),
+                            'data' => CHtml::listData(Libro::model()->de_tipo(Libro::BAUTIZOS)->findAll(), 'id', 'tomo','ano'),
 //                                    'empty'=>'seleccione',
                         'htmlOptions' => array(),
                     )

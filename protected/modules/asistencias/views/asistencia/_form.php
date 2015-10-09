@@ -35,7 +35,7 @@
                 
                 
                     
-                                                                <?php echo $form->textFieldGroup($model, 'fecha') ?>
+                                                                <?php echo $form->hiddenField($model, 'fecha') ?>
                                                         
                                                                 <?php echo $form->textFieldGroup($model, 'numero_asistentes') ?>
                                                         

@@ -184,7 +184,7 @@
                                         'iglesia',
                                         array(
                                             'name' => 'padre_parroquia_id',
-                                            'value' => ($model->bautizos->padre ? $model->bautizos->padre->campo_completo() : ""),
+                                            'value' => ($model->bautizos->padre ? $model->bautizos->padre->campo_completo : ""),
                                             'type' => 'html',
                                         ),
                                         'fecha_bautizo',

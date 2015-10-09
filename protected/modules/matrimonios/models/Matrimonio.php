@@ -51,6 +51,11 @@ class Matrimonio extends BaseMatrimonio {
             'papa_novia' => array(self::BELONGS_TO, 'Persona', 'papa_novia_id'),
             'mama_novio' => array(self::BELONGS_TO, 'Persona', 'mama_novio_id'),
             'mama_novia' => array(self::BELONGS_TO, 'Persona', 'mama_novia_id'),
+            'mama_novia' => array(self::BELONGS_TO, 'Persona', 'mama_novia_id'),
+            'testigo_novio_uno' => array(self::BELONGS_TO, 'Persona', 'testigo_novio_1'),
+            'testigo_novio_dos' => array(self::BELONGS_TO, 'Persona', 'testigo_novio_2'),
+            'testigo_novia_uno' => array(self::BELONGS_TO, 'Persona', 'testigo_novia_1'),
+            'testigo_novia_dos' => array(self::BELONGS_TO, 'Persona', 'testigo_novia_2'),
             'padre' => array(self::BELONGS_TO, 'Padre', 'padre_parroquia_id'),
             'libro' => array(self::BELONGS_TO, 'Libro', 'tomo_id'),
         );

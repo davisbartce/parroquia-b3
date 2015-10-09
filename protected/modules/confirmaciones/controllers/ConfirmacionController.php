@@ -25,6 +25,13 @@ class ConfirmacionController extends AweController {
             'model' => $this->loadModel($id),
         ));
     }
+    
+     public function actionViewPrint($id) {
+        $this->layout='//layouts/print';
+        $this->render('print', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
 
     /**
      * Creates a new model.

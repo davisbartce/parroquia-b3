@@ -22,12 +22,14 @@ class uniqueValidator extends CValidator {
 //            $varaibleTemporal=explode('/', $object->$name);
 //            var_dump($object->$name);
 
-           if($name=='fecha_nacimiento'){
-               $object->$name=  Util::FormatDate($object->$name, 'Y-m-d');
-            }
+//           if($name=='fecha_nacimiento'){
+//               $object->$name=  Util::FormatDate($object->$name, 'Y-m-d');
+//            }
 //            var_dump(checkdate(explode('/', $object->$name)));
             $criteria->addSearchCondition($name, $object->$name, false);
         }
+//        var_dump($criteria->params);
+//        die();
 //        var_dump($object->exists( $criteria ));
 //        var_dump($criteria);
 //        var_dump($criteria->condition);
