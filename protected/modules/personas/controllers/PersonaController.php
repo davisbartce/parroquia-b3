@@ -37,13 +37,20 @@ class PersonaController extends AweController {
 
 //        $this->performAjaxValidation($model, 'persona-form');
 //        var_dump(  $this->performAjaxValidation($model, 'persona-form'));
-        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+//        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
 
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
             $model->nombres = trim($model->nombres);
             $model->apellidos = trim($model->apellidos);
-            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+            if (!empty($_POST['Persona']['fecha_nacimiento'])) {
+//                 var_dump($_POST);
+//                 var_dump(Util::FormatDate($_POST['Persona']['fecha_nacimiento'], 'Y-m-d'));
+                $model->fecha_nacimiento = Util::FormatDate($_POST['Persona']['fecha_nacimiento'], 'Y-m-d');
+            }
+//            var_dump($_POST);
+//            var_dump($model->fecha_nacimiento);
+//            die();
             $result['success'] = $model->save();
             if ($result['success']) {
                 $result['attr'] = $model->attributes;
@@ -66,29 +73,25 @@ class PersonaController extends AweController {
             ));
         }
     }
+
     public function actionCreateModal() {
-        $model=new Persona;
-        
-          if (Yii::app()->request->isAjaxRequest) {
-        
-         $this->renderPartial('modal', array( 'model'=>$model), false, true);
-          }
-         
-         
+        $model = new Persona;
+
+        if (Yii::app()->request->isAjaxRequest) {
+
+            $this->renderPartial('modal', array('model' => $model), false, true);
+        }
     }
+
     public function actionReporteDashboard() {
-        
+
         Persona::model()->generateColumnReport(date('01/01/Y'), date('31/12/Y'));
-        
-          if (Yii::app()->request->isAjaxRequest) {
-        
-         $this->renderPartial('modal', array( 'model'=>$model), false, true);
-          }
-         
-         
+
+        if (Yii::app()->request->isAjaxRequest) {
+
+            $this->renderPartial('modal', array('model' => $model), false, true);
+        }
     }
-    
-    
 
     /**
      * Updates a particular model.
@@ -97,14 +100,22 @@ class PersonaController extends AweController {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+        if ($model->fecha_nacimiento) {
+            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+        }
         $result = array();
         $this->ajaxValidation($model);
         if (isset($_POST['Persona'])) {
             $model->attributes = $_POST['Persona'];
             $model->nombres = trim($model->nombres);
             $model->apellidos = trim($model->apellidos);
-            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+            
+             if (!empty($_POST['Persona']['fecha_nacimiento'])) {
+//                 var_dump($_POST);
+//                 var_dump(Util::FormatDate($_POST['Persona']['fecha_nacimiento'], 'Y-m-d'));
+                $model->fecha_nacimiento = Util::FormatDate($_POST['Persona']['fecha_nacimiento'], 'Y-m-d');
+            }
+//            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
             $result['success'] = $model->save();
             if ($result['success']) {
                 $result['attr'] = $model->attributes;
@@ -132,11 +143,10 @@ class PersonaController extends AweController {
     public function actionDelete($id) {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-         $this->loadModel($id)->delete();
+            $this->loadModel($id)->delete();
 //          $model=  $this->loadModel($id);
 //          $bautizo=$model->bautizos;
 //          var_dump($bautizo)
-
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -150,12 +160,13 @@ class PersonaController extends AweController {
     public function actionAdmin() {
         $model = new Persona('search');
         $model->unsetAttributes(); // clear any default values
-    if (isset($_GET['Persona'])){
-    $model->attributes = $_GET['Persona'];}
-    if (isset($_GET['searchValue'])){
-              $model->de_persona($_GET['searchValue']);
+        if (isset($_GET['Persona'])) {
+            $model->attributes = $_GET['Persona'];
         }
-        
+        if (isset($_GET['searchValue'])) {
+            $model->de_persona($_GET['searchValue']);
+        }
+
 
         $this->render('admin', array(
             'model' => $model,
@@ -169,11 +180,16 @@ class PersonaController extends AweController {
 
 //        $this->performAjaxValidation($model, 'persona-form');
 //        var_dump(  $this->performAjaxValidation($model, 'persona-form'));
-        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
+//        $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'd-m-Y');
 
         if (isset($_POST['Persona'])) {
+            
+            
             $model->attributes = $_POST['Persona'];
-            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+//            $model->fecha_nacimiento = Util::FormatDate($model->fecha_nacimiento, 'Y-m-d');
+             if (!empty($_POST['Persona']['fecha_nacimiento'])) {
+                $model->fecha_nacimiento = Util::FormatDate($_POST['Persona']['fecha_nacimiento'], 'Y-m-d');
+            }
             $result['success'] = $model->save();
             if ($result['success']) {
                 $result['attr'] = $model->attributes;
@@ -235,19 +251,18 @@ class PersonaController extends AweController {
             echo CJSON::encode(Persona::model()->getListSelect2($search_value));
         }
     }
+
     public function actionReporte() {
 //        var_dump($search_value);
-        $consulta=Persona::model()->generateColumnReport("01/01/2015", "31/12/2015");
-        
+        $consulta = Persona::model()->generateColumnReport("01/01/2015", "31/12/2015");
+
         $this->renderPartial('_reporte', array(
-                'consulta' => $consulta,
-                    ), false, true);
+            'consulta' => $consulta,
+                ), false, true);
 //        Persona::model()->generateColumnReport("2015-01-01", "2015-12-31");
 //        if (Yii::app()->request->isAjaxRequest) {
 //            echo CJSON::encode(Persona::model()->getListSelect2($search_value));
 //        }
     }
-    
-   
 
 }
