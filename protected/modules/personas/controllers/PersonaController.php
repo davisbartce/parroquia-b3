@@ -143,9 +143,9 @@ class PersonaController extends AweController {
     public function actionDelete($id) {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
-            $this->validarDependencias($this->loadModel(10));
-            $this->validarDependencias($this->loadModel(1));
-            die();
+//            $this->validarDependencias($this->loadModel(10));
+//            $this->validarDependencias($this->loadModel(1));
+//            die();
             $this->loadModel($id)->delete();
 //          $model=  $this->loadModel($id);
 //          $bautizo=$model->bautizos;

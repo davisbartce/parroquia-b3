@@ -21,6 +21,17 @@ class Libro extends BaseLibro
         return Yii::t('app', 'Libro|Libros', $n);
     }
     
+    
+      public function relations() {
+        return array(
+            'LibroBautizos' => array(self::HAS_MANY, 'Bautizo', 'tomo_id'),
+            'LibroMatrimonios' => array(self::HAS_MANY, 'Matrimonio', 'tomo_id'),
+            'LibroComuniones' => array(self::HAS_MANY, 'Comunion', 'tomo_id'),
+            'LibroConfirmaciones' => array(self::HAS_MANY, 'Confirmacion', 'tomo_id'),
+//            'LibroBautizos' => array(self::BELONGS_TO, 'Bautizo', array('id' => 'tomo_id')),
+           
+        );
+    }
      public function scopes() {
         return array(
 //            'activos' => array(
@@ -72,6 +83,32 @@ class Libro extends BaseLibro
                         $this->addError($attribute, 'Este tomo ya existe.');
             }
         }
+    }
+    
+    public function validarDependencias(){
+//        $count=true;
+        $count=count($this->LibroBautizos);
+        $count1=count($this->LibroMatrimonios);
+        $count2=count($this->LibroComuniones);
+        $count3=count($this->LibroConfirmaciones);
+//        var_dump($count);
+//        var_dump($count1);
+//        var_dump($count2);
+//        var_dump($count3);
+        $count=$count+$count1+$count2+$count3;
+//        $count2=count($this->testigosMatrimonios1)+
+//                count($this->testigosMatrimonios2)+
+//                count($this->testigosMatrimonios3)+count($this->testigosMatrimonios4);
+////        var_dump(count($this->testigosMatrimonios1));
+////        var_dump(count($this->testigosMatrimonios2));
+////        var_dump(count($this->testigosMatrimonios3));
+////        var_dump(count($this->testigosMatrimonios4));
+//        $count=$count+$count2;
+//        die();
+//        var_dump($this->matrimoniosNovio);
+//        var_dump($this->matrimoniosNovia);
+//        var_dump($this->confirmaciones);
+        return ($count > 0) ? false : true ;
     }
     
 

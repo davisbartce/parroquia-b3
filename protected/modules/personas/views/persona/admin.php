@@ -97,7 +97,7 @@ Util::tsRegisterAssetJs('admin.js');
                                     ),
                                 ),
                                 'htmlOptions' => array(
-                                    'width' => '100px'
+                                    'width' => '140px'
                                 )
                             ),
                         ),

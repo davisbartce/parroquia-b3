@@ -86,6 +86,10 @@ class LibroController extends AweController {
 		{
 			// we only allow deletion via POST request
 			$this->loadModel($id)->delete();
+//			$model=$this->loadModel($id);
+//                        $model->tomo=2;
+//                        $model->save();
+//                        $model->
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
