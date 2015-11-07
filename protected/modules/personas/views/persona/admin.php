@@ -67,7 +67,7 @@ Util::tsRegisterAssetJs('admin.js');
                             'lugar_nacimiento',
                             array(
                                 'class' => 'CButtonColumn',
-                                'template' => '{update} {view}',
+                                'template' => '{update} {view} {delete}',
                                 'afterDelete' => 'function(link,success,data){ 
                 if(success) {
                 $("#flashMsg").empty();
@@ -88,12 +88,13 @@ Util::tsRegisterAssetJs('admin.js');
                                         'imageUrl' => false,
                                     //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_update"))'
                                     ),
-//                                    'delete' => array(
-//                                        'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
-//                                        'options' => array('title' => 'Eliminar'),
-//                                        'imageUrl' => false,
-//                                    //'visible' => 'Util::checkAccess(array("action_incidenciaPrioridad_delete"))'
-//                                    ),
+                                    'delete' => array(
+                                        'label' => '<button class="btn btn-danger"><i class="fa fa-trash"></i></button>',
+                                        'options' => array('title' => 'Eliminar'),
+//                                        'url' => false,
+                                        'imageUrl' => false,
+                                    'visible' => '$data->validarDependencias()'
+                                    ),
                                 ),
                                 'htmlOptions' => array(
                                     'width' => '100px'

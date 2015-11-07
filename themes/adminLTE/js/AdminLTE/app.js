@@ -584,8 +584,8 @@ $(window).load(function() {
             var btn = $(this).children("a").first();
             var menu = $(this).children(".treeview-menu").first();
             var isActive = $(this).hasClass('active');
-            console.log(isActive);
-            console.log(this);
+//            console.log(isActive);
+//            console.log(this);
 // alert();
             //initialize already active menus
             if (isActive) {

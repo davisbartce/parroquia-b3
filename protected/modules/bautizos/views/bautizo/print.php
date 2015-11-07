@@ -166,7 +166,7 @@
 
                     El Padre <?php echo $model->padre->campo_completo ?>
                     Bautizó solemnemente a: <?php echo $model->persona->campo_completo ?>
-                    nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : " " ?> el <?php echo (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) ?> 
+                    nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : "______________________ " ?> el <?php echo $model->persona->fecha_nacimiento ? (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) : "______________________" ?> 
 
 
                     hijo(a) de <?php echo $model->papa ? $model->papa->campo_completo : " .............. " ?>

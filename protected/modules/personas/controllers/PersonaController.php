@@ -143,6 +143,9 @@ class PersonaController extends AweController {
     public function actionDelete($id) {
         if (Yii::app()->request->isPostRequest) {
             // we only allow deletion via POST request
+            $this->validarDependencias($this->loadModel(10));
+            $this->validarDependencias($this->loadModel(1));
+            die();
             $this->loadModel($id)->delete();
 //          $model=  $this->loadModel($id);
 //          $bautizo=$model->bautizos;
@@ -153,6 +156,24 @@ class PersonaController extends AweController {
         } else
             throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
     }
+    public function actionDelete2($id) {
+        if (Yii::app()->request->isPostRequest) {
+            // we only allow deletion via POST request
+//            $this->validarDependencias($this->loadModel(10));
+//            $this->validarDependencias($this->loadModel(1));
+//            die();
+            $this->loadModel($id)->delete();
+//          $model=  $this->loadModel($id);
+//          $bautizo=$model->bautizos;
+//          var_dump($bautizo)
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if (!isset($_GET['ajax']))
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        } else
+            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+    }
+    
+   
 
     /**
      * Manages all models.

@@ -25,6 +25,11 @@ class Persona extends BasePersona {
             'matrimoniosNovio' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'novio_id')),
             'matrimoniosNovia' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'novia_id')),
             'confirmaciones' => array(self::BELONGS_TO, 'Confirmacion', array('id' => 'persona_id')),
+            'confirmaciones' => array(self::BELONGS_TO, 'Confirmacion', array('id' => 'persona_id')),
+            'testigosMatrimonios1' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'testigo_novia_1')),
+            'testigosMatrimonios2' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'testigo_novia_2')),
+            'testigosMatrimonios3' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'testigo_novio_1')),
+            'testigosMatrimonios4' => array(self::BELONGS_TO, 'Matrimonio', array('id' => 'testigo_novio_2')),
         );
     }
 
@@ -231,6 +236,25 @@ class Persona extends BasePersona {
                 )
         );
         return $this;
+    }
+    
+     public function validarDependencias(){
+//        $count=true;
+        $count=count($this->bautizos)+count($this->comuniones)+count($this->matrimoniosNovio)+count($this->matrimoniosNovia)+count($this->confirmaciones);
+//        var_dump($count);
+        $count2=count($this->testigosMatrimonios1)+
+                count($this->testigosMatrimonios2)+
+                count($this->testigosMatrimonios3)+count($this->testigosMatrimonios4);
+//        var_dump(count($this->testigosMatrimonios1));
+//        var_dump(count($this->testigosMatrimonios2));
+//        var_dump(count($this->testigosMatrimonios3));
+//        var_dump(count($this->testigosMatrimonios4));
+        $count=$count+$count2;
+//        die();
+//        var_dump($this->matrimoniosNovio);
+//        var_dump($this->matrimoniosNovia);
+//        var_dump($this->confirmaciones);
+        return ($count > 0) ? false : true ;
     }
 
 }
