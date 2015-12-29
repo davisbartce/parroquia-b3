@@ -3,6 +3,7 @@
 /** @var Bautizo $model */
 /** @var AweActiveForm $form */
 Util::tsRegisterAssetJs('_form.js');
+
 ?>
 <aside class="right-side">
 
