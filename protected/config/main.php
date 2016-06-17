@@ -35,6 +35,7 @@ return array(
         'application.modules.confirmaciones.models.*',
         'application.modules.comuniones.models.*',
         'application.modules.asistencias.models.*',
+          'application.vendors.phpexcel.PHPExcel',
     ),
     'modules' => array(
         'dashboard',

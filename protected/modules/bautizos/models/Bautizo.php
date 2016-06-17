@@ -34,7 +34,7 @@ class Bautizo extends BaseBautizo {
     }
 
     public function attributeLabels() {
-      return   array_merge(parent::attributeLabels(),array(
+        return array_merge(parent::attributeLabels(), array(
             'id' => Yii::t('app', 'ID'),
             'persona_id' => Yii::t('app', 'Persona'),
             'fecha_bautizo' => Yii::t('app', 'Fecha Bautizo'),
@@ -81,28 +81,37 @@ class Bautizo extends BaseBautizo {
         );
         return $this;
     }
-    
 
     public function obtenerTextoPadrinos() {
 
         $padrino = $this->padrino;
         $madrina = $this->madrina;
-        $mensaje=null;
+        $mensaje = null;
 //        var_dump($padrino,$madrina);
         if ($padrino && $madrina) {
-           $mensaje="Fueron sus    padrinos   ". $padrino->campo_completo. "  y  ".$madrina->campo_completo;
+            $mensaje = "Fueron sus    padrinos   " . $padrino->campo_completo . "  y  " . $madrina->campo_completo;
         } else if ($padrino && !$madrina) {
-              $mensaje="Fue su  Padrino  ". $padrino->campo_completo. "";
-            
+            $mensaje = "Fue su  Padrino  " . $padrino->campo_completo . "";
         } else if ($madrina && !$padrino) {
-             $mensaje="Fue su  Madrina  ". $madrina->campo_completo. "";
+            $mensaje = "Fue su  Madrina  " . $madrina->campo_completo . "";
         }
         echo $mensaje;
-        
-        
+
+
 
 
 //        var_dump($padrino,$madrina);
+    }
+
+    public function obtenerBautizos($ano=null,$tomo=null) {
+//        select Grupo, ID_Cota from vw_DatosClientes
+        $consulta = Yii::app()->db->createCommand()
+                ->select('b.id,'
+                        . 'select(concat(p1.nombres,"",p1.apellidos)  from persona p1 where p1.id=b.persona_id) as persona_nombres'
+                        . '')
+                ->from('bautizo b')
+                ->join('persona p','p.id=b.persona_id');
+        return $consulta->queryAll();
     }
 
 }
