@@ -46,70 +46,109 @@ Util::tsRegisterAssetJs('historial.js');
 
                     <div class="col-sm-4">
 
-                <?php
-                
-                echo $form->datePickerGroup(
-                        $libro, 'ano', array(
-                    'widgetOptions' => array(
-                        'options' => array(
-                            'format' => 'yyyy',
-                            'startView' => 2,
-                            'minViewMode' => 2,
-                            'autoclose' => true
-                        ),
-                    ),
-                    'wrapperHtmlOptions' => array(
-                        'class' => 'col-sm-3 col-lg-3 ',
-                    ),
+                        <?php
+                        echo $form->datePickerGroup(
+                                $libro, 'ano', array(
+                            'widgetOptions' => array(
+                                'options' => array(
+                                    'format' => 'yyyy',
+                                    'startView' => 2,
+                                    'minViewMode' => 2,
+                                    'autoclose' => true
+                                ),
+                            ),
+                            'wrapperHtmlOptions' => array(
+                                'class' => 'col-sm-3 col-lg-3 ',
+                            ),
 //				'hint' => 'Click inside! This is a super cool date field.',
-                    'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
-                        )
-                );
-                ?>
-                                            </div>
+                            'prepend' => '<i class="glyphicon glyphicon-calendar"></i>'
+                                )
+                        );
+                        ?>
+                    </div>
 
 
-                <div class="input-group input-group-sm col-sm-3">
-                    <input type="text" id="busquedaSearch" class="form-control" placeholder="Tomo">
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
-                    </span>
+                    <div class="input-group input-group-sm col-sm-3">
+                        <input type="text" id="busquedaSearch" class="form-control" placeholder="Tomo">
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-flat" type="button" onclick="js:search();"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
                 </div>
-                                    </div>
 
 
                 <?php $this->endWidget(); ?>
+                <div class="" style="overflow: auto">
 
 
-                <?php
-                $this->widget('booster.widgets.TbGridView', array(
-                    'id' => 'bautizo-grid',
-                    'type' => 'striped bordered hover advance',
-                    'dataProvider' => $model->search(),
+                    <?php
+                    $this->widget('booster.widgets.TbGridView', array(
+                        'id' => 'bautizo-grid',
+                        'type' => 'striped bordered hover advance',
+                        'dataProvider' => New CArrayDataProvider($model->obtenerBautizos(NULL, NULL)),
+//                    'dataProvider' => $model->search(),
 //                        'filters'=>true,
 //                        'filter'=>$model,
-                    'columns' => array(
-                        array(
-                            'name' => 'persona_id',
-                            'value' => '$data->persona->campo_completo',
+                        'columns' => array(
+                            array(
+                                'header' => 'Persona',
+                                'name' => 'persona_id',
+                                'value' => '$data["persona"]',
 //                                'filter'=> CHtml::listData(Persona::model()->findAll(), 'id', 'nombres'),
-                        ),
+                            ),
 //                            'persona_id',
-                        'fecha_bautizo',
-                        'iglesia',
+                            'fecha',
+                            'iglesia',
 //                            'padre_parroquia_id',
-                        array(
-                            'name' => 'padre_parroquia_id',
-                            'value' => '$data->padre->campo_completo'
-                        ),
-                        array(
-                            'name' => 'papa_id',
-                            'value' => '$data->papa ? $data->papa->campo_completo : ""'
-                        ),
-                        array(
-                            'name' => 'mama_id',
-                            'value' => '$data->mama ? $data->mama->campo_completo : ""'
-                        ),
+                            array(
+                                'header' => 'Padre',
+                                'name' => 'padre_parroquia_id',
+                                'value' => '$data["padre_parroquia"]'
+                            ),
+                            array(
+                                'header' => 'Papá',
+                                'name' => 'papa_id',
+                                'value' => '$data["papa"]'
+                            ),
+                            array(
+                                'header' => 'Mamá',
+                                'name' => 'mama',
+                                'value' => '$data["mama"]'
+                            ),
+                            array(
+                                'header' => 'Feligreses de',
+                                'name' => 'feligreses_de',
+                                'value' => '$data["feligreses_de"]'
+                            ),
+                            array(
+                                'header' => 'Libro Tomo',
+                                'name' => 'tomo',
+                                'value' => '$data["tomo"]'
+                            ),
+                            array(
+                                'header' => 'Libro Año',
+                                'name' => 'ano',
+                                'value' => '$data["ano"]'
+                            ),
+                            array(
+                                'header' => 'Página',
+                                'name' => 'pagina',
+                                'value' => '$data["libro_pagina"]'
+                            ),
+                            array(
+                                'header' => 'Número',
+                                'name' => 'numero',
+                                'value' => '$data["libro_numero"]'
+                            ),
+                            array(
+                                'header' => 'Nota',
+                                'name' => 'nota',
+                                'value' => '$data["nota"]'
+                            ),
+//                        array(
+//                            'name' => 'mama_id',
+//                            'value' => '$data->mama ? $data->mama->campo_completo : ""'
+//                        ),
 //                            'papa_id',
 //                            'mama_id',
                         /*
@@ -126,13 +165,13 @@ Util::tsRegisterAssetJs('historial.js');
                           'rc_acta',
                           'rc_fecha',
                          */
-                    ),
-                ));
-                ?>
+                        ),
+                    ));
+                    ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </aside>
 

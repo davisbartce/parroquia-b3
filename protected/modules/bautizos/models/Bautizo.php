@@ -106,11 +106,17 @@ class Bautizo extends BaseBautizo {
     public function obtenerBautizos($ano=null,$tomo=null) {
 //        select Grupo, ID_Cota from vw_DatosClientes
         $consulta = Yii::app()->db->createCommand()
-                ->select('b.id,'
-                        . 'select(concat(p1.nombres,"",p1.apellidos)  from persona p1 where p1.id=b.persona_id) as persona_nombres'
-                        . '')
-                ->from('bautizo b')
-                ->join('persona p','p.id=b.persona_id');
+                ->select('t.id,
+(select concat(p.nombres,"",p.apellidos)  from bautizo b join persona p on p.id=b.persona_id where t.id=b.id )as persona,
+(select concat(p.nombres,"",p.apellidos)  from bautizo b join persona p on p.id=b.papa_id where t.id=b.id) as papa,
+(select concat(p.nombres,"",p.apellidos)  from bautizo b join persona p on p.id=b.mama_id where t.id=b.id) as mama,
+(select concat(p.nombres,"",p.apellidos)  from bautizo b join persona p on p.id=b.padrino_id where t.id=b.id) as padrino,
+(select concat(p.nombres,"",p.apellidos)  from bautizo b join persona p on p.id=b.madrina_id where t.id=b.id) as madrina,
+t.fecha_bautizo fecha,t.iglesia,t.feligreses_de,l.tomo,l.ano,t.pagina libro_pagina,t.numero libro_numero,t.nota,concat(pa.nombres," ",pa.apellidos) padre_parroquia
+')
+                ->from('bautizo t')
+                ->join('padre pa',' pa.id=t.padre_parroquia_id')
+                ->join('libro l','l.id=t.tomo_id');
         return $consulta->queryAll();
     }
 
