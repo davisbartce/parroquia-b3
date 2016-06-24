@@ -45,9 +45,12 @@ function exportar() {
 }
 
 function search() {
-    if ($('#Cobranza_fechas').val() != "") {
-        $.fn.yiiGridView.update('cobranza-grid', {
-            data: {fechas: $('#Cobranza_fechas').val()}
+    if ($('#Libro_ano').val() != "") {
+        $.fn.yiiGridView.update('bautizo-grid', {
+            data: {
+                fechas: $('#Libro_ano').val(),
+                tomo: $('#busquedaSearch').val(),
+            }
         });
     }
     else {

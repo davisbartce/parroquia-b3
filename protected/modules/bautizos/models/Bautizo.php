@@ -117,6 +117,13 @@ t.fecha_bautizo fecha,t.iglesia,t.feligreses_de,l.tomo,l.ano,t.pagina libro_pagi
                 ->from('bautizo t')
                 ->join('padre pa',' pa.id=t.padre_parroquia_id')
                 ->join('libro l','l.id=t.tomo_id');
+        
+        if($ano){
+            $consulta->andWhere('l.ano=:anio',array(':anio'=>$ano));
+        }
+        if($tomo){
+             $consulta->andWhere('t.tomo_id=:tomo',array(':tomo'=>$tomo));
+        }
         return $consulta->queryAll();
     }
 

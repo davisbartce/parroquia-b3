@@ -85,7 +85,7 @@ Util::tsRegisterAssetJs('historial.js');
                     $this->widget('booster.widgets.TbGridView', array(
                         'id' => 'bautizo-grid',
                         'type' => 'striped bordered hover advance',
-                        'dataProvider' => New CArrayDataProvider($model->obtenerBautizos(NULL, NULL)),
+                        'dataProvider' => New CArrayDataProvider($elementos),
 //                    'dataProvider' => $model->search(),
 //                        'filters'=>true,
 //                        'filter'=>$model,
