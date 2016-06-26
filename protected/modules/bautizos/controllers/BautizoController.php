@@ -233,7 +233,7 @@ class BautizoController extends AweController {
             $id++;
         }
 
-        for ($i = 'A'; $i <= 'K'; $i++) {
+        for ($i = 'A'; $i <= 'N'; $i++) {
             $objExcel->setActiveSheetIndex(0)->getColumnDimension($i)->setAutoSize(TRUE);
         }
         $objExcel->getActiveSheet()->setTitle(count($elementos) . ' Registros Exportados');
@@ -247,7 +247,7 @@ class BautizoController extends AweController {
 
 // Se manda el archivo al navegador web, con el nombre que se indica, en formato 2007
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        header('Content-Disposition: attachment;filename="ReporteCobranzas.xlsx"');
+        header('Content-Disposition: attachment;filename="Bautizos.xlsx"');
         header('Cache-Control: max-age=0');
 
         $objWriter = PHPExcel_IOFactory::createWriter($objExcel, 'Excel2007');

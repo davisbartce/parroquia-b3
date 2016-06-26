@@ -75,5 +75,34 @@ class Matrimonio extends BaseMatrimonio {
         );
         return $this;
     }
+    
+    public function obtenerMatrimonios($ano=null,$tomo=null) {
+//        select Grupo, ID_Cota from vw_DatosClientes
+        $consulta = Yii::app()->db->createCommand()
+                ->select('t.id,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.novio_id where t.id=b.id )as novio,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.novia_id where t.id=b.id) as novia,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.papa_novio_id where t.id=b.id) as papa_novio,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.mama_novio_id where t.id=b.id) as mama_novio,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.papa_novia_id where t.id=b.id) as papa_novia,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.mama_novia_id where t.id=b.id) as mama_novia,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.testigo_novio_1 where t.id=b.id) as testigo_novio_1,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.testigo_novio_2 where t.id=b.id) as testigo_novio_2,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.testigo_novia_1 where t.id=b.id) as testigo_novia_1,
+(select concat(p.nombres,"",p.apellidos)  from matrimonio b join persona p on p.id=b.testigo_novia_2 where t.id=b.id) as testigo_novia_2,
+t.fecha_matrimonio fecha,t.iglesia,l.tomo,l.ano,t.pagina libro_pagina,t.numero libro_numero,rc_acta acta_rc,concat(pa.nombres," ",pa.apellidos) padre_parroquia
+')
+                ->from('matrimonio t')
+                ->join('padre pa',' pa.id=t.padre_parroquia_id')
+                ->join('libro l','l.id=t.tomo_id');
+        
+        if($ano){
+            $consulta->andWhere('l.ano=:anio',array(':anio'=>$ano));
+        }
+        if($tomo){
+             $consulta->andWhere('t.tomo_id=:tomo',array(':tomo'=>$tomo));
+        }
+        return $consulta->queryAll();
+    }
 
 }

@@ -23,7 +23,7 @@ Util::tsRegisterAssetJs('historial.js');
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo '' . ' ' . Bautizo::label(2); ?></h3>
+                <h3 class="panel-title"><?php echo '' . ' ' . Matrimonio::label(2); ?></h3>
             </div>
             <div class="panel-body">
                 <!--                <div class="input-group input-group-sm col-sm-4">
@@ -91,9 +91,15 @@ Util::tsRegisterAssetJs('historial.js');
 //                        'filter'=>$model,
                         'columns' => array(
                             array(
-                                'header' => 'Persona',
+                                'header' => 'Novio',
                                 'name' => 'persona_id',
-                                'value' => '$data["persona"]',
+                                'value' => '$data["novio"]',
+//                                'filter'=> CHtml::listData(Persona::model()->findAll(), 'id', 'nombres'),
+                            ),
+                            array(
+                                'header' => 'Novia',
+                                'name' => 'persona_id',
+                                'value' => '$data["novia"]',
 //                                'filter'=> CHtml::listData(Persona::model()->findAll(), 'id', 'nombres'),
                             ),
 //                            'persona_id',
@@ -101,24 +107,49 @@ Util::tsRegisterAssetJs('historial.js');
                             'iglesia',
 //                            'padre_parroquia_id',
                             array(
-                                'header' => 'Parroquia',
+                                'header' => 'Padre Parroquia',
                                 'name' => 'padre_parroquia_id',
                                 'value' => '$data["padre_parroquia"]'
                             ),
                             array(
-                                'header' => 'Papá',
+                                'header' => 'Papá Novio',
                                 'name' => 'papa_id',
-                                'value' => '$data["papa"]'
+                                'value' => '$data["papa_novio"]'
                             ),
                             array(
-                                'header' => 'Mamá',
+                                'header' => 'Mamá Novio',
                                 'name' => 'mama',
-                                'value' => '$data["mama"]'
+                                'value' => '$data["mama_novio"]'
                             ),
                             array(
-                                'header' => 'Feligreses de',
-                                'name' => 'feligreses_de',
-                                'value' => '$data["feligreses_de"]'
+                                'header' => 'Papá Novia',
+                                'name' => 'papa_id',
+                                'value' => '$data["papa_novia"]'
+                            ),
+                            array(
+                                'header' => 'Mamá Novia',
+                                'name' => 'mama',
+                                'value' => '$data["mama_novia"]'
+                            ),
+                            array(
+                                'header' => 'Testigo Novio 1',
+                                'name' => 'testigo_novia_1',
+                                'value' => '$data["testigo_novio_1"]'
+                            ),
+                            array(
+                                'header' => 'Testigo Novio 2',
+                                'name' => 'testigo_novio_2',
+                                'value' => '$data["testigo_novio_2"]'
+                            ),
+                            array(
+                                'header' => 'Testigo Novia 1',
+                                'name' => 'testigo_novia_1',
+                                'value' => '$data["testigo_novia_1"]'
+                            ),
+                            array(
+                                'header' => 'Testigo Novia 2',
+                                'name' => 'testigo_novia_2',
+                                'value' => '$data["testigo_novia_2"]'
                             ),
                             array(
                                 'header' => 'Libro Tomo',
@@ -141,10 +172,15 @@ Util::tsRegisterAssetJs('historial.js');
                                 'value' => '$data["libro_numero"]'
                             ),
                             array(
-                                'header' => 'Nota',
-                                'name' => 'nota',
-                                'value' => '$data["nota"]'
+                                'header' => '# Acta Registro Civil',
+                                'name' => 'acta_rc',
+                                'value' => '$data["acta_rc"]'
                             ),
+//                            array(
+//                                'header' => 'Nota',
+//                                'name' => 'nota',
+//                                'value' => '$data["nota"]'
+//                            ),
 //                        array(
 //                            'name' => 'mama_id',
 //                            'value' => '$data->mama ? $data->mama->campo_completo : ""'

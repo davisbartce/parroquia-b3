@@ -416,7 +416,9 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo Yii::app()->createUrl('bautizos/bautizo/reporte') ?>" style="margin-left: 10px;"><i class="fa fa-child"></i> Bautizos</a></li>
-                                <li><a href="<?php echo Yii::app()->createUrl('matrimonios/amtrimonio/reporte') ?>" style="margin-left: 10px;"><i class="fa fa fa-slideshare"></i> Bautizos</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('matrimonios/matrimonio/reporte') ?>" style="margin-left: 10px;"><i class="fa fa fa-slideshare"></i> Matrimonios</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('confirmaciones/confirmacion/reporte') ?>" style="margin-left: 10px;"><i class="fa fa fa-book"></i> Confirmaciones</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('comuniones/comunion/reporte') ?>" style="margin-left: 10px;"><i class="fa fa fa-bell"></i> Comuniones</a></li>
 <!--                                <li class=""><a href="< ?php echo Yii::app()->createUrl('padres/padre/admin') ?>" style="margin-left: 10px;"><i class="fa fa-male"></i> Padres</a></li>
                                 <li class=""><a href="< ?php echo Yii::app()->createUrl('libros/libro/admin') ?>" style="margin-left: 10px;"><i class="fa fa-book"></i> Libros</a></li>-->
                             </ul>

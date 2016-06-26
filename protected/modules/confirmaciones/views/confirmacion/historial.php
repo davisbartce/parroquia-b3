@@ -23,7 +23,7 @@ Util::tsRegisterAssetJs('historial.js');
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo '' . ' ' . Bautizo::label(2); ?></h3>
+                <h3 class="panel-title"><?php echo '' . ' ' . Confirmacion::label(2); ?></h3>
             </div>
             <div class="panel-body">
                 <!--                <div class="input-group input-group-sm col-sm-4">
@@ -83,7 +83,7 @@ Util::tsRegisterAssetJs('historial.js');
 
                     <?php
                     $this->widget('booster.widgets.TbGridView', array(
-                        'id' => 'bautizo-grid',
+                        'id' => 'confirmacion-grid',
                         'type' => 'striped bordered hover advance',
                         'dataProvider' => New CArrayDataProvider($elementos),
 //                    'dataProvider' => $model->search(),
@@ -120,6 +120,16 @@ Util::tsRegisterAssetJs('historial.js');
                                 'name' => 'feligreses_de',
                                 'value' => '$data["feligreses_de"]'
                             ),
+                              array(
+                                'header' => 'Padrino',
+                                'name' => 'padrino',
+                                'value' => '$data["padrino"]'
+                            ),
+                              array(
+                                'header' => 'Madrina',
+                                'name' => 'madrina',
+                                'value' => '$data["madrina"]'
+                            ),
                             array(
                                 'header' => 'Libro Tomo',
                                 'name' => 'tomo',
@@ -141,9 +151,19 @@ Util::tsRegisterAssetJs('historial.js');
                                 'value' => '$data["libro_numero"]'
                             ),
                             array(
-                                'header' => 'Nota',
-                                'name' => 'nota',
-                                'value' => '$data["nota"]'
+                                'header' => 'Fecha_bautizo',
+                                'name' => 'fecha_bautizo',
+                                'value' => '$data["fecha_bautizo"]'
+                            ),
+                            array(
+                                'header' => 'Lugar Bautizo',
+                                'name' => 'fecha_bautizo',
+                                'value' => '$data["lugar_bautizo"]'
+                            ),
+                            array(
+                                'header' => 'Tomo-Página-Número',
+                                'name' => 'tomo',
+                                'value' => '$data["tomo_bautizo"]."-".$data["pagina_bautizo"]."-".$data["numero_bautizo"]'
                             ),
 //                        array(
 //                            'name' => 'mama_id',

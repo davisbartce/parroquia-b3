@@ -56,7 +56,7 @@ class MatrimonioController extends AweController {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-         $model->fecha_matrimonio = Util::FormatDate($model->fecha_matrimonio, 'd-m-Y');
+        $model->fecha_matrimonio = Util::FormatDate($model->fecha_matrimonio, 'd-m-Y');
         $model->rc_fecha = Util::FormatDate($model->rc_fecha, 'd-m-Y');
 
 
@@ -99,12 +99,12 @@ class MatrimonioController extends AweController {
     public function actionAdmin() {
         $model = new Matrimonio('search');
         $model->unsetAttributes(); // clear any default values
-        if (isset($_GET['Matrimonio'])){
+        if (isset($_GET['Matrimonio'])) {
             $model->attributes = $_GET['Matrimonio'];
         }
-        
-           if (isset($_GET['searchValue'])){
-              $model->de_persona($_GET['searchValue']);
+
+        if (isset($_GET['searchValue'])) {
+            $model->de_persona($_GET['searchValue']);
         }
 
 
@@ -135,12 +135,124 @@ class MatrimonioController extends AweController {
             Yii::app()->end();
         }
     }
-    
-      public function actionViewPrint($id) {
-        $this->layout='//layouts/print';
+
+    public function actionViewPrint($id) {
+        $this->layout = '//layouts/print';
         $this->render('print', array(
             'model' => $this->loadModel($id),
         ));
+    }
+
+    public function actionReporte() {
+        $model = new Matrimonio('search');
+        $libro = new Libro;
+        $model->unsetAttributes(); // clear any default values
+        $elementos = array();
+        if (isset($_GET['ajax'])) {
+            $elementos = $model->obtenerMatrimonios($_GET['fechas'], $_GET['tomo']);
+        }
+//        var_dump($elementos);
+//        die();
+        $this->render('historial', array(
+            'model' => $model,
+            'libro' => $libro,
+            'elementos' => $elementos,
+        ));
+    }
+
+    public function actionExport() {
+        $elementos = Matrimonio::model()->obtenerMatrimonios($_POST['Ano'], $_POST['Tomo']);
+        $objExcel = new PHPExcel();
+//    die(var_dump($elementos));
+
+        $objExcel->setActiveSheetIndex(0)// Titulo del reporte
+                ->setCellValue('A1', 'Novio')
+                ->setCellValue('B1', 'Novia')
+                ->setCellValue('C1', 'Fecha Matrimonio')
+                ->setCellValue('D1', 'Iglesia')
+                ->setCellValue('E1', 'Padre Parroquia')
+                ->setCellValue('F1', 'Papa Novio')
+                ->setCellValue('G1', 'Mama Novio')
+                ->setCellValue('H1', 'Papa Novia')
+                ->setCellValue('I1', 'Mama Novia')
+                ->setCellValue('J1', 'Testigo Novio 1')
+                ->setCellValue('K1', 'Testigo Novio 2')
+                ->setCellValue('L1', 'Testigo Novia 1')
+                ->setCellValue('M1', 'Testigo Novia 2')
+                ->setCellValue('N1', 'Libro Año')
+                ->setCellValue('O1', 'Libro Tomo')
+                ->setCellValue('P1', 'Libro página')
+                ->setCellValue('Q1', '# registro')
+                ->setCellValue('R1', '# Acta Registro Civil');
+//                ->setCellValue('J1', 'Estado Transacción');
+//                ->setCellValue('K1', 'Saldo Capital')
+//                ->setCellValue('L1', 'Interés Normal')
+//                ->setCellValue('M1', 'Interés Mora')
+//                ->setCellValue('J1', 'Valor Vencido');
+//                ->setCellValue('O1', 'Mínimo a Pagar');
+//                ->setCellValue('M1', 'Total a Pagar')
+//                ->setCellValue('P1', 'Forma de Pago');
+
+        $id = 2;
+        foreach ($elementos as $Cobr) {
+            $objExcel->setActiveSheetIndex(0)
+//                    'fecha_gestion' => null
+//      'username' => string 'admin' (length=5)
+                    ->setCellValue('A' . $id, $Cobr['novio'] . ' ')
+                    ->setCellValue('B' . $id, $Cobr['novia'])
+                    ->setCellValue('C' . $id, $Cobr['fecha'] . ' ')
+                    ->setCellValue('D' . $id, $Cobr['iglesia'] . ' ')
+                    ->setCellValue('E' . $id, $Cobr['padre_parroquia'])
+                    ->setCellValue('F' . $id, $Cobr['papa_novio'])
+                    ->setCellValue('G' . $id, $Cobr['mama_novio'])
+                    ->setCellValue('H' . $id, $Cobr['papa_novia'])
+                    ->setCellValue('I' . $id, $Cobr['mama_novia'])
+                    ->setCellValue('J' . $id, $Cobr['testigo_novio_1'])
+                    ->setCellValue('K' . $id, $Cobr['testigo_novio_2'])
+                    ->setCellValue('L' . $id, $Cobr['testigo_novia_1'])
+                    ->setCellValue('M' . $id, $Cobr['testigo_novia_2'])
+                    ->setCellValue('N' . $id, $Cobr['ano'])
+                    ->setCellValue('O' . $id, $Cobr['tomo'])
+                    ->setCellValue('P' . $id, $Cobr['libro_pagina'])
+                    ->setCellValue('Q' . $id, $Cobr['libro_numero'])
+                    ->setCellValue('R' . $id, $Cobr['acta_rc']);
+//                    ->setCellValue('J' . $id, $Cobr['estado_transaccional']);
+//                    ->setCellValue('K' . $id, $Cobr['saldo_capital'])
+//                    ->setCellValue('L' . $id, $Cobr['interes_normal'])
+//                    ->setCellValue('M' . $id, $Cobr['interes_mora'])
+//                    ->setCellValue('J' . $id, $Cobr['valor_vencido'])
+//                    ->setCellValue('O' . $id, $Cobr['minimo_pagar'])
+//                    ->setCellValue('M' . $id, $Cobr->total_pagar)
+//                    ->setCellValue('P' . $id, $Cobr->forma_pago)
+//->setCellValue('F' . $id, $Cobr->cuotas_mora)
+//->setCellValue('G' . $id, $Cobr->monto_cuota)
+//->setCellValue('H' . $id, $Cobr->monto_mora)
+//->setCellValue('I' . $id, $Cobr->saldo_favor)
+//->setCellValue('J' . $id, $Cobr->saldo_negativo)
+//->setCellValue('K' . $id, $Cobr->descripcion)
+            $id++;
+        }
+
+        for ($i = 'A'; $i <= 'R'; $i++) {
+            $objExcel->setActiveSheetIndex(0)->getColumnDimension($i)->setAutoSize(TRUE);
+        }
+        $objExcel->getActiveSheet()->setTitle(count($elementos) . ' Registros Exportados');
+
+// Se activa la hoja para que sea la que se muestre cuando el archivo se abre
+        $objExcel->setActiveSheetIndex(0);
+
+//Inmovilizar paneles
+        $objExcel->getActiveSheet(0)->freezePane('A4');
+        $objExcel->getActiveSheet(0)->freezePaneByColumnAndRow(1, 2);
+
+// Se manda el archivo al navegador web, con el nombre que se indica, en formato 2007
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="Matrimonios.xlsx"');
+        header('Cache-Control: max-age=0');
+
+        $objWriter = PHPExcel_IOFactory::createWriter($objExcel, 'Excel2007');
+        $objWriter->save('php://output');
+        exit;
     }
 
 }

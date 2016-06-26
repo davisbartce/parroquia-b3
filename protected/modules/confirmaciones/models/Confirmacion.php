@@ -73,5 +73,30 @@ class Confirmacion extends BaseConfirmacion
         );
         return $this;
     }
+    
+    public function obtenerConfirmaciones($ano=null,$tomo=null) {
+//        select Grupo, ID_Cota from vw_DatosClientes
+        $consulta = Yii::app()->db->createCommand()
+                ->select('t.id,
+(select concat(p.nombres,"",p.apellidos)  from confirmacion b join persona p on p.id=b.persona_id where t.id=b.id )as persona,
+(select concat(p.nombres,"",p.apellidos)  from confirmacion b join persona p on p.id=b.papa_id where t.id=b.id) as papa,
+(select concat(p.nombres,"",p.apellidos)  from confirmacion b join persona p on p.id=b.mama_id where t.id=b.id) as mama,
+(select concat(p.nombres,"",p.apellidos)  from confirmacion b join persona p on p.id=b.padrino_id where t.id=b.id) as padrino,
+(select concat(p.nombres,"",p.apellidos)  from confirmacion b join persona p on p.id=b.madrina_id where t.id=b.id) as madrina,
+t.fecha_confirmacion fecha,t.iglesia,t.feligreses_de,l.tomo,l.ano,t.pagina libro_pagina,t.numero libro_numero,t.fecha_bautizo,t.ano_bautizo,t.tomo_bautizo,t.pagina_bautizo,t.numero_bautizo,t.lugar_bautizo,
+concat(pa.nombres," ",pa.apellidos) padre_parroquia
+')
+                ->from('confirmacion t')
+                ->join('padre pa',' pa.id=t.padre_parroquia_id')
+                ->join('libro l','l.id=t.tomo_id');
+        
+        if($ano){
+            $consulta->andWhere('l.ano=:anio',array(':anio'=>$ano));
+        }
+        if($tomo){
+             $consulta->andWhere('t.tomo_id=:tomo',array(':tomo'=>$tomo));
+        }
+        return $consulta->queryAll();
+    }
 
 }

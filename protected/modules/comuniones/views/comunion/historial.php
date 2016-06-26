@@ -23,7 +23,7 @@ Util::tsRegisterAssetJs('historial.js');
 
         <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo '' . ' ' . Bautizo::label(2); ?></h3>
+                <h3 class="panel-title"><?php echo '' . ' ' . Comunion::label(2); ?></h3>
             </div>
             <div class="panel-body">
                 <!--                <div class="input-group input-group-sm col-sm-4">
@@ -83,7 +83,7 @@ Util::tsRegisterAssetJs('historial.js');
 
                     <?php
                     $this->widget('booster.widgets.TbGridView', array(
-                        'id' => 'bautizo-grid',
+                        'id' => 'comunion-grid',
                         'type' => 'striped bordered hover advance',
                         'dataProvider' => New CArrayDataProvider($elementos),
 //                    'dataProvider' => $model->search(),
@@ -140,11 +140,11 @@ Util::tsRegisterAssetJs('historial.js');
                                 'name' => 'numero',
                                 'value' => '$data["libro_numero"]'
                             ),
-                            array(
-                                'header' => 'Nota',
-                                'name' => 'nota',
-                                'value' => '$data["nota"]'
-                            ),
+//                            array(
+//                                'header' => 'Nota',
+//                                'name' => 'nota',
+//                                'value' => '$data["nota"]'
+//                            ),
 //                        array(
 //                            'name' => 'mama_id',
 //                            'value' => '$data->mama ? $data->mama->campo_completo : ""'
