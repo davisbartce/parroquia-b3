@@ -171,7 +171,7 @@ class ComunionController extends AweController {
 
         $objExcel->setActiveSheetIndex(0)// Titulo del reporte
                 ->setCellValue('A1', 'Persona')
-                ->setCellValue('B1', 'Fecha Bautizo')//Titulo de las columnas
+                ->setCellValue('B1', 'Fecha Comunión')//Titulo de las columnas
                 ->setCellValue('C1', 'Iglesia')
                 ->setCellValue('D1', 'Padre Parroquia')
                 ->setCellValue('E1', 'Papá')
