@@ -1,7 +1,7 @@
 
 <style>
     .center{
-       text-align: center;
+        text-align: center;
     }
     .descripcion {
         background: inherit;
@@ -47,6 +47,7 @@
 
 </style>
 <section class="invoice">
+    <?php // var_dump($model) ?>
     <!-- title row -->
     <div class="row">
         <div class="col-xs-2">
@@ -79,22 +80,40 @@
         </div>
     </div>
     <div class="row">
-<h2 class="text-center" >CERTIFICADO</h2>
-            <div class="center" >
-                <p class="elipsis90 parrafo">
-                    <span class="espacio">A  </span><span class="espacio"> l...</span>Sr....
-                    <?php echo $model->persona->campo_completo ?>
-                </p>
-                <p class="parrafo">
-                    Por Haber Relaizado: <strong>LA CONFIRMACIÓN.</strong>
-                    <br>
-                    Es lo que podemos expresar en honor a la verdad.
-                </p>
-                <br>
+        <div class="descripcion-certificado">
+            <div class="xs-9">
 
-                <p class="parrafo">
-                    Quito, <?php echo Util::traducirFechaActual(); ?>
-                </p>
+                <h2 class="text-center" >CERTIFICADO</h2>
+                <div class="center" >
+                    <p class="elipsis90 parrafo">
+                        <span class="espacio">Otorgado a  </span>
+                        <?php echo $model->persona->campo_completo ?>
+                    </p>
+                    <p class="parrafo">
+                        Por Haber Relaizado: <strong>LA CONFIRMACIÓN.</strong>
+                        <br>
+                        <!--                    Fueron sus padrinos
+                                            Es lo que podemos expresar en honor a la verdad.-->
+                    </p>
+                    <p class="parrafo">
+                        El día <?php echo date('d', strtotime($model->fecha_confirmacion)) ?> , del mes de <?php echo Util::retornarMestraduciso(date('m', strtotime($model->fecha_confirmacion))) ?> ,  del año del Señor <?php echo date('Y', strtotime($model->fecha_confirmacion)) ?>,
+
+                        en la Iglesia parroquial <?php echo $model->iglesia ?>.
+
+                        El Padre <?php echo $model->padre->campo_completo ?>
+                        realizo la confirmación solemnemente a: <?php echo $model->persona->campo_completo ?>
+                        nacido(a) en <?php echo $model->persona->lugar_nacimiento ? $model->persona->lugar_nacimiento : "______________________ " ?> el <?php echo $model->persona->fecha_nacimiento ? (date('d', strtotime($model->persona->fecha_nacimiento))) . ' de ' . Util::retornarMestraduciso(date('m', strtotime($model->persona->fecha_nacimiento))) . ' del ' . date('Y', strtotime($model->persona->fecha_nacimiento)) : "______________________" ?> 
+
+
+                        hijo(a) de <?php echo $model->papa ? $model->papa->campo_completo : " .............. " ?>
+                        y de <?php echo $model->mama ? $model->mama->campo_completo : " .............. " ?>.
+                    </p>
+                    <br>
+
+                    <p class="parrafo">
+                        Quito, <?php echo Util::traducirFechaActual(); ?>
+                    </p>
+                </div>
             </div>
 
 
@@ -106,6 +125,6 @@
                 PARROCO
 
             </div>
-        </div><!-- /.col -->
-    </div>
+        </div>
+    </div><!-- /.col -->
 </section>
