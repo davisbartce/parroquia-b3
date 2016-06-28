@@ -46,7 +46,7 @@
 
 
 </style>
-<section class="invoice">
+<section class="invoice" style="padding: 40px">
     <?php // var_dump($model) ?>
     <!-- title row -->
     <div class="row">
